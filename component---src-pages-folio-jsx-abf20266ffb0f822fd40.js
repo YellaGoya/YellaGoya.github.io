@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkyellagoya_malog=self.webpackChunkyellagoya_malog||[]).push([[904],{1034:function(e,l,n){n.r(l),n.d(l,{default:function(){return u}});var a=n(7294);function t(){return a.createElement("div",null,"폴리오 페이지입니다.")}var u=()=>a.createElement(a.Fragment,null,a.createElement(t,null))}}]);
-//# sourceMappingURL=component---src-pages-folio-jsx-abf20266ffb0f822fd40.js.map

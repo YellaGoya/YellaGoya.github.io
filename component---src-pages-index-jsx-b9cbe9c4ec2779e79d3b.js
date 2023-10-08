@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkyellagoya_malog=self.webpackChunkyellagoya_malog||[]).push([[230],{1160:function(e,l,n){n.r(l),n.d(l,{default:function(){return u}});var a=n(7294);function t(){return a.createElement("div",null,"안녕하세요~~! 메인이에요")}var u=()=>a.createElement(a.Fragment,null,a.createElement(t,null))}}]);
-//# sourceMappingURL=component---src-pages-index-jsx-b9cbe9c4ec2779e79d3b.js.map
