@@ -38,8 +38,8 @@ export const RecentCard = styled.div`
   cursor: pointer;
 
   .gatsby-image-wrapper {
-    width: 100%;
-    height: 200px;
+    width: 100% !important;
+    height: 200px !important;
     border: 1px solid rgba(0, 0, 0, 1);
     box-shadow: rgba(0, 0, 0, 1) 5px 5px;
   }

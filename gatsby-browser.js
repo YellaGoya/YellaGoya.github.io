@@ -9,6 +9,10 @@ export const wrapPageElement = ({ element }) => {
   const [isFolio, setIsFolio] = r.useState(false);
   const [isMenu, setIsMenu] = r.useState(false);
 
+  r.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <g.GlobalStyle />
