@@ -1,12 +1,39 @@
 import * as React from "react";
-import Main from "components/content/Main.jsx";
+import Main from "components/content/main/Main.jsx";
 
-const IndexPage = () => {
+import { graphql } from "gatsby";
+
+const IndexPage = ({ data }) => {
   return (
     <>
-      <Main />
+      <Main data={data} />
     </>
   );
 };
+
+export const query = graphql`
+  {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 7) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;

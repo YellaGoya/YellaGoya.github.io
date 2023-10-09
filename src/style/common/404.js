@@ -1,0 +1,55 @@
+import styled from "styled-components";
+
+export const NinjaHouse = styled.main`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease;
+`;
+
+export const Ninja = styled.section`
+  position: relative;
+`;
+
+export const KillerSmile = styled.img``;
+
+export const Eyes = styled.div`
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateX(-1px);
+
+  height: 1.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  padding: 0px 6px;
+  background-color: #d5383f;
+`;
+
+export const Bunshinsul = styled.div``;
+
+export const Dagger = styled.h1`
+  font-size: 2rem;
+  font-weight: 800;
+  color: #d5383f;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 0;
+`;
+
+export const Silence = styled.h3`
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+`;

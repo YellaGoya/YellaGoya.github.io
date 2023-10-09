@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { graphql } from "gatsby";
 
-export default function PostTemplate({ data }) {
+const PostTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const thumbnailImg = getImage(post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData);
 
@@ -21,7 +21,7 @@ export default function PostTemplate({ data }) {
       </s.Post>
     </s.Main>
   );
-}
+};
 
 export const query = graphql`
   query ($slug: String!) {
@@ -38,3 +38,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default PostTemplate;

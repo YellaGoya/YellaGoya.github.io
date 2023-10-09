@@ -1,8 +1,8 @@
 ---
 title: What follows from here
-date: "2022-05-11T22:12:03.284Z"
+date: "2022-05-21T22:12:03.284Z"
 description: 남은 할일 목록
-thumbnail: './thumbnail.jpg'
+thumbnail: './thumbnail.png'
 ---
 
 # NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Gatsby Sites.

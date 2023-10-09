@@ -6,15 +6,14 @@ import "assets/highlight/prism-dracula.css";
 import TopBar from "components/common/TopBar.jsx";
 
 export const wrapPageElement = ({ element }) => {
+  const [isFolio, setIsFolio] = r.useState(false);
   const [isMenu, setIsMenu] = r.useState(false);
 
   return (
     <>
       <g.GlobalStyle />
-      <TopBar isMenu={isMenu} setIsMenu={setIsMenu} />
+      <TopBar isFolio={isFolio} setIsFolio={setIsFolio} isMenu={isMenu} setIsMenu={setIsMenu} />
       <g.Contents $isMenu={isMenu}>{element}</g.Contents>
-      {/* <g.GradContentsUpper $isMenu={isMenu} />
-      <g.GradContentsLower /> */}
     </>
   );
 };

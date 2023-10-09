@@ -146,9 +146,13 @@ export const Content = styled.article`
   }
 
   .gatsby-code-button-container {
+    position: relative;
+    top: 0;
+
+    height: 0px;
     width: auto;
     max-width: 900px;
-    margin: 0px 10px 15px 10px;
+    margin: 0px 10px 0px 10px;
 
     &::before {
       content: none;
@@ -157,7 +161,7 @@ export const Content = styled.article`
 
   .gatsby-code-button {
     position: absolute;
-    top: -4px;
+    top: 9px;
     right: 7px;
 
     &::before {
@@ -179,7 +183,8 @@ export const Content = styled.article`
     }
   }
 
-  div > div {
+  .gatsby-highlight {
+    position: relative;
     &::before {
       content: "";
       position: absolute;

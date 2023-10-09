@@ -1,3 +1,7 @@
-export default function Folio() {
-  return <div>폴리오 페이지입니다.</div>;
-}
+import React from "react";
+
+const Folio = () => {
+  return <div>Folio</div>;
+};
+
+export default Folio;

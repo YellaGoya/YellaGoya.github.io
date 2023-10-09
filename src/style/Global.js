@@ -9,6 +9,12 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${PrVr}) format('truetype');
   }
 
+  html {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
   body {
     margin: 0;
     font-family: "PrVr", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;;
@@ -17,21 +23,27 @@ export const GlobalStyle = createGlobalStyle`
 
     & > .gatsby-code-button-toaster{
       position: fixed;
-      left: calc((100vw - 288px) / 2 + 176px);
-      transform: translateX(-50%);
 
       margin-top: -1px;
       
       height:65px;
-      width: fit-content;
+      width: 100vw;
 
       display: flex;
       justify-content: center;
       align-items: center;
 
       & > .gatsby-code-button-toaster-text{
-        font-size: 1.1rem;
-        font-weight: 600;
+        position: absolute;
+        right: 75px;
+
+        margin: 0;
+        padding: 0;
+
+        width: fit-content;
+
+        font-size: 1.2rem;
+        font-weight: 700;
 
         background-color: transparent;
 

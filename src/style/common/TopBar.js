@@ -29,15 +29,15 @@ export const TitleWrapper = styled.nav`
   & > svg {
     color: #d5383f;
     transition: opacity 0.3s ease;
-    opacity: ${(props) => (props.$here === "/" || props.$here.startsWith("/post/") ? "1" : "0.5")};
+    opacity: ${(props) => (props.$isFolio ? "0.5" : "1")};
   }
 
   & > :nth-child(2) {
-    opacity: ${(props) => (props.$here === "/" || props.$here.startsWith("/post/") ? "1" : "0.5")};
+    opacity: ${(props) => (props.$isFolio ? "0.5" : "1")};
   }
 
   & > :nth-child(4) {
-    opacity: ${(props) => (props.$here.startsWith("/folio/") ? "1" : "0.5")};
+    opacity: ${(props) => (props.$isFolio ? "1" : "0.5")};
   }
 `;
 
@@ -53,6 +53,7 @@ export const Title = styled(Link)`
 
   cursor: pointer;
 
+  opacity: 0.5;
   transition: opacity 0.3s ease;
 `;
 
@@ -63,6 +64,15 @@ export const NavWrapper = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  & > :first-child {
+    visibility: ${(props) => (props.$isMenu ? "visible" : "hidden")};
+    opacity: ${(props) => (props.$isMenu ? "1" : "0")};
+
+    transition:
+      visibility 0.3s ease,
+      opacity 0.3s ease;
+  }
 `;
 
 export const NavBtn = styled.button`
