@@ -6,21 +6,23 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const RecentSix = ({ data }) => {
   console.log(data);
   return (
-    <s.RecentWrapper>
+    <s.Wrapper>
       <s.RecentTitle>
         Recent
         <br />
         Posts
       </s.RecentTitle>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <s.RecentCard key={node.id} onClick={() => navigate(node.fields.slug)}>
-          <GatsbyImage image={getImage(node.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData)} />
+      <s.RecentWrapper>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <s.RecentCard key={node.id} onClick={() => navigate(node.fields.slug)}>
+            <GatsbyImage image={getImage(node.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData)} />
 
-          <s.CardTitle>{node.frontmatter.title}</s.CardTitle>
-          <s.CardDescription>{node.frontmatter.description}</s.CardDescription>
-        </s.RecentCard>
-      ))}
-    </s.RecentWrapper>
+            <s.CardTitle>{node.frontmatter.title}</s.CardTitle>
+            <s.CardDescription>{node.frontmatter.description}</s.CardDescription>
+          </s.RecentCard>
+        ))}
+      </s.RecentWrapper>
+    </s.Wrapper>
   );
 };
 
