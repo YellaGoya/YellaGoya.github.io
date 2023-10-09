@@ -35,20 +35,19 @@ export const RecentTitle = styled.h1`
 `;
 
 export const RecentCard = styled.div`
-  width: 100;
-
   cursor: pointer;
 
   .gatsby-image-wrapper {
+    width: 100%;
     border: 1px solid rgba(0, 0, 0, 1);
     box-shadow: rgba(0, 0, 0, 1) 5px 5px;
   }
 
   img {
-    width: 530px;
+    width: 100%;
     height: 200px;
-    //witdh 만큼 채우기
     object-fit: cover;
+    object-position: center;
   }
 `;
 
