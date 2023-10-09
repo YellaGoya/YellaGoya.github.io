@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkyellagoya_malog=self.webpackChunkyellagoya_malog||[]).push([[904],{1034:function(a,e,l){l.r(e),l.d(e,{default:function(){return o}});l(7294);var n=l(5893);var r=()=>(0,n.jsx)("div",{children:"Folio"});var o=()=>(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(r,{})})}}]);
+//# sourceMappingURL=component---src-pages-folio-jsx-91be4216019c611e0ac1.js.map
