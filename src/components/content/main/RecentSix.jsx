@@ -15,7 +15,7 @@ const RecentSix = ({ data }) => {
       <s.RecentWrapper>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <s.RecentCard key={node.id} onClick={() => navigate(node.fields.slug)}>
-            <GatsbyImage image={getImage(node.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData)} />
+            <GatsbyImage image={getImage(node.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData)} alt="thumbnail" />
 
             <s.CardTitle>{node.frontmatter.title}</s.CardTitle>
             <s.CardDescription>{node.frontmatter.description}</s.CardDescription>
