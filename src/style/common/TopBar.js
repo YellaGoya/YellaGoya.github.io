@@ -1,22 +1,44 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-export const Box = styled.div`
-  position: relative;
+export const Header = styled.header`
+  position: fixed;
   top: 0px;
   width: 100%;
   height: 63px;
 
-  background-color: #1b1b1b;
+  //내부 wrapper 2개를 좌우 끝에 위치 시키고 수직 중앙 정렬
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   border-bottom: 2px solid #858585;
 
   user-select: none;
+  z-index: 100;
 `;
 
-export const TitleBox = styled.div`
+export const TitleWrapper = styled.nav`
   position: relative;
+  margin-left: 20px;
 
-  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > svg {
+    color: #d5383f;
+    transition: opacity 0.3s ease;
+    opacity: ${(props) => (props.$here === "/" || props.$here.startsWith("/post/") ? "1" : "0.5")};
+  }
+
+  & > :nth-child(2) {
+    opacity: ${(props) => (props.$here === "/" || props.$here.startsWith("/post/") ? "1" : "0.5")};
+  }
+
+  & > :nth-child(4) {
+    opacity: ${(props) => (props.$here.startsWith("/folio/") ? "1" : "0.5")};
+  }
 `;
 
 export const Title = styled(Link)`
@@ -24,48 +46,51 @@ export const Title = styled(Link)`
   margin: 8px;
 
   color: #d5383f;
+
   font-weight: 700;
   font-size: 1.2rem;
   text-decoration: none;
 
   cursor: pointer;
+
+  transition: opacity 0.3s ease;
 `;
 
-export const NavBox = styled.div`
+export const NavWrapper = styled.nav`
   position: relative;
-  float: right;
-  top: -3px;
-  right: 0px;
   color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-// Export const Nav = styled(Link)`
-//   margin: 21px;
-
-//   color: white;
-//   font-size: 1.1rem;
-//   text-decoration: none;
-// `;
-
-export const Btn = styled.button`
+export const NavBtn = styled.button`
   margin-right: 20px;
 
   background-color: transparent;
   border: none;
 
-  color: white;
-  font-family: "PrVr";
-  font-size: 1.1rem;
-  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   cursor: pointer;
+
+  & > svg {
+    color: ${(props) => (props.$isToggle ? "#fff" : "#d5383f")};
+    transition: color 0.3s ease;
+  }
 `;
 
 export const Menu = styled.nav`
-  display: ${(props) => (props.$toggle ? "block" : "none")};
-  background-color: beige;
-  height: 200px;
+  position: fixed;
+  top: ${(props) => (props.$isMenu ? "65px" : "-137px")};
 
-  background-color: #1b1b1b;
+  height: 200px;
+  width: 100%;
+
   border-bottom: 2px solid #858585;
+
+  transition: top 0.5s ease;
 `;

@@ -1,35 +1,43 @@
-import React from "react";
 import * as s from "style/common/TopBar.js";
 
+// 라이브러리
+import { useLocation } from "@reach/router";
+
+// 컴포넌츠
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
+import ListAltIcon from "@mui/icons-material/ListAlt";
+import FlareIcon from "@mui/icons-material/Flare";
 
-export default function TopBar() {
+export default function TopBar({ isMenu, setIsMenu }) {
+  const location = useLocation();
   // Const [isFolio, setIsFolio] = React.useState();
-  const [menuOpen, setMenuOpen] = React.useState(false);
 
-  const toggleMenuHandler = () => {
-    setMenuOpen(!menuOpen);
+  const watchToggleHandler = () => {
+    setIsMenu(!isMenu);
   };
 
   return (
     <>
-      <s.Box>
-        <s.TitleBox>
-          <s.Title to="/">Malog</s.Title>
-          <span style={{ fontSize: "1.2rem", fontWeight: "900", color: "#858585" }}>/</span>
-          <s.Title to="/folio">folio</s.Title>
-        </s.TitleBox>
+      <s.Header>
+        <s.TitleWrapper $here={location.pathname}>
+          <FlareIcon />
+          <s.Title to="/">malog</s.Title>
 
-        <s.NavBox>
-          <s.Btn>
+          <span style={{ fontSize: "1.2rem", fontWeight: "900", color: "#858585" }}>:</span>
+
+          <s.Title to="/folio">folio</s.Title>
+        </s.TitleWrapper>
+
+        <s.NavWrapper>
+          <s.NavBtn>
             <ManageSearchIcon />
-          </s.Btn>
-          <s.Btn onClick={toggleMenuHandler} style={{ color: "#d66d72" }}>
-            메뉴
-          </s.Btn>
-        </s.NavBox>
-      </s.Box>
-      <s.Menu $toggle={menuOpen} />
+          </s.NavBtn>
+          <s.NavBtn onClick={watchToggleHandler} $isToggle={isMenu}>
+            <ListAltIcon />
+          </s.NavBtn>
+        </s.NavWrapper>
+      </s.Header>
+      <s.Menu $isMenu={isMenu} />
     </>
   );
 }
