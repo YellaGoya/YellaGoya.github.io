@@ -39,13 +39,12 @@ export const RecentCard = styled.div`
 
   .gatsby-image-wrapper {
     width: 100%;
+    height: 200px;
     border: 1px solid rgba(0, 0, 0, 1);
     box-shadow: rgba(0, 0, 0, 1) 5px 5px;
   }
 
   img {
-    width: 100%;
-    height: 200px;
     object-fit: cover;
     object-position: center;
   }
