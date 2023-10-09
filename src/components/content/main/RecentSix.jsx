@@ -4,7 +4,6 @@ import { navigate } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const RecentSix = ({ data }) => {
-  console.log(data);
   return (
     <s.Wrapper>
       <s.RecentTitle>

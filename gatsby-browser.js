@@ -9,15 +9,21 @@ export const wrapPageElement = ({ element }) => {
   const [isFolio, setIsFolio] = r.useState(false);
   const [isMenu, setIsMenu] = r.useState(false);
 
+  const contentsRef = r.useRef(null);
+
   r.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (contentsRef.current) {
+      contentsRef.current.scrollTop = 0;
+    }
+  }, [element]);
 
   return (
     <>
       <g.GlobalStyle />
       <TopBar isFolio={isFolio} setIsFolio={setIsFolio} isMenu={isMenu} setIsMenu={setIsMenu} />
-      <g.Contents $isMenu={isMenu}>{element}</g.Contents>
+      <g.Contents ref={contentsRef} $isMenu={isMenu}>
+        {element}
+      </g.Contents>
     </>
   );
 };
