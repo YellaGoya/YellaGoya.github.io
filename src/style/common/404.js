@@ -6,8 +6,6 @@ export const NinjaHouse = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  transition: all 0.3s ease;
 `;
 
 export const Ninja = styled.section`
