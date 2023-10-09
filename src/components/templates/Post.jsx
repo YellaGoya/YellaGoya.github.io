@@ -15,6 +15,9 @@ const PostTemplate = ({ data }) => {
         </s.ThumbnailWrapper>
 
         <s.Content>
+          <s.Categories>
+            {post.frontmatter.categories && post.frontmatter.categories.map((category) => <span key={category}>{category}</span>)}
+          </s.Categories>
           <h1>{post.frontmatter.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </s.Content>
@@ -29,6 +32,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        categories
         thumbnail {
           childImageSharp {
             gatsbyImageData

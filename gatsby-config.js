@@ -39,5 +39,32 @@ module.exports = {
         path: `${__dirname}/src/posts/`
       }
     }
+    // {
+    //   resolve: "gatsby-plugin-fusejs",
+    //   options: {
+    //     path: "public/fuse.json",
+    //     fields: ["title", "content", "categories"],
+    //     async items({ graphql }) {
+    //       const { data } = await graphql(`
+    //         query {
+    //           allMarkdownRemark {
+    //             nodes {
+    //               frontmatter {
+    //                 title
+    //                 categories
+    //               }
+    //               html
+    //             }
+    //           }
+    //         }
+    //       `);
+    //       return data.allMarkdownRemark.nodes.map((node) => ({
+    //         title: node.frontmatter.title,
+    //         content: node.html,
+    //         categories: node.frontmatter.categories.join(" ")
+    //       }));
+    //     }
+    //   }
+    // }
   ]
 };

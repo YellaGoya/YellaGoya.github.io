@@ -3,6 +3,8 @@ title: 테스트용 제목입니다.
 date: "2022-05-17T22:12:03.284Z"
 description: 남은 할일 목록
 thumbnail: './thumbnail.jpg'
+categories:
+  - javascript
 ---
 
 

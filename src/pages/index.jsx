@@ -19,6 +19,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            categories
             date(formatString: "MMMM DD, YYYY")
             description
             thumbnail {

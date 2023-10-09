@@ -35,6 +35,9 @@ export const RecentTitle = styled.h1`
 `;
 
 export const RecentCard = styled.div`
+  position: relative;
+
+  padding-bottom: 30px;
   cursor: pointer;
 
   .gatsby-image-wrapper {
@@ -50,9 +53,34 @@ export const RecentCard = styled.div`
   }
 `;
 
+export const Categories = styled.div`
+  position: absolute;
+  margin-top: 14px;
+
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: right;
+  & > span {
+    padding: 3px 6px 3px 8px;
+    margin: 0 3px;
+
+    color: #fff;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+
+    background-color: #d5383f;
+    border-radius: 15px 5px 5px 5px;
+  }
+`;
+
 export const CardTitle = styled.h3`
   margin: 0;
-  padding: 16px 16px 8px 16px;
+  padding: 16px 0 8px 0;
+
+  line-height: 1.2;
 
   font-size: 2rem;
   color: #fff;
@@ -60,7 +88,7 @@ export const CardTitle = styled.h3`
 
 export const CardDescription = styled.p`
   margin: 0;
-  padding: 0 16px 16px 16px;
+  padding: 0 0 16px 0;
 
   font-size: 1.1rem;
   font-weight: 300;

@@ -12,9 +12,47 @@ export const Post = styled.section`
   padding-top: 20px;
 `;
 
-export const ThumbnailWrapper = styled.div``;
+export const ThumbnailWrapper = styled.div`
+  position: relative;
+  width: calc(100% - 40px);
+  height: 300px;
+
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+`;
+
+export const Categories = styled.div`
+  position: absolute;
+  top: 0px;
+  & > span {
+    padding: 2px 8px 4px 6px;
+    margin: 0 3px;
+
+    color: #fff;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+
+    background-color: #d5383f;
+    border-radius: 5px 5px 15px 5px;
+  }
+`;
 
 export const Content = styled.article`
+  position: relative;
   padding: 20px;
   margin-bottom: 100px;
 

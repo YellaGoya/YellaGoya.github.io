@@ -18,6 +18,10 @@ const RecentSix = ({ data }) => {
 
             <s.CardTitle>{node.frontmatter.title}</s.CardTitle>
             <s.CardDescription>{node.frontmatter.description}</s.CardDescription>
+
+            <s.Categories>
+              {node.frontmatter.categories && node.frontmatter.categories.map((category) => <span key={category}>{category}</span>)}
+            </s.Categories>
           </s.RecentCard>
         ))}
       </s.RecentWrapper>

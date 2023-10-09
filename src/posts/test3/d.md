@@ -3,6 +3,10 @@ title: 어바웃 String
 date: "2022-05-20T22:12:03.284Z"
 description: 남은 할일 목록
 thumbnail: './thumbnail.png'
+categories:
+  - javascript
+  - string
+  - 공부
 ---
 
 ### 프로퍼티
