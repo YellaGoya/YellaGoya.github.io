@@ -1,6 +1,5 @@
 import * as r from "react";
 import firebase from "modules/FirebaseTest.js";
-import ReactMarkdown from "react-markdown";
 
 const MarkDownEditor = () => {
   const [text, setText] = r.useState("");
@@ -32,7 +31,6 @@ const MarkDownEditor = () => {
   return (
     <>
       <textarea value={text} onChange={handleChange} />
-      <ReactMarkdown>{text}</ReactMarkdown>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import * as React from "react";
 import Main from "components/content/main/Main.jsx";
 import About from "components/content/main/About.jsx";
-import MarkDownEditor from "components/common/MarkDownEditor";
 
 import { graphql } from "gatsby";
 
@@ -9,7 +8,6 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <Main data={data} />
-      <MarkDownEditor />
       <About />
     </>
   );
