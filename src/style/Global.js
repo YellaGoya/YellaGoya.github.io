@@ -87,6 +87,7 @@ export const Contents = styled.section`
   top: ${(props) => (props.$isMenu ? "267px" : "65px")};
 
   width: 100%;
+
   height: ${(props) => (props.$isMenu ? "calc(100vh - 267px)" : "calc(100vh - 65px)")};
 
   overflow-y: scroll;
@@ -95,6 +96,12 @@ export const Contents = styled.section`
   transition:
     top 0.5s ease,
     height 0.5s ease;
+`;
+
+export const ContentsWidthWrapper = styled.div`
+  max-width: 1300px;
+
+  margin: 0 auto;
 `;
 
 export const GradContentsUpper = styled.div`

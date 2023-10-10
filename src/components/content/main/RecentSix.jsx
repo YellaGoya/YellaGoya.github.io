@@ -1,16 +1,17 @@
 import * as s from "style/content/main/RecentSix.js";
+import { Wrapper, ContentTitle } from "style/content/main/style.js";
 
 import { navigate } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const RecentSix = ({ data }) => {
   return (
-    <s.Wrapper>
-      <s.RecentTitle>
+    <Wrapper>
+      <ContentTitle>
         Recent
         <br />
         Posts
-      </s.RecentTitle>
+      </ContentTitle>
       <s.RecentWrapper>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <s.RecentCard key={node.id} onClick={() => navigate(node.fields.slug)}>
@@ -25,7 +26,7 @@ const RecentSix = ({ data }) => {
           </s.RecentCard>
         ))}
       </s.RecentWrapper>
-    </s.Wrapper>
+    </Wrapper>
   );
 };
 

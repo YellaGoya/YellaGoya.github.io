@@ -25,7 +25,7 @@ export const wrapPageElement = ({ element }) => {
       <g.GlobalStyle />
       <TopBar isFolio={isFolio} setIsFolio={setIsFolio} isMenu={isMenu} setIsMenu={setIsMenu} />
       <g.Contents ref={contentsRef} $isMenu={isMenu}>
-        {element}
+        <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
       </g.Contents>
     </>
   );

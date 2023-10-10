@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.section`
-  position: relative;
-`;
-
-export const RecentWrapper = styled.div`
+export const RecentWrapper = styled.section`
   position: relative;
 
-  padding: 20px 20px 20px 20px;
+  padding: 30px 20px 30px 20px;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -20,19 +16,7 @@ export const RecentWrapper = styled.div`
   gap: 30px;
 `;
 
-export const RecentTitle = styled.h1`
-  position: relative;
-
-  padding: 30px 20px 30px 20px;
-
-  color: #d5383f;
-  font-size: 4rem;
-  line-height: 0.6;
-
-  margin: 0;
-`;
-
-export const RecentCard = styled.div`
+export const RecentCard = styled.article`
   position: relative;
 
   padding-bottom: 30px;
