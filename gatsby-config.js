@@ -38,7 +38,16 @@ module.exports = {
       options: {
         path: `${__dirname}/src/posts/`
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Malog`,
+        display: `standalone`,
+        icon: `./src/assets/flare.svg`
+      }
+    },
+    "gatsby-plugin-react-helmet"
     // {
     //   resolve: "gatsby-plugin-fusejs",
     //   options: {

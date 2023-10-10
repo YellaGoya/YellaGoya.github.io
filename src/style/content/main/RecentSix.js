@@ -9,8 +9,6 @@ export const RecentWrapper = styled.div`
 
   padding: 20px 20px 20px 20px;
 
-  margin-bottom: 100px;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: auto;
