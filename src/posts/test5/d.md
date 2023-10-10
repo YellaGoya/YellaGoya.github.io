@@ -1,10 +1,10 @@
 ---
-title: 왤케 어렵냐 짱나게
+title: 되는건가?
 date: "2022-05-15T22:12:03.284Z"
 description: 남은 할일 목록
 thumbnail: './thumbnail.jpg'
 categories:
-  - 뻐킹하드
+  - 된다
   - hard
 ---
 
