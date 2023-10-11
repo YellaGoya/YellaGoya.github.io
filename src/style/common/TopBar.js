@@ -12,6 +12,8 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
 
+  background-color: #1b1b1b;
+
   border-bottom: 2px solid #858585;
 
   user-select: none;
@@ -64,15 +66,6 @@ export const NavWrapper = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  & > :first-child {
-    visibility: ${(props) => (props.$isMenu ? "visible" : "hidden")};
-    opacity: ${(props) => (props.$isMenu ? "1" : "0")};
-
-    transition:
-      visibility 0.3s ease,
-      opacity 0.3s ease;
-  }
 `;
 
 export const NavBtn = styled.button`
@@ -103,4 +96,49 @@ export const Menu = styled.nav`
   border-bottom: 2px solid #858585;
 
   transition: top 0.5s ease;
+
+  background-color: #1b1b1b;
+  z-index: 50;
+`;
+
+export const Search = styled.nav`
+  position: fixed;
+  top: ${(props) => (props.$isSearch ? "65px" : "-2px")};
+
+  height: 65px;
+  width: 100%;
+
+  background-color: #1b1b1b;
+
+  border-bottom: 2px solid #858585;
+
+  transition: top 0.5s ease;
+
+  z-index: 51;
+
+  & > input {
+    position: relative;
+    top: 7px;
+    left: 20px;
+    height: 50px;
+    width: calc(100% - 40px);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+
+    background-color: transparent;
+
+    outline: none;
+    border: none;
+
+    font-family:
+      "PrVr",
+      Pretendard,
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      sans-serif;
+    text-rendering: optimizeLegibility;
+  }
 `;

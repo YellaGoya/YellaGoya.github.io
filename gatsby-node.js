@@ -3,13 +3,28 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
+
+  if (node.internal.type === "MarkdownRemark") {
     const slug = createFilePath({ node, getNode });
+
+    const dataToIndex = {
+      title: node.frontmatter.title,
+      content: node.rawMarkdownBody,
+      categories: node.frontmatter.categories,
+      description: node.frontmatter.description,
+      slug
+    };
 
     createNodeField({
       node,
-      name: `slug`,
+      name: "slug",
       value: slug
+    });
+
+    createNodeField({
+      node,
+      name: "index",
+      value: JSON.stringify(dataToIndex)
     });
   }
 };

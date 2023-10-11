@@ -1,5 +1,23 @@
-import { styled, createGlobalStyle } from "styled-components";
+import { styled, createGlobalStyle, keyframes } from "styled-components";
 import PrVr from "assets/fonts/PretendardVariable.ttf";
+
+const searchOpacity = keyframes`
+  0% {
+    opacity: 0;
+  }
+  
+  15% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+`;
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -17,27 +35,30 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: "PrVr", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;;
+    font-family: "PrVr", Pretendard, -apple-system, BlinkMacSystemFont, system-ui;
     text-rendering: optimizeLegibility;
     background-color: #1b1b1b;
 
     & > .gatsby-code-button-toaster{
       position: fixed;
-
-      margin-top: -1px;
-      
-      height:65px;
+      height:63px;
       width: 100vw;
 
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: -1px;
+      
+      background-color: #1b1b1b;
+
+      opacity: 0;
+
+      animation: ${searchOpacity} 2s ease;
 
       & > .gatsby-code-button-toaster-text{
-        position: absolute;
-        right: 75px;
-
-        margin: 0;
+        position: fixed;
+        top:17px;
+        right: 22px;
         padding: 0;
 
         width: fit-content;
@@ -49,7 +70,10 @@ export const GlobalStyle = createGlobalStyle`
 
         color: #d5383f;
 
-        font-family: "PrVr", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;;
+        animation: ${searchOpacity} 2s ease-in-out;
+        
+
+        font-family: "PrVr", Pretendard, -apple-system, BlinkMacSystemFont, system-ui;
         text-rendering: optimizeLegibility;
       }
     }
@@ -84,11 +108,11 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Contents = styled.section`
   position: fixed;
-  top: ${(props) => (props.$isMenu ? "267px" : "65px")};
+  top: ${(props) => (props.$isMenu ? "267px" : props.$isSearch ? "132px" : "65px")};
 
   width: 100%;
 
-  height: ${(props) => (props.$isMenu ? "calc(100vh - 267px)" : "calc(100vh - 65px)")};
+  height: ${(props) => (props.$isMenu ? "calc(100vh - 267px)" : props.$isSearch ? "calc(100vh - 132px)" : "calc(100vh - 65px)")};
 
   overflow-y: scroll;
   overflow-x: hidden;
@@ -102,23 +126,4 @@ export const ContentsWidthWrapper = styled.div`
   max-width: 1300px;
 
   margin: 0 auto;
-`;
-
-export const GradContentsUpper = styled.div`
-  position: fixed;
-  top: ${(props) => (props.$isMenu ? "267px" : "65px")};
-  width: 100%;
-  height: 10px;
-
-  background-color: #1b1b1b;
-
-  transition: top 0.5s ease;
-`;
-export const GradContentsLower = styled.div`
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 10px;
-
-  background-color: #1b1b1b;
 `;
