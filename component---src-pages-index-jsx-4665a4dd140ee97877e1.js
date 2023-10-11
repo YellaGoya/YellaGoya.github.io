@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkyellagoya_malog=self.webpackChunkyellagoya_malog||[]).push([[230],{1160:function(a,e,l){l.r(e),l.d(e,{default:function(){return s}});l(7294);var n=l(5893);var r=()=>(0,n.jsx)("div",{children:"Main"});var s=()=>(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(r,{})})}}]);
-//# sourceMappingURL=component---src-pages-index-jsx-4665a4dd140ee97877e1.js.map
