@@ -5,10 +5,10 @@ const SearchContext = r.createContext({
   setSearchQuery() {}
 });
 
-const SearchContextProvider = ({ children }) => {
+const SearchProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = r.useState("");
 
   return <SearchContext.Provider value={{ searchQuery, setSearchQuery }}>{children}</SearchContext.Provider>;
 };
 
-export { SearchContext, SearchContextProvider };
+export { SearchContext, SearchProvider };

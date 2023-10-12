@@ -2,16 +2,21 @@ import * as r from "react";
 import * as s from "style/common/TopBar.js";
 
 import { useLocation } from "@reach/router";
+import { navigate } from "gatsby";
 
 import { SearchContext } from "context/search.jsx";
+import { TopBarContext } from "context/topbar.jsx";
 
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import FlareIcon from "@mui/icons-material/Flare";
 
-const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch }) => {
+const TopBar = () => {
   const location = useLocation();
   const { setSearchQuery } = r.useContext(SearchContext);
+  const { isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch } = r.useContext(TopBarContext);
+
+  const inputRef = r.useRef(null);
 
   const TitleToggleHandler = () => {
     setIsSearch(false);
@@ -19,6 +24,7 @@ const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch 
   };
 
   const searchToggleHandler = () => {
+    if (!isSearch) inputRef.current.focus();
     setIsSearch(!isSearch);
     setIsMenu(false);
   };
@@ -32,6 +38,16 @@ const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch 
     setSearchQuery(event.target.value);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      navigate("/search");
+    }
+
+    if (event.key === "Escape") {
+      setIsSearch(false);
+    }
+  };
+
   r.useEffect(() => {
     setIsFolio(location.pathname.startsWith("/folio"));
   }, [location]);
@@ -40,7 +56,7 @@ const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch 
     <>
       <s.Menu $isMenu={isMenu}>아직 준비중</s.Menu>
       <s.Search $isSearch={isSearch}>
-        <input placeholder="검색어 입력" type="text" onChange={handleInputChange}></input>
+        <input ref={inputRef} placeholder="검색어 입력" type="text" onChange={handleInputChange} onKeyDown={handleKeyPress}></input>
       </s.Search>
       <s.Header>
         <s.TitleWrapper $isFolio={isFolio}>
