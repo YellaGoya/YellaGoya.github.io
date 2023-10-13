@@ -3,7 +3,7 @@ import * as s from "style/common/404.js";
 
 const NotFound = () => {
   return (
-    <>
+    <s.Main>
       <s.NinjaHouse>
         <s.Ninja>
           <s.KillerSmile src={ninja}></s.KillerSmile>
@@ -17,7 +17,7 @@ const NotFound = () => {
           <s.Silence>&quot;이 곳에는 아무 것도 없다.&quot;</s.Silence>
         </s.Bunshinsul>
       </s.NinjaHouse>
-    </>
+    </s.Main>
   );
 };
 

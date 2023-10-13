@@ -1,4 +1,5 @@
 import * as r from "react";
+import * as s from "style/templates/Search.js";
 import { graphql, navigate } from "gatsby";
 import Fuse from "fuse.js";
 
@@ -19,7 +20,7 @@ const SearchPage = ({ data }) => {
   }, [searchQuery]);
 
   return (
-    <div>
+    <s.Main>
       <ul>
         {results &&
           results.map((result) => (
@@ -29,7 +30,14 @@ const SearchPage = ({ data }) => {
             </li>
           ))}
       </ul>
-    </div>
+      {!results || results.length === 0 ? (
+        <s.Noresult>
+          검색 결과가 없습니다 ㅠㅜ..
+          <br />
+          다른 검색어를 입력해보세요.
+        </s.Noresult>
+      ) : null}
+    </s.Main>
   );
 };
 

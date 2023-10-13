@@ -29,7 +29,7 @@ export const Window = styled.article`
 
   margin: 0 auto;
 
-  margin-bottom: 150px;
+  margin-bottom: 70px;
 
   padding-top: 42px;
 
@@ -91,19 +91,36 @@ export const Introduce = styled.article`
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 
   grid-template-rows: auto;
+
+  & > ul,
+  p {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
 `;
 
 export const IntroduceLinkList = styled.ul`
   display: inline-block;
   width: 300px;
+  padding-left: 0px;
 
   list-style: none;
 `;
 
 export const IntroduceLink = styled.li`
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.65;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  cursor: pointer;
+
+  & > svg {
+    transform: translateY(-1px);
+  }
 `;
 
 export const IntroduceDescription = styled.p`

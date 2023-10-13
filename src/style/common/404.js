@@ -1,11 +1,20 @@
 import styled from "styled-components";
 
-export const NinjaHouse = styled.main`
+export const Main = styled.main`
   width: 100%;
   height: 100%;
+`;
+
+export const NinjaHouse = styled.main`
+  position: fixed;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const Ninja = styled.section`

@@ -12,6 +12,8 @@ categories:
 - 검색최적화(SEO)
 - 카테고리 만들기
 
+김경숙은 최악의 프론트다.
+
 ![alt alt](./hello.jpg)
 ![alt alt](./page1.png)
 ![alt alt](./thumbnail.jpg)
