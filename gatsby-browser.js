@@ -5,14 +5,22 @@ import "assets/highlight/prism-dracula.css";
 
 import { Helmet } from "react-helmet";
 import TopBar from "components/common/TopBar.jsx";
-import { SearchContextProvider } from "context/search";
+
+import { SearchProvider } from "context/search";
+import { TopBarProvider, TopBarContext } from "context/topbar";
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <TopBarProvider>
+      <SearchProvider>{element}</SearchProvider>
+    </TopBarProvider>
+  );
+};
 
 export const wrapPageElement = ({ element }) => {
-  const [isFolio, setIsFolio] = r.useState(false);
-  const [isMenu, setIsMenu] = r.useState(false);
-  const [isSearch, setIsSearch] = r.useState(false);
-
   const contentsRef = r.useRef(null);
+  const topBarState = r.useContext(TopBarContext);
+
   r.useEffect(() => {
     if (contentsRef.current) {
       contentsRef.current.scrollTop = 0;
@@ -25,12 +33,10 @@ export const wrapPageElement = ({ element }) => {
         <title>malog</title>
       </Helmet>
       <g.GlobalStyle />
-      <SearchContextProvider>
-        <TopBar isFolio={isFolio} setIsFolio={setIsFolio} isMenu={isMenu} setIsMenu={setIsMenu} isSearch={isSearch} setIsSearch={setIsSearch} />
-        <g.Contents ref={contentsRef} $isMenu={isMenu} $isSearch={isSearch}>
-          <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
-        </g.Contents>
-      </SearchContextProvider>
+      <TopBar />
+      <g.Contents ref={contentsRef} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
+        <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
+      </g.Contents>
     </>
   );
 };

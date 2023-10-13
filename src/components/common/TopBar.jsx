@@ -3,15 +3,26 @@ import * as s from "style/common/TopBar.js";
 
 import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
+<<<<<<< HEAD
+=======
+
+>>>>>>> adf0cfee5bd25b47515316bd337ff9d168b2a4f3
 import { SearchContext } from "context/search.jsx";
+import { TopBarContext } from "context/topbar.jsx";
 
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import FlareIcon from "@mui/icons-material/Flare";
 
-const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch }) => {
+const TopBar = () => {
   const location = useLocation();
+<<<<<<< HEAD
   const { searchQuery, setSearchQuery } = r.useContext(SearchContext);
+=======
+  const { setSearchQuery } = r.useContext(SearchContext);
+  const { isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch } = r.useContext(TopBarContext);
+
+>>>>>>> adf0cfee5bd25b47515316bd337ff9d168b2a4f3
   const inputRef = r.useRef(null);
 
   const TitleToggleHandler = () => {
@@ -34,6 +45,7 @@ const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch 
     setSearchQuery(event.target.value);
   };
 
+<<<<<<< HEAD
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       navigate("/search"); // 엔터 키를 눌렀을 때 '/search' 경로로 이동
@@ -41,6 +53,15 @@ const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch 
 
     if (e.key === "Escape") {
       setIsSearch(false); // ESC 키를 눌렀을 때 검색창 닫기
+=======
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      navigate("/search");
+    }
+
+    if (event.key === "Escape") {
+      setIsSearch(false);
+>>>>>>> adf0cfee5bd25b47515316bd337ff9d168b2a4f3
     }
   };
 
@@ -72,6 +93,7 @@ const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch 
     <>
       <s.Menu $isMenu={isMenu}>아직 준비중</s.Menu>
       <s.Search $isSearch={isSearch}>
+<<<<<<< HEAD
         <input
           ref={inputRef}
           placeholder="검색어 입력"
@@ -80,6 +102,9 @@ const TopBar = ({ isFolio, setIsFolio, isMenu, setIsMenu, isSearch, setIsSearch 
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
         ></input>
+=======
+        <input ref={inputRef} placeholder="검색어 입력" type="text" onChange={handleInputChange} onKeyDown={handleKeyPress}></input>
+>>>>>>> adf0cfee5bd25b47515316bd337ff9d168b2a4f3
       </s.Search>
       <s.Header>
         <s.TitleWrapper $isFolio={isFolio}>

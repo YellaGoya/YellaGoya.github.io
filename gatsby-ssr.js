@@ -5,6 +5,17 @@ import "assets/highlight/prism-dracula.css";
 import { Helmet } from "react-helmet";
 import TopBar from "components/common/TopBar.jsx";
 
+import { SearchProvider } from "context/search";
+import { TopBarProvider } from "context/topbar";
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <TopBarProvider>
+      <SearchProvider>{element}</SearchProvider>
+    </TopBarProvider>
+  );
+};
+
 export const wrapPageElement = ({ element }) => {
   return (
     <>
@@ -13,7 +24,9 @@ export const wrapPageElement = ({ element }) => {
       </Helmet>
       <g.GlobalStyle />
       <TopBar />
-      <g.Contents>{element}</g.Contents>
+      <g.Contents $isSearch={false} $isMenu={false}>
+        <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
+      </g.Contents>
     </>
   );
 };
