@@ -8,7 +8,6 @@ export const ProjectWrapper = styled.section`
   border-top: 2px solid #858585;
   border-bottom: 2px solid #858585;
 
-  //간격 12px
   gap: 30px;
 `;
 
@@ -86,7 +85,6 @@ export const ProjectImage = styled.img`
 `;
 
 export const Introduce = styled.article`
-  //grid 2열로
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 

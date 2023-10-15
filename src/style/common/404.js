@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
+export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
 `;
 
-export const NinjaHouse = styled.main`
+export const NinjaHouse = styled.div`
   position: fixed;
 
   display: flex;

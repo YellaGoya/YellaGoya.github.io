@@ -7,7 +7,6 @@ export const Header = styled.header`
   width: 100%;
   height: 63px;
 
-  //내부 wrapper 2개를 좌우 끝에 위치 시키고 수직 중앙 정렬
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,6 +30,7 @@ export const TitleWrapper = styled.nav`
   & > svg {
     color: #d5383f;
     transition: opacity 0.3s ease;
+    transform: rotate(180deg);
     opacity: ${(props) => (props.$isFolio ? "0.5" : "1")};
   }
 
@@ -88,17 +88,29 @@ export const NavBtn = styled.button`
 
 export const Menu = styled.nav`
   position: fixed;
-  top: ${(props) => (props.$isMenu ? "65px" : "-137px")};
+  visibility: ${(props) => (props.$isMenu ? "visible" : "hidden")};
+  top: ${(props) => (props.$isMenu ? "65px" : `${63 - props.menuHeight}px`)};
 
-  height: 200px;
   width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
 
   border-bottom: 2px solid #858585;
 
-  transition: top 0.5s ease;
+  transition: all 0.5s ease;
 
   background-color: #1b1b1b;
   z-index: 50;
+`;
+
+export const Category = styled.div`
+  color: #fff;
+
+  padding: 15px;
+
+  cursor: pointer;
 `;
 
 export const Search = styled.nav`

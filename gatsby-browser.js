@@ -7,12 +7,15 @@ import { Helmet } from "react-helmet";
 import TopBar from "components/common/TopBar.jsx";
 
 import { SearchProvider } from "context/search";
+import { CategoryProvider } from "context/category";
 import { TopBarProvider, TopBarContext } from "context/topbar";
 
 export const wrapRootElement = ({ element }) => {
   return (
     <TopBarProvider>
-      <SearchProvider>{element}</SearchProvider>
+      <SearchProvider>
+        <CategoryProvider>{element}</CategoryProvider>
+      </SearchProvider>
     </TopBarProvider>
   );
 };
@@ -20,6 +23,7 @@ export const wrapRootElement = ({ element }) => {
 export const wrapPageElement = ({ element }) => {
   const contentsRef = r.useRef(null);
   const topBarState = r.useContext(TopBarContext);
+  const [menuHeight, setMenuHeight] = r.useState(54);
 
   r.useEffect(() => {
     if (contentsRef.current) {
@@ -27,14 +31,18 @@ export const wrapPageElement = ({ element }) => {
     }
   }, [location.pathname]);
 
+  r.useEffect(() => {
+    console.log(menuHeight);
+  }, [menuHeight]);
+
   return (
     <>
       <Helmet>
         <title>malog</title>
       </Helmet>
       <g.GlobalStyle />
-      <TopBar />
-      <g.Contents ref={contentsRef} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
+      <TopBar menuHeight={menuHeight} setMenuHeight={setMenuHeight} />
+      <g.Contents menuHeight={menuHeight} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
         <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
       </g.Contents>
     </>

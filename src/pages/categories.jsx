@@ -3,21 +3,23 @@ import * as s from "style/templates/Search.js";
 import { graphql, navigate } from "gatsby";
 import Fuse from "fuse.js";
 
-import { SearchContext } from "context/search.jsx";
+import { CategoryContext } from "context/category.jsx";
 
-const SearchPage = ({ data }) => {
-  const { searchQuery } = r.useContext(SearchContext);
+const CategoriesPage = ({ data }) => {
+  const { category } = r.useContext(CategoryContext);
   const [results, setResults] = r.useState("");
 
-  const fuseIndexes = data.allMarkdownRemark.edges.map(({ node }) => JSON.parse(node.fields.index));
-  const fuseInstance = new Fuse(fuseIndexes, { keys: ["title", "content", "categories"] });
+  const fuseIndexes = data.allMarkdownRemark.edges.map(({ node }) => JSON.parse(node.fields.categories));
+  const fuseInstance = new Fuse(fuseIndexes, { keys: ["categories"] });
 
   r.useEffect(() => {
-    const resultsRawData = fuseInstance.search(searchQuery);
-    const resultsParsedData = resultsRawData.map((result) => result.item);
-
-    setResults(resultsParsedData);
-  }, [searchQuery]);
+    if (category === "") setResults(fuseIndexes);
+    else {
+      const resultsRawData = fuseInstance.search(category);
+      const resultsParsedData = resultsRawData.map((result) => result.item);
+      setResults(resultsParsedData);
+    }
+  }, [category]);
 
   return (
     <s.Wrapper>
@@ -41,7 +43,7 @@ const SearchPage = ({ data }) => {
   );
 };
 
-export default SearchPage;
+export default CategoriesPage;
 
 export const pageQuery = graphql`
   {
@@ -52,7 +54,7 @@ export const pageQuery = graphql`
             title
           }
           fields {
-            index
+            categories
           }
         }
       }

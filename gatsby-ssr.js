@@ -6,12 +6,15 @@ import { Helmet } from "react-helmet";
 import TopBar from "components/common/TopBar.jsx";
 
 import { SearchProvider } from "context/search";
+import { CategoryProvider } from "context/category";
 import { TopBarProvider } from "context/topbar";
 
 export const wrapRootElement = ({ element }) => {
   return (
     <TopBarProvider>
-      <SearchProvider>{element}</SearchProvider>
+      <SearchProvider>
+        <CategoryProvider>{element}</CategoryProvider>
+      </SearchProvider>
     </TopBarProvider>
   );
 };

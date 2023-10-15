@@ -106,13 +106,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const Contents = styled.section`
-  position: fixed;
-  top: ${(props) => (props.$isMenu ? "267px" : props.$isSearch ? "132px" : "65px")};
+export const Contents = styled.main`
+  position: relative;
+  top: ${(props) => (props.$isMenu ? `${67 + props.menuHeight}px` : props.$isSearch ? "132px" : "65px")};
 
   width: 100%;
 
-  height: ${(props) => (props.$isMenu ? "calc(100vh - 267px)" : props.$isSearch ? "calc(100vh - 132px)" : "calc(100vh - 65px)")};
+  height: ${(props) => (props.$isMenu ? `calc(100vh - ${67 + props.menuHeight}px)` : props.$isSearch ? "calc(100vh - 132px)" : "calc(100vh - 65px)")};
 
   overflow-y: scroll;
   overflow-x: hidden;

@@ -12,7 +12,6 @@ export const RecentWrapper = styled.section`
   border-top: 2px solid #858585;
   border-bottom: 2px solid #858585;
 
-  //간격 12px
   gap: 30px;
 `;
 

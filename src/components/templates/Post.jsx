@@ -8,7 +8,7 @@ const PostTemplate = ({ data }) => {
   const thumbnailImg = getImage(post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData);
 
   return (
-    <s.Main>
+    <s.Wrapper>
       <s.Post>
         <s.ThumbnailWrapper>
           <GatsbyImage image={thumbnailImg} alt="Thumbnail" />
@@ -19,10 +19,10 @@ const PostTemplate = ({ data }) => {
             {post.frontmatter.categories && post.frontmatter.categories.map((category) => <span key={category}>{category}</span>)}
           </s.Categories>
           <h1>{post.frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <article dangerouslySetInnerHTML={{ __html: post.html }} />
         </s.Content>
       </s.Post>
-    </s.Main>
+    </s.Wrapper>
   );
 };
 

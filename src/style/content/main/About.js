@@ -13,7 +13,6 @@ export const AboutWrapper = styled.div`
 
   border-bottom: 2px solid #858585;
 
-  //간격 12px
   gap: 30px;
 `;
 
@@ -23,9 +22,6 @@ export const AboutTitle = styled.span`
 
   line-height: 0.7;
   color: #fff;
-
-  // 텍스트에 그림자 효과
-  /* text-shadow: 5px 5px 0 rgba(0, 0, 0, 1); */
 
   & h1 {
     margin: 10px 0 20px 0;
