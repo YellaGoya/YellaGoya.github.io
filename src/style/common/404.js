@@ -21,8 +21,6 @@ export const Ninja = styled.section`
   position: relative;
 `;
 
-export const KillerSmile = styled.img``;
-
 export const Eyes = styled.div`
   position: absolute;
   top: 28px;

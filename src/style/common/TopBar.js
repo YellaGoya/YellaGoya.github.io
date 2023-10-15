@@ -89,7 +89,7 @@ export const NavBtn = styled.button`
 export const Menu = styled.nav`
   position: fixed;
   visibility: ${(props) => (props.$isMenu ? "visible" : "hidden")};
-  top: ${(props) => (props.$isMenu ? "65px" : `${63 - props.menuHeight}px`)};
+  top: ${(props) => (props.$isMenu ? "65px" : `${63 - props.$menuHeight}px`)};
 
   width: 100%;
 

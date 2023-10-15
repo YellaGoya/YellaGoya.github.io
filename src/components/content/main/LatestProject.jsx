@@ -1,8 +1,9 @@
 import * as s from "style/content/main/LatestProject.js";
+
 import { Wrapper, ContentTitle } from "style/content/main/style.js";
-import Intro from "assets/images/latestProject/intro.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { navigate } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const LatestProject = () => {
   return (
@@ -14,13 +15,9 @@ const LatestProject = () => {
       </ContentTitle>
       <s.ProjectWrapper>
         <s.Title>프로젝트 내쉬다.</s.Title>
-        <s.Window>
-          <p>intro</p>
-          <div></div>
-          <div></div>
-          <div></div>
-          <s.ProjectImage src={Intro}></s.ProjectImage>
-        </s.Window>
+        <s.ProjectImage>
+          <StaticImage src="../../../assets/images/latestProject/intro.png" alt="A description of the image" />
+        </s.ProjectImage>
         <s.Introduce>
           <s.IntroduceLinkList>
             <s.IntroduceLink onClick={() => navigate("https://github.com/YellaGoya/NASHDA")}>

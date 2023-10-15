@@ -57,7 +57,7 @@ export const Categories = styled.div`
   }
 `;
 
-export const CardTitle = styled.h3`
+export const CardTitle = styled.h2`
   margin: 0;
   padding: 16px 0 8px 0;
 

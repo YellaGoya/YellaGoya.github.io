@@ -1,5 +1,5 @@
 import { styled, createGlobalStyle, keyframes } from "styled-components";
-import PrVr from "assets/fonts/PretendardVariable.ttf";
+import PrVr from "assets/fonts/PretendardVariable.woff2";
 
 const searchOpacity = keyframes`
   0% {
@@ -22,9 +22,9 @@ const searchOpacity = keyframes`
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'PrVr';
-    src: local('PrVr'), local('PrVr');
-    font-style: normal;
-    src: url(${PrVr}) format('truetype');
+    src: url(${PrVr}) format('woff2-variations');
+    font-weight: 100 900;
+    font-display: swap;
   }
 
   html {
@@ -108,11 +108,12 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Contents = styled.main`
   position: relative;
-  top: ${(props) => (props.$isMenu ? `${67 + props.menuHeight}px` : props.$isSearch ? "132px" : "65px")};
+  top: ${(props) => (props.$isMenu ? `${67 + props.$menuHeight}px` : props.$isSearch ? "132px" : "65px")};
 
   width: 100%;
 
-  height: ${(props) => (props.$isMenu ? `calc(100vh - ${67 + props.menuHeight}px)` : props.$isSearch ? "calc(100vh - 132px)" : "calc(100vh - 65px)")};
+  height: ${(props) =>
+    props.$isMenu ? `calc(100vh - ${67 + props.$menuHeight}px)` : props.$isSearch ? "calc(100vh - 132px)" : "calc(100vh - 65px)"};
 
   overflow-y: scroll;
   overflow-x: hidden;

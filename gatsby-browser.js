@@ -31,18 +31,15 @@ export const wrapPageElement = ({ element }) => {
     }
   }, [location.pathname]);
 
-  r.useEffect(() => {
-    console.log(menuHeight);
-  }, [menuHeight]);
-
   return (
     <>
       <Helmet>
+        <html lang="ko" />
         <title>malog</title>
       </Helmet>
       <g.GlobalStyle />
       <TopBar menuHeight={menuHeight} setMenuHeight={setMenuHeight} />
-      <g.Contents menuHeight={menuHeight} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
+      <g.Contents $menuHeight={menuHeight} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
         <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
       </g.Contents>
     </>

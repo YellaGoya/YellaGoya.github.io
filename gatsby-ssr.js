@@ -23,6 +23,7 @@ export const wrapPageElement = ({ element }) => {
   return (
     <>
       <Helmet>
+        <html lang="ko" />
         <title>malog</title>
       </Helmet>
       <g.GlobalStyle />

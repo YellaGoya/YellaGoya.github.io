@@ -95,7 +95,7 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
 
   return (
     <>
-      <s.Menu ref={menuRef} $isMenu={isMenu} menuHeight={menuHeight}>
+      <s.Menu ref={menuRef} $isMenu={isMenu} $menuHeight={menuHeight}>
         <s.Category onClick={() => handleCategories("")}>전체</s.Category>
         <s.Category onClick={() => handleCategories("Javascript")}>Javascript</s.Category>
         <s.Category onClick={() => handleCategories("된다")}>test3</s.Category>
@@ -125,10 +125,10 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
         </s.TitleWrapper>
 
         <s.NavWrapper $isMenu={isMenu}>
-          <s.NavBtn onClick={searchToggleHandler} $isToggle={isSearch}>
+          <s.NavBtn onClick={searchToggleHandler} $isToggle={isSearch} id="search" title="Search">
             <ManageSearchIcon />
           </s.NavBtn>
-          <s.NavBtn onClick={menuToggleHandler} $isToggle={isMenu}>
+          <s.NavBtn onClick={menuToggleHandler} $isToggle={isMenu} id="menu" title="Menu">
             <ListAltIcon />
           </s.NavBtn>
         </s.NavWrapper>

@@ -5,6 +5,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-preload-fonts",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -37,6 +38,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/posts/`
+      }
+    },
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: `${__dirname}/src/`,
+        images: `${__dirname}/src/assets/images`
+        // 여기에 추가적인 경로 별칭(alias)를 설정할 수 있습니다.
       }
     },
     {
