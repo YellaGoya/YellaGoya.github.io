@@ -35,6 +35,9 @@ export const wrapPageElement = ({ element }) => {
     <>
       <Helmet>
         <html lang="ko" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="YellaGoya Malog." />
+        <meta name="author" content="YellaGoya" />
         <title>malog</title>
       </Helmet>
       <g.GlobalStyle />
