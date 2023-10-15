@@ -4,25 +4,10 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-root-import",
     "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-preload-fonts",
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: [`auto`, `webp`],
-          placeholder: `dominantColor`,
-          quality: 50,
-          breakpoints: [750, 1080, 1366, 1920],
-          backgroundColor: `transparent`,
-          blurredOptions: {},
-          jpgOptions: {},
-          pngOptions: {},
-          webpOptions: {},
-          avifOptions: {}
-        }
-      }
-    },
+    "gatsby-plugin-react-helmet-async",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -72,34 +57,6 @@ module.exports = {
         display: `standalone`,
         icon: `./src/assets/flare.svg`
       }
-    },
-    "gatsby-plugin-react-helmet"
-    // {
-    //   resolve: "gatsby-plugin-fusejs",
-    //   options: {
-    //     path: "public/fuse.json",
-    //     fields: ["title", "content", "categories"],
-    //     async items({ graphql }) {
-    //       const { data } = await graphql(`
-    //         query {
-    //           allMarkdownRemark {
-    //             nodes {
-    //               frontmatter {
-    //                 title
-    //                 categories
-    //               }
-    //               html
-    //             }
-    //           }
-    //         }
-    //       `);
-    //       return data.allMarkdownRemark.nodes.map((node) => ({
-    //         title: node.frontmatter.title,
-    //         content: node.html,
-    //         categories: node.frontmatter.categories.join(" ")
-    //       }));
-    //     }
-    //   }
-    // }
+    }
   ]
 };

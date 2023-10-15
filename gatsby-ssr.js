@@ -2,7 +2,7 @@ import * as g from "style/Global.js";
 
 import "assets/highlight/prism-dracula.css";
 
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import TopBar from "components/common/TopBar.jsx";
 
 import { SearchProvider } from "context/search";

@@ -2,7 +2,7 @@
 title: What follows from here
 date: "2022-05-21T22:12:03.284Z"
 description: 남은 할일 목록
-thumbnail: './thumbnail.png'
+thumbnail: './thumbnail.jpg'
 categories:
   - markdown
   - test
