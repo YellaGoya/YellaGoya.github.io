@@ -1,12 +1,14 @@
 import * as React from "react";
-import Main from "components/content/main/Main.jsx";
+import RecentSix from "components/content/main/RecentSix";
+import LatestProject from "components/content/main/LatestProject";
 
 import { graphql } from "gatsby";
 
 const IndexPage = ({ data }) => {
   return (
     <>
-      <Main data={data} />
+      <RecentSix data={data} />
+      <LatestProject />
     </>
   );
 };
@@ -20,7 +22,6 @@ export const query = graphql`
           frontmatter {
             title
             categories
-            date(formatString: "MMMM DD, YYYY")
             description
             thumbnail {
               childImageSharp {

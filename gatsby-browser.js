@@ -42,7 +42,7 @@ export const wrapPageElement = ({ element }) => {
       </Helmet>
       <g.GlobalStyle />
       <TopBar menuHeight={menuHeight} setMenuHeight={setMenuHeight} />
-      <g.Contents $menuHeight={menuHeight} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
+      <g.Contents ref={contentsRef} $menuHeight={menuHeight} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
         <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
       </g.Contents>
     </>
