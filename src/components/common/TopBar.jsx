@@ -57,23 +57,10 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
   };
 
   r.useEffect(() => {
-    if (!isSearch) {
-      const interval = setInterval(() => {
-        setSearchQuery((prev) => {
-          if (prev.length === 1) {
-            clearInterval(interval);
-            return "";
-          }
-
-          return prev.slice(0, -1);
-        });
-      }, 50);
-
-      return () => {
-        clearInterval(interval);
-      };
+    if (!location.pathname.startsWith("/search")) {
+      setSearchQuery("");
     }
-  }, [isSearch]);
+  }, [location.pathname]);
 
   r.useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
