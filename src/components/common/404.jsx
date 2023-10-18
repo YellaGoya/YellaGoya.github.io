@@ -1,12 +1,12 @@
-import * as s from "style/common/404.js";
 import { StaticImage } from "gatsby-plugin-image";
 
+import * as s from "style/common/404.js";
 const NotFound = () => {
   return (
     <s.Wrapper>
       <s.NinjaHouse>
         <s.Ninja>
-          <StaticImage src="../../assets/images/404.png"></StaticImage>
+          <StaticImage src="../../assets/images/404.png" alt="ninja" />
           <s.Eyes>404</s.Eyes>
         </s.Ninja>
         <s.Bunshinsul>

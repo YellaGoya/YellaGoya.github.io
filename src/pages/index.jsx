@@ -1,13 +1,14 @@
-import * as React from "react";
-import RecentSix from "components/content/main/RecentSix";
-import LatestProject from "components/content/main/LatestProject";
+import Recent from "components/content/malog/Recent";
+import LatestProject from "components/content/malog/LatestProject";
 
 import { graphql } from "gatsby";
 
 const IndexPage = ({ data }) => {
+  const nodes = data.allMarkdownRemark.edges.map(({ node }) => node);
+
   return (
     <>
-      <RecentSix data={data} />
+      <Recent nodes={nodes} />
       <LatestProject />
     </>
   );
@@ -25,7 +26,7 @@ export const query = graphql`
             description
             thumbnail {
               childImageSharp {
-                gatsbyImageData(layout: FIXED, width: 530)
+                gatsbyImageData(width: 530)
               }
             }
           }

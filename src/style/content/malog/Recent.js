@@ -9,14 +9,12 @@ export const RecentWrapper = styled.section`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: auto;
 
-  border-top: 2px solid #858585;
-  border-bottom: 2px solid #858585;
-
   gap: 30px;
 `;
 
 export const RecentCard = styled.article`
   position: relative;
+  max-width: 530px;
 
   padding-bottom: 30px;
   cursor: pointer;

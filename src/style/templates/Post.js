@@ -123,7 +123,6 @@ export const Content = styled.article`
   }
 
   hr {
-    //색상 검정으로
     border: 1px solid #858585;
   }
 

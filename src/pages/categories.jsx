@@ -1,46 +1,28 @@
-import * as r from "react";
-import * as s from "style/templates/Search.js";
-import { graphql, navigate } from "gatsby";
+import { useState, useEffect, useContext } from "react";
+import { graphql } from "gatsby";
 import Fuse from "fuse.js";
 
+import Recent from "components/content/malog/Recent";
 import { CategoryContext } from "context/category.jsx";
 
 const CategoriesPage = ({ data }) => {
-  const { category } = r.useContext(CategoryContext);
-  const [results, setResults] = r.useState("");
+  const { category } = useContext(CategoryContext);
+  const [nodes, setNodes] = useState("");
 
-  const fuseIndexes = data.allMarkdownRemark.edges.map(({ node }) => JSON.parse(node.fields.categories));
-  const fuseInstance = new Fuse(fuseIndexes, { keys: ["categories"] });
+  const fuseIndexes = data.allMarkdownRemark.edges.map(({ node }) => node);
+  const fuseInstance = new Fuse(fuseIndexes, { keys: ["frontmatter.categories"] });
 
-  r.useEffect(() => {
-    if (category === "") setResults(fuseIndexes);
+  useEffect(() => {
+    if (category === "") setNodes(fuseIndexes);
     else {
       const resultsRawData = fuseInstance.search(category);
       const resultsParsedData = resultsRawData.map((result) => result.item);
-      setResults(resultsParsedData);
+      setNodes(resultsParsedData);
     }
   }, [category]);
 
-  return (
-    <s.Wrapper>
-      <ul>
-        {results &&
-          results.map((result) => (
-            <li key={result.slug} onClick={() => navigate(`/post${result.slug}`)}>
-              <h2>{result.title}</h2>
-              <p>{result.description}</p>
-            </li>
-          ))}
-      </ul>
-      {!results || results.length === 0 ? (
-        <s.Noresult>
-          검색 결과가 없습니다 ㅠㅜ..
-          <br />
-          다른 검색어를 입력해보세요.
-        </s.Noresult>
-      ) : null}
-    </s.Wrapper>
-  );
+  // return <div>hi</div>;
+  return <Recent nodes={nodes} />;
 };
 
 export default CategoriesPage;
@@ -50,11 +32,19 @@ export const pageQuery = graphql`
     allMarkdownRemark {
       edges {
         node {
+          id
           frontmatter {
             title
+            categories
+            description
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 530)
+              }
+            }
           }
           fields {
-            categories
+            slug
           }
         }
       }

@@ -1,5 +1,4 @@
 import { styled, createGlobalStyle, keyframes } from "styled-components";
-import PrVr from "assets/fonts/PretendardVariable.woff2";
 
 const searchOpacity = keyframes`
   0% {
@@ -20,23 +19,21 @@ const searchOpacity = keyframes`
 `;
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'PrVr';
-    src: url(${PrVr}) format('woff2-variations');
-    font-weight: 100 900;
-    font-display: swap;
-  }
-
   html {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
+
+    overflow : hidden;
+  }
+
+  body, input {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     margin: 0;
-    font-family: "PrVr", Pretendard, -apple-system, BlinkMacSystemFont, system-ui;
-    text-rendering: optimizeLegibility;
     background-color: #1b1b1b;
 
     & > .gatsby-code-button-toaster{
@@ -73,7 +70,7 @@ export const GlobalStyle = createGlobalStyle`
         animation: ${searchOpacity} 2s ease-in-out;
         
 
-        font-family: "PrVr", Pretendard, -apple-system, BlinkMacSystemFont, system-ui;
+        font-family: Pretendard,  -apple-system, BlinkMacSystemFont, system-ui;
         text-rendering: optimizeLegibility;
       }
     }
@@ -115,7 +112,7 @@ export const Contents = styled.main`
   height: ${(props) =>
     props.$isMenu ? `calc(100vh - ${67 + props.$menuHeight}px)` : props.$isSearch ? "calc(100vh - 132px)" : "calc(100vh - 65px)"};
 
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 
   transition:

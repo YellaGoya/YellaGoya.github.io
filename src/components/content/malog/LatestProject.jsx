@@ -1,18 +1,17 @@
-import * as s from "style/content/main/LatestProject.js";
-
-import { Wrapper, ContentTitle } from "style/content/main/style.js";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import { navigate } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { Wrapper } from "style/content/malog/style.js";
+import * as s from "style/content/malog/LatestProject.js";
 const LatestProject = () => {
   return (
     <Wrapper>
-      <ContentTitle>
+      <s.ContentTitle>
         Latest
         <br />
         Project
-      </ContentTitle>
+      </s.ContentTitle>
       <s.ProjectWrapper>
         <s.Title>프로젝트 내쉬다.</s.Title>
         <s.ProjectImage>

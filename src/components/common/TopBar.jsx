@@ -1,8 +1,7 @@
-import * as r from "react";
-import * as s from "style/common/TopBar.js";
-
+import { useEffect, useContext, useRef } from "react";
 import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
+
 import { SearchContext } from "context/search.jsx";
 import { CategoryContext } from "context/category.jsx";
 import { TopBarContext } from "context/topbar.jsx";
@@ -11,15 +10,15 @@ import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import FlareIcon from "@mui/icons-material/Flare";
 import LogoutIcon from "@mui/icons-material/Logout";
-
+import * as s from "style/common/TopBar.js";
 const TopBar = ({ menuHeight, setMenuHeight }) => {
   const location = useLocation();
-  const { searchQuery, setSearchQuery } = r.useContext(SearchContext);
-  const { setCategory } = r.useContext(CategoryContext);
-  const { isMenu, setIsMenu, isSearch, setIsSearch } = r.useContext(TopBarContext);
+  const { searchQuery, setSearchQuery } = useContext(SearchContext);
+  const { setCategory } = useContext(CategoryContext);
+  const { isMenu, setIsMenu, isSearch, setIsSearch } = useContext(TopBarContext);
 
-  const inputRef = r.useRef(null);
-  const menuRef = r.useRef(null);
+  const inputRef = useRef(null);
+  const menuRef = useRef(null);
 
   const TitleToggleHandler = () => {
     setIsSearch(false);
@@ -56,13 +55,12 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
     navigate("/categories");
   };
 
-  r.useEffect(() => {
-    if (!location.pathname.startsWith("/search")) {
-      setSearchQuery("");
-    }
+  useEffect(() => {
+    if (location.pathname.startsWith("/search")) inputRef.current.focus();
+    else setSearchQuery("");
   }, [location.pathname]);
 
-  r.useEffect(() => {
+  useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         setMenuHeight(entry.contentRect.height);
@@ -85,7 +83,7 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
       <s.Menu ref={menuRef} $isMenu={isMenu} $menuHeight={menuHeight}>
         <s.Category onClick={() => handleCategories("")}>전체</s.Category>
         <s.Category onClick={() => handleCategories("Javascript")}>Javascript</s.Category>
-        <s.Category onClick={() => handleCategories("된다")}>test3</s.Category>
+        <s.Category onClick={() => handleCategories("gatsby")}>gatsby</s.Category>
       </s.Menu>
       <s.Search $isSearch={isSearch}>
         <input

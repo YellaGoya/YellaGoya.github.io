@@ -1,11 +1,24 @@
 import styled from "styled-components";
 
+export const ContentTitle = styled.h1`
+  position: relative;
+
+  padding: 30px 20px 30px 20px;
+  margin: 0;
+
+  color: #d5383f;
+  font-size: 4rem;
+  line-height: 0.65;
+
+  border-top: 2px solid #858585;
+  border-bottom: 2px solid #858585;
+`;
+
 export const ProjectWrapper = styled.section`
   position: relative;
 
   padding: 30px 20px 30px 20px;
 
-  border-top: 2px solid #858585;
   border-bottom: 2px solid #858585;
 
   gap: 30px;

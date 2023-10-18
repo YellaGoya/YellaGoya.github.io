@@ -1,8 +1,7 @@
-import * as s from "style/templates/Post.js";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
 import { graphql } from "gatsby";
 
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import * as s from "style/templates/Post.js";
 const PostTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const thumbnailImg = getImage(post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData);

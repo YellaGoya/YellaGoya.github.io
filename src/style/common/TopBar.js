@@ -145,7 +145,6 @@ export const Search = styled.nav`
     border: none;
 
     font-family:
-      "PrVr",
       Pretendard,
       -apple-system,
       BlinkMacSystemFont,

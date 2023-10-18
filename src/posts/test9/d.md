@@ -2,6 +2,7 @@
 title: asap
 date: "2022-05-10T22:12:03.284Z"
 description: 남은 할일 목록
+thumbnail: './thumbnail.jpg'
 ---
 
 

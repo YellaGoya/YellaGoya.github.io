@@ -15,13 +15,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       slug
     };
 
-    const dataForCategory = {
-      title: node.frontmatter.title,
-      categories: node.frontmatter.categories,
-      description: node.frontmatter.description,
-      slug
-    };
-
     createNodeField({
       node,
       name: "slug",
@@ -32,12 +25,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: "index",
       value: JSON.stringify(dataForSearch)
-    });
-
-    createNodeField({
-      node,
-      name: "categories",
-      value: JSON.stringify(dataForCategory)
     });
   }
 };

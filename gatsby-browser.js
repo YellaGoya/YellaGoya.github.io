@@ -39,6 +39,13 @@ export const wrapPageElement = ({ element }) => {
         <meta name="description" content="YellaGoya Malog." />
         <meta name="author" content="YellaGoya" />
         <title>malog</title>
+        <link
+          rel="preload"
+          as="style"
+          crossOrigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css"
+          onLoad="this.onload=null;this.rel='stylesheet'"
+        />
       </Helmet>
       <g.GlobalStyle />
       <TopBar menuHeight={menuHeight} setMenuHeight={setMenuHeight} />
