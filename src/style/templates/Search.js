@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   color: white;
   background-color: #1b1b1b;
 
+  margin-bottom: 120px;
+
   li {
     color: #fff;
 
