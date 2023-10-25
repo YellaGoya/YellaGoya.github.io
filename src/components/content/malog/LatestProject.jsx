@@ -2,7 +2,7 @@ import { navigate } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Wrapper } from "style/content/malog/style.js";
+import { Wrapper } from "style/content/malog/Malog.js";
 import * as s from "style/content/malog/LatestProject.js";
 const LatestProject = () => {
   return (

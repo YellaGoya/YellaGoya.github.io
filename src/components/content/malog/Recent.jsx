@@ -2,7 +2,7 @@ import { navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import { Wrapper, ContentTitle, Noresult } from "style/content/malog/style.js";
+import { Wrapper, ContentTitle, Noresult } from "style/content/malog/Malog.js";
 import * as s from "style/content/malog/Recent.js";
 const Recent = ({ nodes }) => {
   const location = useLocation();

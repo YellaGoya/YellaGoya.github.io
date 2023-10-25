@@ -1,7 +1,7 @@
 import { navigate } from "gatsby";
 
-import { Noresult } from "style/content/malog/style.js";
-import * as s from "style/templates/Search.js";
+import { Noresult } from "style/content/malog/Malog.js";
+import * as s from "style/content/malog/Search.js";
 const SearchResult = ({ results }) => {
   return (
     <s.Wrapper>
