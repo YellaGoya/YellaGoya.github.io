@@ -58,24 +58,6 @@ export const Content = styled.article`
 
   div > * {
     position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -10px;
-      width: 3px;
-      height: 100%;
-      background-color: #d5383f;
-
-      transition: opacity 0.2s ease;
-
-      opacity: 0;
-    }
-
-    &:hover::before {
-      opacity: 1;
-    }
   }
 
   p {
@@ -222,22 +204,6 @@ export const Content = styled.article`
 
   .gatsby-highlight {
     position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 10px;
-      height: 100%;
-
-      transition: opacity 0.2s ease;
-
-      opacity: 0;
-    }
-
-    &:hover::before {
-      opacity: 1;
-    }
 
     & > pre {
       width: auto;
@@ -264,10 +230,6 @@ export const Content = styled.article`
         border-top: 3px solid transparent;
         border-bottom: 3px solid transparent;
       }
-
-      &:hover {
-        border-radius: 0px 3px 3px 0px;
-      }
     }
   }
 
@@ -283,28 +245,8 @@ export const Content = styled.article`
 
     transition: background-color 0.2s ease;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0px;
-      left: -10px;
-      width: 10px;
-      height: 100%;
-      background-color: #d5383f;
-
-      transition: opacity 0.2s ease;
-
-      opacity: 0;
-    }
-
-    &:hover::before {
-      opacity: 1;
-    }
-
     &:hover {
       background-color: #ffffff44;
-
-      border-radius: 0px 3px 24px 0px;
     }
 
     box-shadow:
