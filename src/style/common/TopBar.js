@@ -29,17 +29,22 @@ export const TitleWrapper = styled.nav`
 
   & > svg {
     color: #d5383f;
-    transition: opacity 0.3s ease;
-    transform: rotate(180deg);
+    transition: opacity 0.2s ease;
     opacity: ${(props) => (props.$isFolio ? "0.5" : "1")};
   }
 
-  & > :nth-child(2) {
+  & > #malog-title {
     opacity: ${(props) => (props.$isFolio ? "0.5" : "1")};
   }
 
-  & > :nth-child(4) {
+  & > #folio-title {
     opacity: ${(props) => (props.$isFolio ? "1" : "0.5")};
+  }
+
+  & > span {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #858585;
   }
 `;
 
@@ -56,7 +61,7 @@ export const Title = styled(Link)`
   cursor: pointer;
 
   opacity: 0.5;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
 `;
 
 export const NavWrapper = styled.nav`
@@ -70,6 +75,8 @@ export const NavWrapper = styled.nav`
 
 export const NavBtn = styled.button`
   margin-right: 20px;
+  height: 30px;
+  width: 30px;
 
   background-color: transparent;
   border: none;
@@ -80,9 +87,20 @@ export const NavBtn = styled.button`
 
   cursor: pointer;
 
+  transition: background-color 0.2s ease;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: #414141;
+  }
+
   & > svg {
     color: ${(props) => (props.$isToggle ? "#fff" : "#d5383f")};
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
+  }
+
+  &#search > svg {
+    transform: translate(0, -1px);
   }
 `;
 

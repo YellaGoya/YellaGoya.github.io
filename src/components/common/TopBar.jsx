@@ -1,16 +1,17 @@
-import { useEffect, useContext, useRef } from "react";
-import { useLocation } from "@reach/router";
-import { navigate } from "gatsby";
+import { useEffect, useContext, useRef } from 'react';
+import { useLocation } from '@reach/router';
+import { navigate } from 'gatsby';
 
-import { SearchContext } from "context/search.jsx";
-import { CategoryContext } from "context/category.jsx";
-import { TopBarContext } from "context/topbar.jsx";
+import { SearchContext } from 'context/search.jsx';
+import { CategoryContext } from 'context/category.jsx';
+import { TopBarContext } from 'context/topbar.jsx';
 
-import ManageSearchIcon from "@mui/icons-material/ManageSearch";
-import ListAltIcon from "@mui/icons-material/ListAlt";
-import FlareIcon from "@mui/icons-material/Flare";
-import LogoutIcon from "@mui/icons-material/Logout";
-import * as s from "style/common/TopBar.js";
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import FlareIcon from '@mui/icons-material/Flare';
+// import LogoutIcon from "@mui/icons-material/Logout";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import * as s from 'style/common/TopBar.js';
 const TopBar = ({ menuHeight, setMenuHeight }) => {
   const location = useLocation();
   const { searchQuery, setSearchQuery } = useContext(SearchContext);
@@ -41,23 +42,23 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      navigate("/search");
+    if (event.key === 'Enter') {
+      navigate('/search');
     }
 
-    if (event.key === "Escape") {
+    if (event.key === 'Escape') {
       setIsSearch(false);
     }
   };
 
   const handleCategories = (category) => {
     setCategory(category);
-    navigate("/categories");
+    navigate('/categories');
   };
 
   useEffect(() => {
-    if (location.pathname.startsWith("/search")) inputRef.current.focus();
-    else setSearchQuery("");
+    if (location.pathname.startsWith('/search')) inputRef.current.focus();
+    else setSearchQuery('');
   }, [location.pathname]);
 
   useEffect(() => {
@@ -81,39 +82,32 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
   return (
     <>
       <s.Menu ref={menuRef} $isMenu={isMenu} $menuHeight={menuHeight}>
-        <s.Category onClick={() => handleCategories("")}>전체</s.Category>
-        <s.Category onClick={() => handleCategories("Javascript")}>Javascript</s.Category>
-        <s.Category onClick={() => handleCategories("gatsby")}>gatsby</s.Category>
+        <s.Category onClick={() => handleCategories('')}>전체</s.Category>
+        <s.Category onClick={() => handleCategories('Javascript')}>Javascript</s.Category>
+        <s.Category onClick={() => handleCategories('gatsby')}>gatsby</s.Category>
       </s.Menu>
       <s.Search $isSearch={isSearch}>
-        <input
-          ref={inputRef}
-          value={searchQuery}
-          placeholder="검색어 입력"
-          type="text"
-          onChange={handleInputChange}
-          onKeyDown={handleKeyPress}
-        ></input>
+        <input ref={inputRef} value={searchQuery} placeholder="검색어 입력" type="text" onChange={handleInputChange} onKeyDown={handleKeyPress} />
       </s.Search>
       <s.Header>
-        <s.TitleWrapper $isFolio={location.pathname.startsWith("/folio")}>
-          {location.pathname.startsWith("/post") ? <LogoutIcon onClick={() => navigate(-1)} style={{ cursor: "pointer" }} /> : <FlareIcon />}
-          <s.Title to="/" onClick={TitleToggleHandler}>
+        <s.TitleWrapper $isFolio={location.pathname.startsWith('/folio')}>
+          {location.pathname.startsWith('/post') ? <ArrowBackIosNewIcon style={{ cursor: 'pointer' }} onClick={() => navigate(-1)} /> : <FlareIcon />}
+          <s.Title id="malog-title" to="/" onClick={TitleToggleHandler}>
             malog
           </s.Title>
 
-          <span style={{ fontSize: "1.2rem", fontWeight: "900", color: "#858585" }}>:</span>
+          <span>:</span>
 
-          <s.Title to="/404" onClick={TitleToggleHandler}>
+          <s.Title id="folio-title" to="/folio" onClick={TitleToggleHandler}>
             folio
           </s.Title>
         </s.TitleWrapper>
 
         <s.NavWrapper $isMenu={isMenu}>
-          <s.NavBtn onClick={searchToggleHandler} $isToggle={isSearch} id="search" title="Search">
+          <s.NavBtn $isToggle={isSearch} id="search" title="Search" onClick={searchToggleHandler}>
             <ManageSearchIcon />
           </s.NavBtn>
-          <s.NavBtn onClick={menuToggleHandler} $isToggle={isMenu} id="menu" title="Menu">
+          <s.NavBtn $isToggle={isMenu} id="menu" title="Menu" onClick={menuToggleHandler}>
             <ListAltIcon />
           </s.NavBtn>
         </s.NavWrapper>

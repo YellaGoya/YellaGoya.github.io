@@ -1,13 +1,13 @@
-import * as g from "style/Global.js";
+import * as g from 'style/Global.js';
 
-import "assets/highlight/prism-dracula.css";
+import 'assets/highlight/prism-dracula.css';
 
-import { Helmet } from "react-helmet-async";
-import TopBar from "components/common/TopBar.jsx";
+import { Helmet } from 'react-helmet-async';
+import TopBar from 'components/common/TopBar.jsx';
 
-import { SearchProvider } from "context/search";
-import { CategoryProvider } from "context/category";
-import { TopBarProvider } from "context/topbar";
+import { SearchProvider } from 'context/search';
+import { CategoryProvider } from 'context/category';
+import { TopBarProvider } from 'context/topbar';
 
 export const wrapRootElement = ({ element }) => {
   return (
@@ -29,9 +29,9 @@ export const wrapPageElement = ({ element }) => {
         <meta name="author" content="YellaGoya" />
         <title>malog</title>
         <link
+          crossOrigin
           rel="preload"
           as="style"
-          crossOrigin
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css"
           onLoad="this.onload=null;this.rel='stylesheet'"
         />

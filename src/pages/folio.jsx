@@ -1,9 +1,10 @@
-import Folio from "components/content/folio/Folio.jsx";
+// import Folio from "components/content/folio/Folio.jsx";
+import AboutMe from "components/content/folio/AboutMe.jsx";
 
 const FolioPage = () => {
   return (
     <>
-      <Folio />
+      <AboutMe />
     </>
   );
 };

@@ -1,14 +1,16 @@
-import * as r from "react";
+import * as r from 'react';
 
 const CategoryContext = r.createContext({
-  category: "",
-  setCategory() {}
+  category: '',
+  setCategory() {},
 });
 
 const CategoryProvider = ({ children }) => {
-  const [category, setCategory] = r.useState("");
+  const [category, setCategory] = r.useState('');
 
-  return <CategoryContext.Provider value={{ category, setCategory }}>{children}</CategoryContext.Provider>;
+  const value = r.useMemo(() => ({ category, setCategory }), [category]);
+
+  return <CategoryContext.Provider value={value}>{children}</CategoryContext.Provider>;
 };
 
 export { CategoryContext, CategoryProvider };

@@ -20,8 +20,8 @@ categories:
 ### HTML Semantic Markup
 
 > **[semantic](https://en.dict.naver.com/#/entry/enko/74453940307f4c45ba76b0aa988fc5c3)**
-미국∙영국*[sɪˈmæntɪk]*
 > 
+> 미국∙영국*[sɪˈmæntɪk]*
 > 
 > **형용사**
 > : 의미의, 의미론적인

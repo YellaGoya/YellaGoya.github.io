@@ -1,14 +1,15 @@
-import { navigate } from "gatsby";
+import { navigate } from 'gatsby';
 
-import { Noresult } from "style/content/malog/Malog.js";
-import * as s from "style/content/malog/Search.js";
+import { Noresult } from 'style/content/malog/Malog.js';
+import * as s from 'style/content/malog/SearchResult.js';
 const SearchResult = ({ results }) => {
   return (
-    <s.Wrapper>
+    <s.SearchWrapper>
       <ul>
         {results &&
           results.map((result) => (
             <li key={result.slug} onClick={() => navigate(`/post${result.slug}`)}>
+              <div />
               <h2>{result.title}</h2>
               <p>{result.description}</p>
             </li>
@@ -21,7 +22,7 @@ const SearchResult = ({ results }) => {
           다른 검색어를 입력해보세요.
         </Noresult>
       ) : null}
-    </s.Wrapper>
+    </s.SearchWrapper>
   );
 };
 

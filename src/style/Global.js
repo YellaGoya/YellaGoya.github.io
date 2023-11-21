@@ -1,4 +1,4 @@
-import { styled, createGlobalStyle, keyframes } from "styled-components";
+import { styled, createGlobalStyle, keyframes } from 'styled-components';
 
 const searchOpacity = keyframes`
   0% {
@@ -105,12 +105,12 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Contents = styled.main`
   position: relative;
-  top: ${(props) => (props.$isMenu ? `${67 + props.$menuHeight}px` : props.$isSearch ? "132px" : "65px")};
+  top: ${(props) => (props.$isMenu ? `${67 + props.$menuHeight}px` : props.$isSearch ? '132px' : '65px')};
 
   width: 100%;
 
   height: ${(props) =>
-    props.$isMenu ? `calc(100vh - ${67 + props.$menuHeight}px)` : props.$isSearch ? "calc(100vh - 132px)" : "calc(100vh - 65px)"};
+    props.$isMenu ? `calc(100vh - ${67 + props.$menuHeight}px)` : props.$isSearch ? 'calc(100vh - 132px)' : 'calc(100vh - 65px)'};
 
   overflow-y: auto;
   overflow-x: hidden;

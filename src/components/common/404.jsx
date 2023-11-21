@@ -1,6 +1,6 @@
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from 'gatsby-plugin-image';
 
-import * as s from "style/common/404.js";
+import * as s from 'style/common/404.js';
 const NotFound = () => {
   return (
     <s.Wrapper>
