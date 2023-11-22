@@ -9,6 +9,14 @@ module.exports = {
     'gatsby-plugin-preload-fonts',
     'gatsby-plugin-react-helmet-async',
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
