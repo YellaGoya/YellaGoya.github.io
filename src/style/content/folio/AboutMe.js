@@ -71,7 +71,7 @@ export const History = styled.ul`
 
 export const HistoryTitle = styled.li`
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-top: 18px;
 `;
@@ -101,7 +101,7 @@ export const HistoryDiv = styled.div`
 
 export const ProfileGreeting = styled.h3`
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
 `;
 
@@ -137,7 +137,7 @@ export const Skills = styled.ul`
 
 export const SkillTitle = styled.li`
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-top: 50px;
   margin-bottom: 5px;
@@ -182,6 +182,18 @@ export const SkillItem = styled.li`
 
     fill: #fff;
   }
+`;
+
+export const SkillDiv = styled.div`
+  display: inline-block;
+  height: 300px;
+  width: 5px;
+  margin-right: 5px;
+  transform: translateY(-1px);
+
+  border-radius: 2px;
+
+  background-color: #fff;
 `;
 
 export const SkillLineDiv = styled.span`
