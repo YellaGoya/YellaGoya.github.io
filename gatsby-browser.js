@@ -1,5 +1,5 @@
-import * as r from 'react';
-import * as g from 'style/Global.js';
+import {useRef, useContext, useEffect, useState} from 'react';
+import {Contents, ContentsWidthWrapper, GlobalStyle} from 'style/Global.js';
 
 import 'assets/highlight/prism-dracula.css';
 
@@ -21,11 +21,11 @@ export const wrapRootElement = ({ element }) => {
 };
 
 export const wrapPageElement = ({ element }) => {
-  const contentsRef = r.useRef(null);
-  const topBarState = r.useContext(TopBarContext);
-  const [menuHeight, setMenuHeight] = r.useState(54);
+  const contentsRef = useRef(null);
+  const topBarState = useContext(TopBarContext);
+  const [menuHeight, setMenuHeight] = useState(54);
 
-  r.useEffect(() => {
+  useEffect(() => {
     if (contentsRef.current) {
       contentsRef.current.scrollTop = 0;
     }
@@ -47,11 +47,11 @@ export const wrapPageElement = ({ element }) => {
           onLoad="this.onload=null;this.rel='stylesheet'"
         />
       </Helmet>
-      <g.GlobalStyle />
+      <GlobalStyle />
       <TopBar menuHeight={menuHeight} setMenuHeight={setMenuHeight} />
-      <g.Contents ref={contentsRef} $menuHeight={menuHeight} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
-        <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
-      </g.Contents>
+      <Contents id="main-contents" ref={contentsRef} $menuHeight={menuHeight} $isSearch={topBarState.isSearch} $isMenu={topBarState.isMenu}>
+        <ContentsWidthWrapper>{element}</ContentsWidthWrapper>
+      </Contents>
     </>
   );
 };

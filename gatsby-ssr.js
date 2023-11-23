@@ -1,4 +1,4 @@
-import * as g from 'style/Global.js';
+import {Contents, ContentsWidthWrapper, GlobalStyle} from 'style/Global.js';
 
 import 'assets/highlight/prism-dracula.css';
 
@@ -36,11 +36,11 @@ export const wrapPageElement = ({ element }) => {
           onLoad="this.onload=null;this.rel='stylesheet'"
         />
       </Helmet>
-      <g.GlobalStyle />
+      <GlobalStyle />
       <TopBar />
-      <g.Contents $isSearch={false} $isMenu={false}>
-        <g.ContentsWidthWrapper>{element}</g.ContentsWidthWrapper>
-      </g.Contents>
+      <Contents $isSearch={false} $isMenu={false}>
+        <ContentsWidthWrapper>{element}</ContentsWidthWrapper>
+      </Contents>
     </>
   );
 };

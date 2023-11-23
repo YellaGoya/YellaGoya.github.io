@@ -3,14 +3,13 @@ import styled from 'styled-components';
 export const WordHighlight = styled.h1`
   margin-bottom: 20px;
 
-  color: #fff;
   font-size: 4rem;
   line-height: 1.05;
   text-align: center;
 `;
 
 export const HighLightLine = styled.div`
-  height: 35vh;
+  height: 30vh;
   width: 10px;
   margin: 0 auto;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(27, 27, 27, 1) 100%);
@@ -20,28 +19,33 @@ export const ProfileWrapper = styled.section``;
 
 export const PhotoGraph = styled.div`
   position: relative;
-  width: 1300px;
   margin-top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
 
   display: flex;
   justify-content: center;
 
+  .gatsby-image-wrapper [data-main-image] {
+    transition: all 0.2s ease;
+  }
+
   & > div > picture > img {
     filter: brightness(0.8) contrast(0.9);
+
+    @media (max-width: 750px) {
+      filter: brightness(1) contrast(1);
+    }
   }
 `;
 
-export const PhotoDesc = styled.h2`
+export const PhotoDesc = styled.h3`
   position: absolute;
   top: 200px;
 
   font-size: 2rem;
-  color: #fff;
 
   text-align: center;
   text-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  color: #fff;
 
   transition: all 0.2s ease;
 
@@ -70,14 +74,12 @@ export const History = styled.ul`
 `;
 
 export const HistoryTitle = styled.li`
-  color: #fff;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 18px;
 `;
 
 export const HistoryItem = styled.li`
-  color: #fff;
   font-size: 1.2rem;
   font-weight: 300;
 
@@ -92,7 +94,6 @@ export const HistoryDiv = styled.div`
   height: 15px;
   width: 5px;
   margin-right: 5px;
-  transform: translateY(-1px);
 
   border-radius: 2px;
 
@@ -110,7 +111,6 @@ export const ProfileDesc = styled.span`
   padding: 0 10px;
   margin: 0;
   margin-top: 18px;
-  color: #fff;
   font-size: 1.2rem;
   font-weight: 300;
   direction: ltr;
@@ -136,7 +136,6 @@ export const Skills = styled.ul`
 `;
 
 export const SkillTitle = styled.li`
-  color: #fff;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 50px;
@@ -152,7 +151,6 @@ export const SkillTitle = styled.li`
     width: 24px;
     height: 24px;
 
-    transform: translateY(-1px);
     border-radius: 0.25rem;
     margin-left: 6px;
 
@@ -161,11 +159,8 @@ export const SkillTitle = styled.li`
 `;
 
 export const SkillItem = styled.li`
-  color: #fff;
   font-size: 1.2rem;
-  font-weight: 300;
-
-  opacity: 0.9;
+  font-weight: 400;
 
   display: flex;
   align-items: center;
@@ -184,20 +179,19 @@ export const SkillItem = styled.li`
   }
 `;
 
-export const SkillDiv = styled.div`
-  display: inline-block;
-  height: 300px;
-  width: 5px;
-  margin-right: 5px;
-  transform: translateY(-1px);
-
-  border-radius: 2px;
-
-  background-color: #fff;
+export const SkillItemDesc = styled.span`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const SkillLineDiv = styled.span`
   display: inline;
   width: 100%;
   height: 16px;
+`;
+
+export const ProjectTitle = styled.h2`
+  margin-top: 100px;
+  padding: 0 10px;
 `;
