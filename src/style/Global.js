@@ -27,14 +27,14 @@ export const GlobalStyle = createGlobalStyle`
     overflow : hidden;
   }
 
-  body, input {
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui;
+  body, input, button{
+    font-family: "Pretendard Variable", Pretendard;
     text-rendering: optimizeLegibility;
   }
 
   body {
     margin: 0;
-    background-color: #1b1b1b;
+    background-color: var(--bg);
 
     & > .gatsby-code-button-toaster{
       position: fixed;
@@ -46,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
       align-items: center;
       margin-top: -1px;
       
-      background-color: #1b1b1b;
+      background-color: var(--bg);
 
       opacity: 0;
 
@@ -65,14 +65,45 @@ export const GlobalStyle = createGlobalStyle`
 
         background-color: transparent;
 
-        color: #d5383f;
+        color: var(--font-highlight);
 
         animation: ${searchOpacity} 2s ease-in-out;
         
 
-        font-family: Pretendard,  -apple-system, BlinkMacSystemFont, system-ui;
-        text-rendering: optimizeLegibility;
+        font-family: "Pretendard Variable", Pretendard;
       }
+    }
+
+    --bg: #1b1b1b;
+    --bg-blur-22: #ffffff22;
+    --bg-blur-44: #ffffff44;
+    --bg-blur-66: #ffffff66;
+    --bg-code: #333;
+
+    --border: #858585;
+    --border-lite: #ccc;
+
+    --font: #fff;
+    --font-highlight: #d5383f;
+
+    --scroll: #888;
+    --scroll-hover: #ccc;
+
+    &.light {
+      --bg: #fff;
+      --bg-blur-22: #00000022;
+      --bg-blur-44: #00000044;
+      --bg-blur-66: #00000066;
+      --bg-code: #ccc;
+
+      --border: #858585;
+      --border-lite: #333;
+
+      --font: #000;
+      --font-highlight: #007fff;
+
+      --scroll: #888;
+      --scroll-hover: #ccc;
     }
   }
 
@@ -85,7 +116,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: var(--scroll);
 
     border-radius: 2px;
 
@@ -99,7 +130,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #cccccc;
+    background-color: var(--scroll-hover);
   }
 `;
 

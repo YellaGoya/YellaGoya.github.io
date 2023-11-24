@@ -5,7 +5,7 @@ export const SearchWrapper = styled.div`
   max-width: 960px;
 
   color: white;
-  background-color: #1b1b1b;
+  background-color: var(--bg);
 
   margin-bottom: 120px;
 
@@ -16,7 +16,7 @@ export const SearchWrapper = styled.div`
   li {
     position: relative;
     padding: 5px 10px;
-    color: #fff;
+    color: var(--font);
 
     margin: 10px;
     border-radius: 0.75rem;
@@ -24,9 +24,9 @@ export const SearchWrapper = styled.div`
     transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: #414141;
+      background-color: var(--bg-blur-22);
       & > div {
-        background-color: #fff;
+        background-color: var(--font);
       }
     }
 
@@ -48,7 +48,7 @@ export const SearchWrapper = styled.div`
       transition: background-color 0.2s ease;
 
       border-radius: 2px;
-      background-color: #414141;
+      background-color: var(--bg-blur-22);
     }
   }
 `;

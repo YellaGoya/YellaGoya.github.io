@@ -13,8 +13,8 @@ export const ContentWrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: auto;
 
-  border-top: 2px solid #858585;
-  border-bottom: 2px solid #858585;
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
 
   gap: 30px;
 `;
@@ -25,11 +25,11 @@ export const ContentTitle = styled.h1`
   padding: 30px 20px 30px 20px;
   margin: 0;
 
-  color: #d5383f;
+  color: var(--font-highlight);
   font-size: 4rem;
   line-height: 0.65;
 
-  border-bottom: 2px solid #858585;
+  border-bottom: 2px solid var(--border);
 `;
 
 export const Noresult = styled.span`
@@ -40,7 +40,7 @@ export const Noresult = styled.span`
   margin: 0 auto;
   margin-top: 100px;
 
-  color: #fff;
+  color: var(--font);
   font-size: 2rem;
   font-weight: 800;
   opacity: 0.5;

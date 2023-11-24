@@ -4,8 +4,8 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 960px;
 
-  color: white;
-  background-color: #1b1b1b;
+  color: var(--font);
+  background-color: var(--bg);
 `;
 
 export const Post = styled.section`
@@ -41,12 +41,12 @@ export const Categories = styled.div`
     padding: 2px 8px 4px 6px;
     margin: 0 3px;
 
-    color: #fff;
+    color: var(--font);
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
 
-    background-color: #d5383f;
+    background-color: var(--font-highlight);
     border-radius: 5px 5px 15px 5px;
   }
 `;
@@ -94,18 +94,18 @@ export const Content = styled.article`
   }
 
   a {
-    color: #d5383f;
+    color: var(--font-highlight);
     text-underline-offset: 3px;
   }
 
   sup > a {
-    color: #d5383f;
+    color: var(--font-highlight);
     font-weight: 700;
     text-decoration: none;
   }
 
   hr {
-    border: 1px solid #858585;
+    border: 1px solid var(--border);
   }
 
   p > code,
@@ -124,12 +124,12 @@ export const Content = styled.article`
     padding: 3px 6px;
     margin: 0 2px;
 
-    color: #fff;
+    color: var(--font);
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
 
-    background-color: #333333;
+    background-color: var(--bg-code)
     border-radius: 5px;
   }
 
@@ -149,13 +149,13 @@ export const Content = styled.article`
 
     & > thead > tr > th {
       padding: 12px 12px;
-      border-bottom: 2px solid #cccccc;
+      border-bottom: 2px solid var(--border-lite);
     }
 
     & > tbody {
       & > tr > td {
         padding: 6px 12px;
-        border-bottom: 1px solid #858585;
+        border-bottom: 1px solid var(--border);
       }
 
       & > :last-child > td {
@@ -192,12 +192,12 @@ export const Content = styled.article`
     }
 
     & > svg > path {
-      fill: #fff;
+      fill: var(--font);
     }
 
     &:hover {
       & > svg > path {
-        fill: #d5383f;
+        fill: var(--font-highlight);
       }
     }
   }
@@ -241,12 +241,12 @@ export const Content = styled.article`
     padding: 10px 20px 10px 20px;
     border-radius: 4px 4px 24px 4px;
 
-    background-color: #ffffff22;
+    background-color: var(--bg-blur-22);
 
     transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: #ffffff44;
+      background-color: var(--bg-blur-44);
     }
 
     box-shadow:

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { TopBarContext } from 'context/topbar.jsx';
 
 import { StaticImage } from 'gatsby-plugin-image';
 import JavascriptIcon from './svg/javascript.inline.svg';
@@ -32,9 +33,39 @@ import GithubIcon from './svg/github.inline.svg';
 import GitlabIcon from './svg/gitlab.inline.svg';
 
 import { Wrapper } from 'style/content/folio/Folio';
+import LightbulbRoundedIcon from '@mui/icons-material/LightbulbRounded';
 import * as s from 'style/content/folio/AboutMe';
 const AboutMe = () => {
   const [mode, setMode] = useState(false);
+  const [suggest, setSuggest] = useState(false);
+  const { light, setLight } = useContext(TopBarContext);
+  const [firstScroll, setFirstScroll] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setFirstScroll(false);
+      setSuggest(true);
+
+      setTimeout(() => {
+        setSuggest(false);
+        window.removeEventListener('wheel', handleScroll);
+      }, 5000);
+    };
+
+    if (firstScroll) window.addEventListener('wheel', handleScroll);
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (suggest) {
+      document.getElementById('light-mode').classList.add('suggest');
+    } else {
+      document.getElementById('light-mode').classList.remove('suggest');
+    }
+  }, [suggest]);
+
   return (
     <Wrapper $lightmode={mode}>
       <s.WordHighlight>
@@ -47,18 +78,23 @@ const AboutMe = () => {
         프론트.
       </s.WordHighlight>
       <s.HighLightLine />
-      <s.ProfileWrapper
-        onClick={() => {
-          setMode(!mode);
-          console.log(mode);
-        }}
-      >
+      <s.ProfileWrapper>
         <s.PhotoGraph>
           <StaticImage src="me.jpg" layout="fixed" alt="A description of the image" />
           <s.PhotoDesc>
             안녕하세요. <br />
             개발자 안세혁입니다.
           </s.PhotoDesc>
+          <s.ModeButtonWrapper
+            id="light-mode"
+            onClick={() => {
+              setMode(false);
+              setLight(!light);
+            }}
+          >
+            <LightbulbRoundedIcon />
+            <h4>라이트 모드</h4>
+          </s.ModeButtonWrapper>
         </s.PhotoGraph>
         <s.Specification>
           <s.ProfileDesc>
@@ -78,7 +114,7 @@ const AboutMe = () => {
             </s.ProfileText>
           </s.ProfileDesc>
           <s.History>
-            <s.HistoryTitle>개발자 약력</s.HistoryTitle>
+            <s.HistoryTitle>학업</s.HistoryTitle>
             <s.HistoryItem>
               <s.HistoryDiv />
               NPLAB 인공지능 연구실 학부연구생
@@ -131,7 +167,7 @@ const AboutMe = () => {
               <s.SkillLineDiv />
               Vue2, Vue3 Composition API 를 사용하여 개발한 경험이 있습니다.
               <br />
-              Vue3를 통해 로직 재사용성을 높이는 법을 배운 후 현제는 React를 주로 사용하고 있습니다.
+              Vue3를 통해 로직 재사용성을 높이는 법을 배운 후 현재는 React를 주로 사용하고 있습니다.
               <s.SkillLineDiv />
               Figma를 활용하여 프론트엔드 디자인을 직접 하기도 합니다.
               <br />

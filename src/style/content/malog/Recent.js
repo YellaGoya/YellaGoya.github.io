@@ -47,12 +47,12 @@ export const Categories = styled.div`
     padding: 3px 6px 3px 8px;
     margin: 0 3px;
 
-    color: #fff;
+    color: var(--font);
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
 
-    background-color: #d5383f;
+    background-color: var(--font-highlight);
     border-radius: 15px 5px 5px 5px;
   }
 `;
@@ -64,7 +64,7 @@ export const CardTitle = styled.h2`
   line-height: 1.2;
 
   font-size: 2rem;
-  color: #fff;
+  color: var(--font);
 `;
 
 export const CardDescription = styled.p`
@@ -73,5 +73,5 @@ export const CardDescription = styled.p`
 
   font-size: 1.1rem;
   font-weight: 300;
-  color: #fff;
+  color: var(--font);
 `;

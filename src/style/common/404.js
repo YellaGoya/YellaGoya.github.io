@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -33,12 +33,12 @@ export const Eyes = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: #fff;
+  color: var(--font);
   font-size: 1.4rem;
   font-weight: 500;
 
   padding: 0px 6px;
-  background-color: #d5383f;
+  background-color: --font-highlighthighlight;
 `;
 
 export const Bunshinsul = styled.div``;
@@ -46,7 +46,7 @@ export const Bunshinsul = styled.div``;
 export const Dagger = styled.h1`
   font-size: 2rem;
   font-weight: 800;
-  color: #d5383f;
+  color: var(--font-highlight)ight);
   text-align: center;
   margin-top: 5px;
   margin-bottom: 0;
@@ -55,6 +55,6 @@ export const Dagger = styled.h1`
 export const Silence = styled.h3`
   font-size: 1rem;
   font-weight: 300;
-  color: #fff;
+  color: var(--font);
   text-align: center;
 `;

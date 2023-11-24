@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const WordHighlight = styled.h1`
   margin-bottom: 20px;
 
+  transition: color 0.4s ease;
+  color: var(--font);
   font-size: 4rem;
   line-height: 1.05;
   text-align: center;
@@ -19,7 +21,9 @@ export const ProfileWrapper = styled.section``;
 
 export const PhotoGraph = styled.div`
   position: relative;
-  margin-top: 50px;
+  max-width: 1125px;
+  margin: 0 auto;
+  margin-top: 75px;
 
   display: flex;
   justify-content: center;
@@ -37,7 +41,7 @@ export const PhotoGraph = styled.div`
   }
 `;
 
-export const PhotoDesc = styled.h3`
+export const PhotoDesc = styled.h2`
   position: absolute;
   top: 200px;
 
@@ -70,6 +74,8 @@ export const History = styled.ul`
   padding: 0 10px;
   margin: 0;
 
+  color: var(--font);
+  transition: color 0.4s ease;
   direction: ltr;
 `;
 
@@ -97,7 +103,8 @@ export const HistoryDiv = styled.div`
 
   border-radius: 2px;
 
-  background-color: #fff;
+  transition: background-color 0.4s ease;
+  background-color: var(--font);
 `;
 
 export const ProfileGreeting = styled.h3`
@@ -115,6 +122,8 @@ export const ProfileDesc = styled.span`
   font-weight: 300;
   direction: ltr;
 
+  color: var(--font);
+  transition: color 0.4s ease;
   @media (max-width: 750px) {
     margin-bottom: 100px;
   }
@@ -132,6 +141,8 @@ export const Skills = styled.ul`
   padding: 0 10px;
   margin-top: 100px;
 
+  transition: color 0.4s ease;
+  color: var(--font);
   direction: ltr;
 `;
 
@@ -154,7 +165,8 @@ export const SkillTitle = styled.li`
     border-radius: 0.25rem;
     margin-left: 6px;
 
-    fill: #fff;
+    fill: var(--font);
+    transition: fill 0.4s ease;
   }
 `;
 
@@ -175,7 +187,7 @@ export const SkillItem = styled.li`
     margin-right: 6px;
     margin-bottom: 15px;
 
-    fill: #fff;
+    fill: var(--font)--font);
   }
 `;
 
@@ -191,7 +203,85 @@ export const SkillLineDiv = styled.span`
   height: 16px;
 `;
 
-export const ProjectTitle = styled.h2`
+export const ProjectTitle = styled.h3`
   margin-top: 100px;
   padding: 0 10px;
+`;
+
+export const ModeButtonWrapper = styled.button`
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -57px;
+  right: 0px;
+  border-radius: 0.5rem;
+
+  border: none;
+  background-color: transparent;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  & > h4 {
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    width: 88px;
+    transform: translateY(-50%);
+
+    margin: 0;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--font);
+
+    opacity: 0;
+    transition:
+      color 0.2s ease,
+      opacity 0.4s ease;
+  }
+
+  &:hover {
+    width: 150px;
+    & > h4 {
+      opacity: 1;
+    }
+
+    background-color: var(--bg-blur-22);
+
+    & > svg {
+      fill: #ffab41;
+    }
+  }
+
+  &.suggest {
+    width: 150px;
+    & > h4 {
+      opacity: 1;
+    }
+
+    background-color: var(--bg-blur-22);
+
+    & > svg {
+      fill: #ffab41;
+    }
+  }
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    fill: var(--font);
+  }
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.2s ease,
+    width 0.5s ease;
+  cursor: pointer;
 `;

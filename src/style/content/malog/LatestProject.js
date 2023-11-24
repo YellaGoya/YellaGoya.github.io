@@ -6,12 +6,12 @@ export const ContentTitle = styled.h1`
   padding: 30px 20px 30px 20px;
   margin: 0;
 
-  color: #d5383f;
+  color: var(--font-highlight);
   font-size: 4rem;
   line-height: 0.65;
 
-  border-top: 2px solid #858585;
-  border-bottom: 2px solid #858585;
+  border-top: 2px solid var(--border)order);
+  border-bottom: 2px solid var(--border)order);
 `;
 
 export const ProjectWrapper = styled.section`
@@ -19,7 +19,7 @@ export const ProjectWrapper = styled.section`
 
   padding: 30px 20px 30px 20px;
 
-  border-bottom: 2px solid #858585;
+  border-bottom: 2px solid var(--border)order);
 
   gap: 30px;
 `;
@@ -32,7 +32,7 @@ export const Title = styled.h1`
   text-align: center;
 
   font-size: calc(2rem + 4vw);
-  color: #fff;
+  color: var(--font);
 `;
 
 export const ProjectImage = styled.article`
@@ -67,7 +67,7 @@ export const IntroduceLinkList = styled.ul`
 `;
 
 export const IntroduceLink = styled.li`
-  color: #fff;
+  color: var(--font);
   font-size: 1.4rem;
   line-height: 1.65;
 
@@ -85,7 +85,7 @@ export const IntroduceLink = styled.li`
 export const IntroduceDescription = styled.p`
   margin: 16px 0;
   max-width: 620px;
-  color: #fff;
+  color: var(--font);
   font-size: 1.2rem;
   line-height: 1.65;
 `;
