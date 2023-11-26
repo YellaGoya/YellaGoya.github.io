@@ -8,10 +8,8 @@ export const Background = styled.div`
   & > div {
     width: 100%;
     height: 100%;
-  }
 
-  img {
-    filter: blur(4px) brightness(0.7);
+    overflow: hidden;
   }
 
   pointer-events: none;

@@ -137,19 +137,19 @@ const AboutMe = () => {
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              <p>회 AI 분석 플랫폼 ' 사랑회요 '</p>
+              <p>회 AI 분석 플랫폼, 사랑회요</p>
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              <p>실시간 화상 스터디 ' STVDY '</p>
+              <p>실시간 화상 스터디 플랫폼, STVDY</p>
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              <p>뇌질환자 언어 재활 어플리케이션 ' 내쉬다 '</p>
+              <p>뇌질환자 언어 재활 어플리케이션, 내쉬다</p>
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              <p>학생용 협업 툴 ' dddev '</p>
+              <p>학생용 협업 툴, dddev</p>
             </s.HistoryItem>
           </s.History>
         </s.Specification>
@@ -249,10 +249,7 @@ const AboutMe = () => {
         </s.Skills>
         <s.ProjectWrapper>
           <s.ProjectTitle>[ 프로젝트 상세 ]</s.ProjectTitle>
-          <s.ProjectName>
-            <s.ProjectDiv />
-            <p>학생용 협업 툴 ' dddev '</p>
-          </s.ProjectName>
+          <s.ProjectName>학생용 협업 툴, dddev</s.ProjectName>
           <s.ProjectWindow>
             <Project />
           </s.ProjectWindow>

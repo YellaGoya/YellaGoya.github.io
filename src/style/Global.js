@@ -89,6 +89,9 @@ export const GlobalStyle = createGlobalStyle`
     --border-lite: #ccc;
 
     --font: #fff;
+    --font80: #ffffff80;
+    --fontaa: #ffffffaa;
+    --fontcc: #ffffffcc;
     --font-highlight: #d5383f;
 
     --scroll: #888;
@@ -108,6 +111,9 @@ export const GlobalStyle = createGlobalStyle`
       --border-lite: #333;
 
       --font: #000;
+      --font80: #00000080;
+      --fontaa: #000000aa;
+      --fontcc: #000000cc;
       --font-highlight: #007fff;
 
       --scroll: #888;

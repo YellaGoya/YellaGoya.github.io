@@ -29,7 +29,7 @@ export const TitleWrapper = styled.nav`
   align-items: center;
 
   & > svg {
-    color: var(--font-highlight);
+    fill: var(--font-highlight);
     transition:
       opacity 0.2s ease,
       color 0.4s ease;

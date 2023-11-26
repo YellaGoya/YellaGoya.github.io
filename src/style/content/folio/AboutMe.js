@@ -224,15 +224,6 @@ export const SkillLineDiv = styled.span`
   height: 16px;
 `;
 
-export const ProjectTitle = styled.h3`
-  margin-top: 150px;
-  padding: 0 10px;
-
-  color: var(--font);
-  font-size: 1.5rem;
-  font-weight: 600;
-`;
-
 export const ModeButtonWrapper = styled.button`
   position: absolute;
   width: 50px;
@@ -315,6 +306,16 @@ export const ModeButtonWrapper = styled.button`
   cursor: pointer;
 `;
 
+export const ProjectTitle = styled.h3`
+  margin-top: 150px;
+  padding: 0 10px;
+
+  color: var(--font);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+`;
+
 export const ProjectWrapper = styled.section`
   position: relative;
   max-width: 1125px;
@@ -323,25 +324,19 @@ export const ProjectWrapper = styled.section`
   margin: 0 auto;
 `;
 
-export const ProjectName = styled.span`
-  height: 29px;
-  padding: 0 10px;
-
+export const ProjectDate = styled.h2`
   font-size: 1.2rem;
-  font-weight: 500;
+  padding: 0 10px;
+  margin: 0;
+  color: var(--font);
+`;
 
-  display: flex;
-  align-items: center;
-
-  & > p {
-    margin: 0;
-    height: 17px;
-
-    line-height: 1;
-
-    display: flex;
-    align-items: center;
-  }
+export const ProjectName = styled.h2`
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0 10px;
+  margin: 0;
+  /* margin-top: -16px; */
 `;
 
 export const ProjectDiv = styled.div`
