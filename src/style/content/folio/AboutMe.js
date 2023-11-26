@@ -83,34 +83,49 @@ export const HistoryTitle = styled.li`
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 18px;
+  margin-bottom: 5px;
 `;
 
 export const HistoryItem = styled.li`
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
 
-  opacity: 0.9;
+  opacity: var(--font-opacity);
+  height: 29px;
 
   display: flex;
   align-items: center;
+
+  & > p {
+    margin: 0;
+    height: 17px;
+
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const HistoryDiv = styled.div`
   display: inline-block;
-  height: 15px;
+  height: 17px;
   width: 5px;
-  margin-right: 5px;
+  margin-right: 6px;
 
   border-radius: 2px;
+
+  tran
 
   transition: background-color 0.4s ease;
   background-color: var(--font);
 `;
 
-export const ProfileGreeting = styled.h3`
+export const ProfileTitle = styled.h3`
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
+  margin-bottom: 5px;
 `;
 
 export const ProfileDesc = styled.span`
@@ -119,7 +134,7 @@ export const ProfileDesc = styled.span`
   margin: 0;
   margin-top: 18px;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
   direction: ltr;
 
   color: var(--font);
@@ -129,9 +144,14 @@ export const ProfileDesc = styled.span`
   }
 `;
 
-export const ProfileText = styled.p`
+export const ProfileText = styled.span`
   margin: 0;
-  opacity: 0.9;
+  opacity: var(--font-opacity);
+
+  & > p {
+    margin: 0;
+    height: 16px;
+  }
 `;
 
 export const Skills = styled.ul`
@@ -139,7 +159,7 @@ export const Skills = styled.ul`
   margin: 0 auto;
   list-style: none;
   padding: 0 10px;
-  margin-top: 100px;
+  margin-top: 150px;
 
   transition: color 0.4s ease;
   color: var(--font);
@@ -173,11 +193,12 @@ export const SkillTitle = styled.li`
 export const SkillItem = styled.li`
   font-size: 1.2rem;
   font-weight: 400;
+  opacity: var(--font-opacity);
 
   display: flex;
   align-items: center;
-  // 한줄에 한 요소만 가능
   flex-wrap: wrap;
+  
 
   & > svg {
     width: 24px;
@@ -204,8 +225,12 @@ export const SkillLineDiv = styled.span`
 `;
 
 export const ProjectTitle = styled.h3`
-  margin-top: 100px;
+  margin-top: 150px;
   padding: 0 10px;
+
+  color: var(--font);
+  font-size: 1.5rem;
+  font-weight: 600;
 `;
 
 export const ModeButtonWrapper = styled.button`
@@ -223,12 +248,26 @@ export const ModeButtonWrapper = styled.button`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    fill: var(--font);
+  }
+
   & > h4 {
     position: absolute;
     top: 50%;
     left: 45px;
-    width: 88px;
+    width: 6rem;
     transform: translateY(-50%);
+
+    //글씨가 아래로 내려가지 않고 한줄 유지
+    text-align: left;
 
     margin: 0;
 
@@ -248,7 +287,7 @@ export const ModeButtonWrapper = styled.button`
       opacity: 1;
     }
 
-    background-color: var(--bg-blur-22);
+    background-color: var(--bg-button-hover);
 
     & > svg {
       fill: #ffab41;
@@ -261,21 +300,11 @@ export const ModeButtonWrapper = styled.button`
       opacity: 1;
     }
 
-    background-color: var(--bg-blur-22);
+    background-color: var(--bg-button-hover);
 
     & > svg {
       fill: #ffab41;
     }
-  }
-
-  & > svg {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    fill: var(--font);
   }
 
   overflow: hidden;
@@ -284,4 +313,59 @@ export const ModeButtonWrapper = styled.button`
     background-color 0.2s ease,
     width 0.5s ease;
   cursor: pointer;
+`;
+
+export const ProjectWrapper = styled.section`
+  position: relative;
+  max-width: 1125px;
+  // 높이는 width의 16:9 비율로 맞춤
+
+  margin: 0 auto;
+`;
+
+export const ProjectName = styled.span`
+  height: 29px;
+  padding: 0 10px;
+
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+
+  & > p {
+    margin: 0;
+    height: 17px;
+
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const ProjectDiv = styled.div`
+  display: inline-block;
+  height: 17px;
+  width: 5px;
+  margin-right: 6px;
+
+  border-radius: 2px;
+
+  transition: background-color 0.4s ease;
+  background-color: var(--font);
+`;
+
+export const ProjectWindow = styled.div`
+  position: relative;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.5rem;
+
+  @media (max-width: 729px) {
+    max-width: 375px;
+    aspect-ratio: 9 / 16;
+  }
+
+  overflow: hidden;
 `;

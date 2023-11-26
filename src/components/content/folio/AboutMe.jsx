@@ -32,6 +32,8 @@ import GitIcon from './svg/git.inline.svg';
 import GithubIcon from './svg/github.inline.svg';
 import GitlabIcon from './svg/gitlab.inline.svg';
 
+import Project from 'components/content/folio/project/Project';
+
 import { Wrapper } from 'style/content/folio/Folio';
 import LightbulbRoundedIcon from '@mui/icons-material/LightbulbRounded';
 import * as s from 'style/content/folio/AboutMe';
@@ -98,66 +100,68 @@ const AboutMe = () => {
         </s.PhotoGraph>
         <s.Specification>
           <s.ProfileDesc>
-            <s.ProfileGreeting>인사말</s.ProfileGreeting>
+            <s.ProfileTitle>[ 인사말 ]</s.ProfileTitle>
             <s.ProfileText>
               안녕하세요. 개발자 안세혁입니다.
-              <br />
-              <br />제 직업은 사용자에게 편리함을 제공하는 웹 서비스를 만드는 것이며, 그 과정에 디자인과 상호작용을 섞어 마법을 부리는 것을
-              좋아합니다.
-              <br />
-              <br />
+              <p />
+              제 직업은 사용자에게 편리함을 제공하는 웹 서비스를 만드는 것이며, 그 과정에 디자인과 상호작용을 섞어 마법을 부리는 것을 좋아합니다.
+              <p />
               가장 영향을 많이 받은 디자이너는 디터 람스입니다. 사용자의 편의를 위해 불필요한 것을 제거하는 것, 디터 람스의 깨달음을 마음에 새기고
               언제나 유용하며 세련된 프론트엔드 개발을 하려 노력하고 있습니다.
-              <br />
-              <br />
+              <p />
               최근 여가 시간에는 키보드를 만들거나 이미 봤던 영화들을 보며 쉬고 있습니다.
             </s.ProfileText>
           </s.ProfileDesc>
           <s.History>
-            <s.HistoryTitle>학업</s.HistoryTitle>
+            <s.HistoryTitle>[ 학업 ]</s.HistoryTitle>
             <s.HistoryItem>
               <s.HistoryDiv />
-              NPLAB 인공지능 연구실 학부연구생
+              <p>NPLAB 인공지능 연구실 학부연구생</p>
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              금오공과대학교 컴퓨터공학과 졸업
+              <p>금오공과대학교 컴퓨터공학과 졸업</p>
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              삼성 SW 아카데미 수료
+              <p>삼성 SW 아카데미 수료</p>
             </s.HistoryItem>
-            <s.HistoryTitle>프로젝트 이력</s.HistoryTitle>
+            <s.HistoryTitle>[ 프로젝트 이력 ]</s.HistoryTitle>
             <s.HistoryItem>
               <s.HistoryDiv />
-              삼성 과제 RDBMS, 시계열 DB 성능 비교
-            </s.HistoryItem>
-            <s.HistoryItem>
-              <s.HistoryDiv />
-              기업 연계 프로젝트 감정 분석 스마트 라이트
+              <p>삼성 과제 RDBMS, 시계열 DB 성능 비교</p>
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              실시간 화상 스터디 STVDY
+              <p>기업 연계 프로젝트 감정 분석 스마트 라이트</p>
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              뇌질환자 언어 재활 어플리케이션 내쉬다
+              <p>회 AI 분석 플랫폼 ' 사랑회요 '</p>
             </s.HistoryItem>
             <s.HistoryItem>
               <s.HistoryDiv />
-              학생용 협업 툴 dddev
+              <p>실시간 화상 스터디 ' STVDY '</p>
+            </s.HistoryItem>
+            <s.HistoryItem>
+              <s.HistoryDiv />
+              <p>뇌질환자 언어 재활 어플리케이션 ' 내쉬다 '</p>
+            </s.HistoryItem>
+            <s.HistoryItem>
+              <s.HistoryDiv />
+              <p>학생용 협업 툴 ' dddev '</p>
             </s.HistoryItem>
           </s.History>
         </s.Specification>
         <s.Skills>
           <s.SkillTitle>
-            프론트엔드 스택
+            [ 프론트엔드 스택
             <JavascriptIcon />
             <ReactIcon />
             <ReduxIcon />
             <VueIcon />
             <FigmaIcon />
+            &nbsp;]
           </s.SkillTitle>
           <s.SkillItem>
             <s.SkillItemDesc>
@@ -175,13 +179,14 @@ const AboutMe = () => {
             </s.SkillItemDesc>
           </s.SkillItem>
           <s.SkillTitle>
-            백엔드 스택
+            [ 백엔드 스택
             <PythonIcon />
             <JavaIcon />
             <Spring />
             <SwaggerIcon />
             <MysqlIcon />
             <InfluxDBIcon />
+            &nbsp;]
           </s.SkillTitle>
           <s.SkillItem>
             <s.SkillItemDesc>
@@ -192,12 +197,13 @@ const AboutMe = () => {
             </s.SkillItemDesc>
           </s.SkillItem>
           <s.SkillTitle>
-            코드 관리
+            [ 코드 관리
             <GitIcon />
             <GithubIcon />
             <GitlabIcon />
             <ESLintIcon />
             <PrettierIcon />
+            &nbsp;]
           </s.SkillTitle>
           <s.SkillItem>
             <s.SkillItemDesc>
@@ -210,10 +216,11 @@ const AboutMe = () => {
             </s.SkillItemDesc>
           </s.SkillItem>
           <s.SkillTitle>
-            서버
+            [ 서버
             <LinuxIcon />
             <UbuntuIcon />
             <DockerIcon />
+            &nbsp;]
           </s.SkillTitle>
           <s.SkillItem>
             <s.SkillItemDesc>
@@ -223,11 +230,12 @@ const AboutMe = () => {
             </s.SkillItemDesc>
           </s.SkillItem>
           <s.SkillTitle>
-            협업
+            [ 협업
             <JiraIcon />
             <SlackIcon />
             <MatterMostIcon />
             <NotionIcon />
+            &nbsp;]
           </s.SkillTitle>
           <s.SkillItem>
             <s.SkillItemDesc>
@@ -239,7 +247,16 @@ const AboutMe = () => {
             </s.SkillItemDesc>
           </s.SkillItem>
         </s.Skills>
-        <s.ProjectTitle>하이하이</s.ProjectTitle>
+        <s.ProjectWrapper>
+          <s.ProjectTitle>[ 프로젝트 상세 ]</s.ProjectTitle>
+          <s.ProjectName>
+            <s.ProjectDiv />
+            <p>학생용 협업 툴 ' dddev '</p>
+          </s.ProjectName>
+          <s.ProjectWindow>
+            <Project />
+          </s.ProjectWindow>
+        </s.ProjectWrapper>
       </s.ProfileWrapper>
     </Wrapper>
   );

@@ -27,6 +27,10 @@ export const GlobalStyle = createGlobalStyle`
     overflow : hidden;
   }
 
+  * {
+    color: var(--font);
+  }
+
   body, input, button{
     font-family: "Pretendard Variable", Pretendard;
     text-rendering: optimizeLegibility;
@@ -79,6 +83,7 @@ export const GlobalStyle = createGlobalStyle`
     --bg-blur-44: #ffffff44;
     --bg-blur-66: #ffffff66;
     --bg-code: #333;
+    --bg-button-hover: #ffffff22;
 
     --border: #858585;
     --border-lite: #ccc;
@@ -89,14 +94,17 @@ export const GlobalStyle = createGlobalStyle`
     --scroll: #888;
     --scroll-hover: #ccc;
 
+    --font-opacity: 0.85;
+
     &.light {
       --bg: #fff;
       --bg-blur-22: #00000022;
       --bg-blur-44: #00000044;
       --bg-blur-66: #00000066;
       --bg-code: #ccc;
+      --bg-button-hover: #00000016;
 
-      --border: #858585;
+      --border: #c7c7c7;
       --border-lite: #333;
 
       --font: #000;
@@ -104,6 +112,8 @@ export const GlobalStyle = createGlobalStyle`
 
       --scroll: #888;
       --scroll-hover: #ccc;
+
+      --font-opacity: 1;
     }
   }
 
