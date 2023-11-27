@@ -1,7 +1,7 @@
-import Recent from "components/content/malog/Recent";
-import LatestProject from "components/content/malog/LatestProject";
+import Recent from 'components/content/malog/Recent';
+import LatestProject from 'components/content/malog/LatestProject';
 
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 
 const IndexPage = ({ data }) => {
   const nodes = data.allMarkdownRemark.edges.map(({ node }) => node);

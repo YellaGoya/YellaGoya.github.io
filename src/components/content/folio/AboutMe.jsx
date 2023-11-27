@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext, useRef } from 'react';
 import { TopBarContext } from 'context/topbar.jsx';
 
 import { StaticImage } from 'gatsby-plugin-image';
@@ -12,7 +12,7 @@ import VueIcon from './svg/vuedotjs.inline.svg';
 import ESLintIcon from './svg/eslint.inline.svg';
 import PrettierIcon from './svg/prettier.inline.svg';
 
-import Spring from './svg/spring.inline.svg';
+import SpringIcon from './svg/spring.inline.svg';
 import SwaggerIcon from './svg/swagger.inline.svg';
 
 import MysqlIcon from './svg/mysql.inline.svg';
@@ -40,10 +40,33 @@ import * as s from 'style/content/folio/AboutMe';
 const AboutMe = () => {
   const [mode, setMode] = useState(false);
   const [suggest, setSuggest] = useState(false);
-  const { light, setLight } = useContext(TopBarContext);
+  const { isFocus, setIsFocus, light, setLight } = useContext(TopBarContext);
   const [firstScroll, setFirstScroll] = useState(true);
+  const focusRef = useRef(null);
+
+  const handleFocus = () => {
+    if (isFocus) return;
+    setIsFocus(true);
+  };
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // console.log('Element is in the viewport!');
+        } else {
+          setIsFocus(false);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+      },
+    );
+
+    if (focusRef.current) observer.observe(focusRef.current);
+
     const handleScroll = () => {
       setFirstScroll(false);
       setSuggest(true);
@@ -55,8 +78,10 @@ const AboutMe = () => {
     };
 
     if (firstScroll) window.addEventListener('wheel', handleScroll);
+
     return () => {
       window.removeEventListener('wheel', handleScroll);
+      if (focusRef.current) observer.unobserve(focusRef.current);
     };
   }, []);
 
@@ -69,7 +94,7 @@ const AboutMe = () => {
   }, [suggest]);
 
   return (
-    <Wrapper $lightmode={mode}>
+    <Wrapper $lightmode={mode} $isFocus={isFocus}>
       <s.WordHighlight>
         청년
         <br />
@@ -154,16 +179,31 @@ const AboutMe = () => {
           </s.History>
         </s.Specification>
         <s.Skills>
-          <s.SkillTitle>
-            [ 프론트엔드 스택
-            <JavascriptIcon />
-            <ReactIcon />
-            <ReduxIcon />
-            <VueIcon />
-            <FigmaIcon />
-            &nbsp;]
-          </s.SkillTitle>
           <s.SkillItem>
+            <s.SkillTitle>
+              [ 프론트엔드 스택
+              <s.SvgWrapper>
+                <JavascriptIcon />
+                <s.SvgTooltip>JavaScript</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <ReactIcon />
+                <s.SvgTooltip>React</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <ReduxIcon />
+                <s.SvgTooltip>Redux</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <VueIcon />
+                <s.SvgTooltip>Vue</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <FigmaIcon />
+                <s.SvgTooltip>Figma</s.SvgTooltip>
+              </s.SvgWrapper>
+              &nbsp;]
+            </s.SkillTitle>
             <s.SkillItemDesc>
               JavaScript, React를 주로 활용하여 프론트 엔드 개발을 하고 있습니다.
               <br />
@@ -178,17 +218,35 @@ const AboutMe = () => {
               이전의 4번의 프로젝트에서 모두 Figma를 사용하였으며 디자인을 전담하였습니다.
             </s.SkillItemDesc>
           </s.SkillItem>
-          <s.SkillTitle>
-            [ 백엔드 스택
-            <PythonIcon />
-            <JavaIcon />
-            <Spring />
-            <SwaggerIcon />
-            <MysqlIcon />
-            <InfluxDBIcon />
-            &nbsp;]
-          </s.SkillTitle>
           <s.SkillItem>
+            <s.SkillTitle>
+              [ 백엔드 스택
+              <s.SvgWrapper>
+                <PythonIcon />
+                <s.SvgTooltip>Python</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <JavaIcon />
+                <s.SvgTooltip>Java</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <SpringIcon />
+                <s.SvgTooltip>Spring</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <SwaggerIcon />
+                <s.SvgTooltip>Swagger</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <MysqlIcon />
+                <s.SvgTooltip>Mysql</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <InfluxDBIcon />
+                <s.SvgTooltip>InfluxDB</s.SvgTooltip>
+              </s.SvgWrapper>
+              &nbsp;]
+            </s.SkillTitle>
             <s.SkillItemDesc>
               프론트엔드 개발을 시작하기 전에 백엔드 개발을 하였습니다.
               <br />
@@ -196,16 +254,31 @@ const AboutMe = () => {
               <s.SkillLineDiv />그 이전 학부연구생 시절에는 파이썬을 활용하여 데이터를 전처리하거나 연구실의 데이터베이스 관련 과제를 진행 하였습니다.
             </s.SkillItemDesc>
           </s.SkillItem>
-          <s.SkillTitle>
-            [ 코드 관리
-            <GitIcon />
-            <GithubIcon />
-            <GitlabIcon />
-            <ESLintIcon />
-            <PrettierIcon />
-            &nbsp;]
-          </s.SkillTitle>
           <s.SkillItem>
+            <s.SkillTitle>
+              [ 코드 관리
+              <s.SvgWrapper>
+                <GitIcon />
+                <s.SvgTooltip>Git</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <GithubIcon />
+                <s.SvgTooltip>Github</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <GitlabIcon />
+                <s.SvgTooltip>Gitlab</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <ESLintIcon />
+                <s.SvgTooltip>ESLint</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <PrettierIcon />
+                <s.SvgTooltip>Prettier</s.SvgTooltip>
+              </s.SvgWrapper>
+              &nbsp;]
+            </s.SkillTitle>
             <s.SkillItemDesc>
               1작성 1커밋을 지향하며, Git을 사용하여 코드를 관리합니다. <br />
               Github, Gitlab 두 플랫폼을 활용하여 개발을 한 경험이 있으며, 현재 Github에서 개인 코드를 관리 중 입니다.
@@ -215,29 +288,50 @@ const AboutMe = () => {
               XO 규칙을 커스텀하여 사용 중 이며 Prettier를 ESLint에 통합하여 사용하고 있습니다.
             </s.SkillItemDesc>
           </s.SkillItem>
-          <s.SkillTitle>
-            [ 서버
-            <LinuxIcon />
-            <UbuntuIcon />
-            <DockerIcon />
-            &nbsp;]
-          </s.SkillTitle>
           <s.SkillItem>
+            <s.SkillTitle>
+              [ 서버
+              <s.SvgWrapper>
+                <LinuxIcon />
+                <s.SvgTooltip>Linux</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <UbuntuIcon />
+                <s.SvgTooltip>Ubuntu</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <DockerIcon />
+                <s.SvgTooltip>Docker</s.SvgTooltip>
+              </s.SvgWrapper>
+              &nbsp;]
+            </s.SkillTitle>
             <s.SkillItemDesc>
               학부 재학 시절에는 연구실의 서버와 개인 랩탑을 우분투로 운영하였습니다.
               <br />
               c언어를 활용한 간단한 시스템 프로그래밍이 가능하며, 리눅스 환경에서 개발을 할 때에도 불편함이 없습니다.
             </s.SkillItemDesc>
           </s.SkillItem>
-          <s.SkillTitle>
-            [ 협업
-            <JiraIcon />
-            <SlackIcon />
-            <MatterMostIcon />
-            <NotionIcon />
-            &nbsp;]
-          </s.SkillTitle>
           <s.SkillItem>
+            <s.SkillTitle>
+              [ 협업
+              <s.SvgWrapper>
+                <JiraIcon />
+                <s.SvgTooltip>Jira</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <SlackIcon />
+                <s.SvgTooltip>Slack</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <MatterMostIcon />
+                <s.SvgTooltip>MatterMost</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <NotionIcon />
+                <s.SvgTooltip>Notion</s.SvgTooltip>
+              </s.SvgWrapper>
+              &nbsp;]
+            </s.SkillTitle>
             <s.SkillItemDesc>
               협업에서 소통을 가장 중요시 여기며, 문서화는 협업 소통수단의 정수라고 생각합니다.
               <s.SkillLineDiv />

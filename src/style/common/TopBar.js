@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 export const Header = styled.header`
   position: fixed;
-  top: 0px;
+  top: ${({ $isFocus }) => ($isFocus ? '-65px' : '0')};
   width: 100%;
   height: 63px;
 
@@ -12,7 +12,9 @@ export const Header = styled.header`
   align-items: center;
 
   background-color: var(--bg);
-  transition: background-color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    top 0.5s ease;
 
   border-bottom: 2px solid var(--border);
 
@@ -113,7 +115,7 @@ export const NavBtn = styled.button`
 export const Menu = styled.nav`
   position: fixed;
   visibility: ${(props) => (props.$isMenu ? 'visible' : 'hidden')};
-  top: ${(props) => (props.$isMenu ? '64px' : `${63 - props.$menuHeight}px`)};
+  top: ${(props) => (props.$isFocus ? '-200px' : props.$isMenu ? '64px' : `${63 - props.$menuHeight}px`)};
 
   width: 100%;
 
@@ -141,7 +143,7 @@ export const Category = styled.div`
 
 export const Search = styled.nav`
   position: fixed;
-  top: ${(props) => (props.$isSearch ? '64px' : '-2px')};
+  top: ${(props) => (props.$isFocus ? '-200px' : props.$isSearch ? '64px' : '-2px')};
 
   height: 65px;
   width: 100%;

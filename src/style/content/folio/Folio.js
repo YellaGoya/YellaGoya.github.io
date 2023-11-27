@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   position: fixed;
-  top: 64px;
+  top: ${({ $isFocus }) => ($isFocus ? '0' : '64px')};
   left: 0;
-  height: calc(100vh - 165px);
+  height: ${({ $isFocus }) => ($isFocus ? 'calc(100vh - 100px)' : 'calc(100vh - 165px)')};
   width: calc(100vw - 9px);
 
   padding-bottom: 100px;
@@ -13,7 +13,10 @@ export const Wrapper = styled.section`
   overflow-x: hidden;
 
   background-color: var(--bg);
-  transition: background-color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    top 0.4s ease,
+    height 0.4s ease;
 
   @media (hover: none) and (pointer: coarse) {
     padding-left: 0;

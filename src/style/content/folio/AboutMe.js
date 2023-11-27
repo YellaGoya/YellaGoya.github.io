@@ -8,6 +8,8 @@ export const WordHighlight = styled.h1`
   font-size: 4rem;
   line-height: 1.05;
   text-align: center;
+
+  user-select: none;
 `;
 
 export const HighLightLine = styled.div`
@@ -50,6 +52,8 @@ export const PhotoDesc = styled.h2`
   text-align: center;
   text-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
   color: #fff;
+
+  user-select: none;
 
   transition: all 0.2s ease;
 
@@ -166,14 +170,97 @@ export const Skills = styled.ul`
   direction: ltr;
 `;
 
-export const SkillTitle = styled.li`
+export const SvgWrapper = styled.div`
+  position: relative;
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+
+  &:first-child {
+    margin-left: 16px;
+  }
+
+  border-radius: 0.25rem;
+  margin-left: 6px;
+
+  &:hover {
+    & > span {
+      visibility: visible;
+      opacity: 0.65;
+    }
+  }
+
+  & > svg {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 0.25rem;
+
+    fill: var(--font);
+    transition: fill 0.4s ease;
+  }
+
+  fill: var(--font);
+  transition: fill 0.4s ease;
+`;
+
+export const SvgTooltip = styled.span`
+  position: absolute;
+  top: -1.6rem;
+  left: calc(50% - 1px);
+
+  transform: translateX(-50%);
+
+  visibility: hidden;
+  opacity: 0;
+
+  font-size: 1rem;
+
+  transition:
+    visibility 0.1s ease,
+    opacity 0.1s ease;
+`;
+
+export const SkillItem = styled.li`
+  font-size: 1.2rem;
+  font-weight: 400;
+  
+  margin-top: 50px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & > svg {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 0.25rem;
+    margin-right: 6px;
+    margin-bottom: 15px;
+
+    fill: var(--font)--font);
+  }
+
+  &:hover {
+    &> span:first-child {
+      transform: scale(1.4);
+    }
+  }
+`;
+
+export const SkillTitle = styled.span`
   font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 50px;
   margin-bottom: 5px;
 
   display: flex;
   align-items: center;
+
+  transform-origin: left;
+  transition: transform 0.4s ease;
 
   & > svg {
     &:first-child {
@@ -190,32 +277,12 @@ export const SkillTitle = styled.li`
   }
 `;
 
-export const SkillItem = styled.li`
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: var(--font-opacity);
-
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  
-
-  & > svg {
-    width: 24px;
-    height: 24px;
-
-    border-radius: 0.25rem;
-    margin-right: 6px;
-    margin-bottom: 15px;
-
-    fill: var(--font)--font);
-  }
-`;
-
 export const SkillItemDesc = styled.span`
+  width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  opacity: var(--font-opacity);
 `;
 
 export const SkillLineDiv = styled.span`
@@ -357,9 +424,11 @@ export const ProjectWindow = styled.div`
   aspect-ratio: 16 / 9;
   border-radius: 0.5rem;
 
+  user-select: none;
+
   @media (max-width: 729px) {
     max-width: 375px;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 10 /16;
   }
 
   overflow: hidden;

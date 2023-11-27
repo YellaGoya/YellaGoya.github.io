@@ -16,7 +16,7 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
   const location = useLocation();
   const { searchQuery, setSearchQuery } = useContext(SearchContext);
   const { setCategory } = useContext(CategoryContext);
-  const { isMenu, setIsMenu, isSearch, setIsSearch } = useContext(TopBarContext);
+  const { isMenu, setIsMenu, isSearch, setIsSearch, isFocus } = useContext(TopBarContext);
 
   const inputRef = useRef(null);
   const menuRef = useRef(null);
@@ -57,6 +57,10 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
   };
 
   useEffect(() => {
+    console.log(isFocus);
+  }, [isFocus]);
+
+  useEffect(() => {
     if (location.pathname.startsWith('/search')) inputRef.current.focus();
     else setSearchQuery('');
   }, [location.pathname]);
@@ -81,15 +85,15 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
 
   return (
     <>
-      <s.Menu ref={menuRef} $isMenu={isMenu} $menuHeight={menuHeight}>
+      <s.Menu ref={menuRef} $isMenu={isMenu} $isFocus={isFocus} $menuHeight={menuHeight}>
         <s.Category onClick={() => handleCategories('')}>전체</s.Category>
         <s.Category onClick={() => handleCategories('Javascript')}>Javascript</s.Category>
         <s.Category onClick={() => handleCategories('gatsby')}>gatsby</s.Category>
       </s.Menu>
-      <s.Search $isSearch={isSearch}>
+      <s.Search $isSearch={isSearch} $isFocus={isFocus}>
         <input ref={inputRef} value={searchQuery} placeholder="검색어 입력" type="text" onChange={handleInputChange} onKeyDown={handleKeyPress} />
       </s.Search>
-      <s.Header>
+      <s.Header $isFocus={isFocus}>
         <s.TitleWrapper $isFolio={location.pathname.startsWith('/folio')}>
           {location.pathname.startsWith('/post') ? <ArrowBackIosNewIcon style={{ cursor: 'pointer' }} onClick={() => navigate(-1)} /> : <FlareIcon />}
           <s.Title id="malog-title" to="/" onClick={TitleToggleHandler}>
