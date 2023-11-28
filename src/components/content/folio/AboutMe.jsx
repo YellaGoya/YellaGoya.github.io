@@ -591,12 +591,12 @@ const AboutMe = () => {
           </s.Project>
           <s.ProjectDivLine />
           <s.Project ref={stvdyRef}>
-            <s.ProjectInterlude
-              onClick={() => {
-                setStvdyToggle(!stvdyToggle);
-              }}
-            >
-              <s.ProjectIntro>
+            <s.ProjectInterlude>
+              <s.ProjectIntro
+                onClick={() => {
+                  setStvdyToggle(!stvdyToggle);
+                }}
+              >
                 <s.LogoWrapper>
                   <StaticImage src="logo/stvdy.png" />
                 </s.LogoWrapper>
