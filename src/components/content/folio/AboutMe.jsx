@@ -34,6 +34,7 @@ import GitlabIcon from './svg/gitlab.inline.svg';
 
 // import Project from 'components/content/folio/project/Project';
 import { Wrapper } from 'style/content/folio/Folio';
+import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LightbulbRoundedIcon from '@mui/icons-material/LightbulbRounded';
 import * as s from 'style/content/folio/AboutMe';
@@ -43,31 +44,16 @@ const AboutMe = () => {
   const { isFocus, setIsFocus, light, setLight } = useContext(TopBarContext);
   const [firstScroll, setFirstScroll] = useState(true);
   const focusRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const [dddevToggle, setDddevToggle] = useState(false);
   const [nashdaToggle, setNashdaToggle] = useState(false);
   const [stvdyToggle, setStvdyToggle] = useState(false);
 
-  const dddevRef = useRef(null);
-  const nashdaRef = useRef(null);
-  const stvdyRef = useRef(null);
-
   // const handleFocus = () => {
   //   if (isFocus) return;
   //   setIsFocus(true);
   // };
-
-  const handleDddev = () => {
-    setDddevToggle(true);
-  };
-
-  const handleNashda = () => {
-    setNashdaToggle(true);
-  };
-
-  const handleStvdy = () => {
-    setStvdyToggle(true);
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -139,6 +125,7 @@ const AboutMe = () => {
               setLight(!light);
             }}
           >
+            <s.TopLocation ref={buttonRef} />
             <LightbulbRoundedIcon />
             <h4>라이트 모드</h4>
           </s.ModeButtonWrapper>
@@ -233,7 +220,7 @@ const AboutMe = () => {
               <br />
               Vue3를 통해 로직 재사용성을 높이는 법을 배운 후 현재는 React를 주로 사용하고 있습니다.
               <s.SkillLineDiv />
-              Figma를 활용하여 프론트엔드 디자인을 직접 하기도 합니다.
+              프론트엔드 디자인, 와이어프레임 및 스토리보드를 작성에는 Figma를 사용합니다.
               <br />
               이전의 4번의 프로젝트에서 모두 Figma를 사용하였으며 디자인을 전담하였습니다.
             </s.SkillItemDesc>
@@ -363,7 +350,7 @@ const AboutMe = () => {
         </s.Skills>
         <s.ProjectWrapper>
           <s.ProjectTitle>[ 프로젝트 상세 ]</s.ProjectTitle>
-          <s.Project ref={dddevRef}>
+          <s.Project>
             <s.ProjectInterlude>
               <s.ProjectIntro
                 onClick={() => {
@@ -471,7 +458,7 @@ const AboutMe = () => {
             </s.ProjectInterlude>
           </s.Project>
           <s.ProjectDivLine />
-          <s.Project ref={nashdaRef}>
+          <s.Project>
             <s.ProjectInterlude>
               <s.ProjectIntro
                 onClick={() => {
@@ -590,7 +577,7 @@ const AboutMe = () => {
             </s.ProjectInterlude>
           </s.Project>
           <s.ProjectDivLine />
-          <s.Project ref={stvdyRef}>
+          <s.Project>
             <s.ProjectInterlude>
               <s.ProjectIntro
                 onClick={() => {
@@ -694,6 +681,19 @@ const AboutMe = () => {
           </s.ProjectWindow> */}
         </s.ProjectWrapper>
       </s.ProfileWrapper>
+      <s.ToTopButton
+        onClick={() => {
+          buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setSuggest(true);
+
+          setTimeout(() => {
+            setSuggest(false);
+          }, 5000);
+        }}
+      >
+        <VerticalAlignTopIcon />
+        처음으로
+      </s.ToTopButton>
 
       {/* <s.Test>STVDY.</s.Test> */}
     </Wrapper>

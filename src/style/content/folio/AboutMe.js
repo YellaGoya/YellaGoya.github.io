@@ -160,7 +160,7 @@ export const Skills = styled.ul`
   margin: 0 auto;
   list-style: none;
   padding: 0 10px;
-  margin-top: 150px;
+  margin-top: 200px;
 
   transition: color 0.4s ease;
   color: var(--font);
@@ -377,7 +377,7 @@ export const ModeButtonWrapper = styled.button`
 `;
 
 export const ProjectTitle = styled.h3`
-  margin-top: 150px;
+  margin-top: 200px;
   padding: 0 10px;
 
   color: var(--font);
@@ -398,7 +398,7 @@ export const Project = styled.article``;
 
 export const ProjectInterlude = styled.div`
   position: relative;
-  padding: 5px 0;
+  padding: 5px 0 5px 0;
   border-radius: 0.5rem;
 
   min-height: 128px;
@@ -415,6 +415,10 @@ export const ProjectIntro = styled.div`
   height: 128px;
   padding: 10px;
 
+  @media (max-width: 500px) {
+    height: auto;
+  }
+
   border-radius: 0.5rem;
 
   cursor: pointer;
@@ -430,6 +434,8 @@ export const LogoWrapper = styled.div`
   height: 128px;
   border-radius: 0.5rem;
   overflow: hidden;
+
+  user-select: none;
 
   @media (max-width: 500px) {
     width: 100%;
@@ -644,4 +650,39 @@ export const ProjectDivLine = styled.div`
   width: calc(100% - 20px);
   height: 1px;
   background-color: var(--font30);
+`;
+
+export const ToTopButton = styled.button`
+  margin: 0 auto;
+  margin-top: 50px;
+
+  background-color: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 1.2rem;
+  padding: 12px 15px 12px 12px;
+  border-radius: 0.5rem;
+
+  user-select: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--bg-button-hover);
+  }
+
+  & > svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    transform: translateY(1px);
+  }
+`;
+
+export const TopLocation = styled.div`
+  position: absolute;
+  top: -15px;
 `;
