@@ -33,7 +33,6 @@ import GithubIcon from './svg/github.inline.svg';
 import GitlabIcon from './svg/gitlab.inline.svg';
 
 // import Project from 'components/content/folio/project/Project';
-import AirRoundedIcon from '@mui/icons-material/AirRounded';
 import { Wrapper } from 'style/content/folio/Folio';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LightbulbRoundedIcon from '@mui/icons-material/LightbulbRounded';
@@ -365,23 +364,23 @@ const AboutMe = () => {
         <s.ProjectWrapper>
           <s.ProjectTitle>[ 프로젝트 상세 ]</s.ProjectTitle>
           <s.Project ref={dddevRef}>
-            <s.ProjectInterlude
-              $toggle={dddevToggle}
-              onClick={() => {
-                if (!dddevToggle) handleDddev();
-              }}
-            >
-              <s.LogoWrapper>
-                <StaticImage src="logo/dddev2.png" />
-              </s.LogoWrapper>
-              <s.ProjectInfo>
-                <s.ProjectName>dddev</s.ProjectName>
-                <s.ProjectDesc>
-                  학생 개발자들의 협업 툴, <br />
-                  협업에 필요한 모든 것을 하나의 툴로 담아낸 프로젝트.
-                </s.ProjectDesc>
-              </s.ProjectInfo>
-
+            <s.ProjectInterlude>
+              <s.ProjectIntro
+                onClick={() => {
+                  setDddevToggle(!dddevToggle);
+                }}
+              >
+                <s.LogoWrapper>
+                  <StaticImage src="logo/dddev2.png" />
+                </s.LogoWrapper>
+                <s.ProjectInfo>
+                  <s.ProjectName>dddev</s.ProjectName>
+                  <s.ProjectDesc>
+                    학생 개발자들의 협업 툴, <br />
+                    협업에 필요한 모든 것을 하나의 툴로 담아낸 프로젝트.
+                  </s.ProjectDesc>
+                </s.ProjectInfo>
+              </s.ProjectIntro>
               <s.ProjectMore $toggle={dddevToggle}>
                 <s.ProjectDetail>
                   개발자가 프로젝트 진행에 최소 2~3개의 협업 툴을 필요로 하는 시대, 초보 개발자 들도 프로젝트에 바로 활용할 수 있는 올인원 협업 툴
@@ -473,19 +472,20 @@ const AboutMe = () => {
           </s.Project>
           <s.ProjectDivLine />
           <s.Project ref={nashdaRef}>
-            <s.ProjectInterlude
-              $toggle={nashdaToggle}
-              onClick={() => {
-                if (!nashdaToggle) handleNashda();
-              }}
-            >
-              <s.LogoWrapper>
-                <StaticImage src="logo/nashda.png" />
-              </s.LogoWrapper>
-              <s.ProjectInfo>
-                <s.ProjectName>내쉬다</s.ProjectName>
-                <s.ProjectDesc>뇌질환 환자들을 위한 발음 재활 어플리케이션.</s.ProjectDesc>
-              </s.ProjectInfo>
+            <s.ProjectInterlude>
+              <s.ProjectIntro
+                onClick={() => {
+                  setNashdaToggle(!nashdaToggle);
+                }}
+              >
+                <s.LogoWrapper>
+                  <StaticImage src="logo/nashda.png" />
+                </s.LogoWrapper>
+                <s.ProjectInfo>
+                  <s.ProjectName>내쉬다</s.ProjectName>
+                  <s.ProjectDesc>뇌질환 환자들을 위한 발음 재활 어플리케이션.</s.ProjectDesc>
+                </s.ProjectInfo>
+              </s.ProjectIntro>
 
               <s.ProjectMore $toggle={nashdaToggle}>
                 <s.ProjectDetail>
@@ -592,18 +592,19 @@ const AboutMe = () => {
           <s.ProjectDivLine />
           <s.Project ref={stvdyRef}>
             <s.ProjectInterlude
-              $toggle={stvdyToggle}
               onClick={() => {
-                if (!stvdyToggle) handleStvdy();
+                setStvdyToggle(!stvdyToggle);
               }}
             >
-              <s.LogoWrapper>
-                <StaticImage src="logo/stvdy.png" />
-              </s.LogoWrapper>
-              <s.ProjectInfo>
-                <s.ProjectName>STVDY</s.ProjectName>
-                <s.ProjectDesc>그룹원 들과 함께 실시간 스터디 진행이 가능한 화상 스터디 플랫폼.</s.ProjectDesc>
-              </s.ProjectInfo>
+              <s.ProjectIntro>
+                <s.LogoWrapper>
+                  <StaticImage src="logo/stvdy.png" />
+                </s.LogoWrapper>
+                <s.ProjectInfo>
+                  <s.ProjectName>STVDY</s.ProjectName>
+                  <s.ProjectDesc>그룹원 들과 함께 실시간 스터디 진행이 가능한 화상 스터디 플랫폼.</s.ProjectDesc>
+                </s.ProjectInfo>
+              </s.ProjectIntro>
 
               <s.ProjectMore $toggle={stvdyToggle}>
                 <s.ProjectDetail>

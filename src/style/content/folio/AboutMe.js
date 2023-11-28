@@ -398,17 +398,28 @@ export const Project = styled.article``;
 
 export const ProjectInterlude = styled.div`
   position: relative;
-  padding: 10px;
-  padding-bottom: 3px;
+  padding: 5px 0;
   border-radius: 0.5rem;
 
   min-height: 128px;
 
   transition: background-color 0.1s ease;
 
-  cursor: ${({ $toggle }) => ($toggle ? 'default' : 'pointer')};
+  /* cursor: ${({ $toggle }) => ($toggle ? 'default' : 'pointer')};
   &:hover {
     background-color: ${({ $toggle }) => ($toggle ? 'transparent' : 'var(--bg-button-hover)')};
+  } */
+`;
+
+export const ProjectIntro = styled.div`
+  height: 128px;
+  padding: 10px;
+
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+  &:hover {
+    background-color: var(--bg-button-hover);
   }
 `;
 
@@ -438,6 +449,7 @@ export const LogoWrapper = styled.div`
 export const ProjectMore = styled.div`
   height: ${({ $toggle }) => ($toggle ? 'auto' : '0')};
   overflow: hidden;
+  padding: 0 10px;
 `;
 export const ProjectDate = styled.h2`
   font-size: 1.2rem;
@@ -453,7 +465,7 @@ export const ProjectInfo = styled.div`
     float: right;
     left: 148px;
     height: 128px;
-    width: calc(100% - 158px);
+    width: calc(100% - 173px);
 
     padding-left: 15px;
   }
