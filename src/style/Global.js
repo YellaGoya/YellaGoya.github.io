@@ -89,10 +89,14 @@ export const GlobalStyle = createGlobalStyle`
     --border-lite: #ccc;
 
     --font: #fff;
+    --font20: #ffffff20;
+    --font30: #ffffff30;
+    --font40: #ffffff40; 
     --font80: #ffffff80;
     --fontaa: #ffffffaa;
     --fontcc: #ffffffcc;
     --font-highlight: #d5383f;
+    --font-custom: #bd93f9;
 
     --scroll: #888;
     --scroll-hover: #ccc;
@@ -111,10 +115,14 @@ export const GlobalStyle = createGlobalStyle`
       --border-lite: #333;
 
       --font: #000;
+      --font20: #00000020;
+      --font30: #00000030;
+      --font40: #00000040; 
       --font80: #00000080;
       --fontaa: #000000aa;
       --fontcc: #000000cc;
       --font-highlight: #007fff;
+      --font-custom: #9149f9;
 
       --scroll: #888;
       --scroll-hover: #ccc;

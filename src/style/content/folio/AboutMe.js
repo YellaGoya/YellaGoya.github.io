@@ -54,7 +54,6 @@ export const PhotoDesc = styled.h2`
   color: #fff;
 
   user-select: none;
-
   transition: all 0.2s ease;
 
   @media (max-width: 750px) {
@@ -118,8 +117,6 @@ export const HistoryDiv = styled.div`
   margin-right: 6px;
 
   border-radius: 2px;
-
-  tran
 
   transition: background-color 0.4s ease;
   background-color: var(--font);
@@ -226,7 +223,7 @@ export const SvgTooltip = styled.span`
 export const SkillItem = styled.li`
   font-size: 1.2rem;
   font-weight: 400;
-  
+
   margin-top: 50px;
 
   display: flex;
@@ -241,12 +238,18 @@ export const SkillItem = styled.li`
     margin-right: 6px;
     margin-bottom: 15px;
 
-    fill: var(--font)--font);
+    fill: var(--font);
   }
 
-  &:hover {
-    &> span:first-child {
-      transform: scale(1.4);
+  @media (max-width: 750px) {
+    filter: brightness(1) contrast(1);
+  }
+
+  @media (min-width: 516px) {
+    &:hover {
+      & > span:first-child {
+        transform: scale(1.4);
+      }
     }
   }
 `;
@@ -380,7 +383,7 @@ export const ProjectTitle = styled.h3`
   color: var(--font);
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 export const ProjectWrapper = styled.section`
@@ -391,6 +394,51 @@ export const ProjectWrapper = styled.section`
   margin: 0 auto;
 `;
 
+export const Project = styled.article``;
+
+export const ProjectInterlude = styled.div`
+  position: relative;
+  padding: 10px;
+  padding-bottom: 3px;
+  border-radius: 0.5rem;
+
+  min-height: 128px;
+
+  transition: background-color 0.1s ease;
+
+  cursor: ${({ $toggle }) => ($toggle ? 'default' : 'pointer')};
+  &:hover {
+    background-color: ${({ $toggle }) => ($toggle ? 'transparent' : 'var(--bg-button-hover)')};
+  }
+`;
+
+export const LogoWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2;
+  }
+
+  & > div {
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+`;
+export const ProjectMore = styled.div`
+  height: ${({ $toggle }) => ($toggle ? 'auto' : '0')};
+  overflow: hidden;
+`;
 export const ProjectDate = styled.h2`
   font-size: 1.2rem;
   padding: 0 10px;
@@ -398,24 +446,145 @@ export const ProjectDate = styled.h2`
   color: var(--font);
 `;
 
+export const ProjectInfo = styled.div`
+  @media (min-width: 501px) {
+    position: absolute;
+    top: 10px;
+    float: right;
+    left: 148px;
+    height: 128px;
+    width: calc(100% - 158px);
+
+    padding-left: 15px;
+  }
+
+  @media (max-width: 500px) {
+    position: relative;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 export const ProjectName = styled.h2`
   font-size: 1.8rem;
   font-weight: 600;
-  padding: 0 10px;
   margin: 0;
   /* margin-top: -16px; */
 `;
 
-export const ProjectDiv = styled.div`
-  display: inline-block;
-  height: 17px;
-  width: 5px;
-  margin-right: 6px;
+export const ProjectDesc = styled.span`
+  font-size: 1.2rem;
+`;
 
-  border-radius: 2px;
+export const ProjectDetail = styled.span`
+  margin-top: 10px;
+  display: block;
+  font-size: 1.2rem;
+  opacity: var(--font-opacity);
+`;
 
-  transition: background-color 0.4s ease;
-  background-color: var(--font);
+export const ProjectCategory = styled.div`
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 5px;
+`;
+
+export const ProjectHighlight = styled.ul`
+  padding: 0;
+  list-style: none;
+  margin: 0;
+`;
+export const ProjectHighlightItem = styled.li`
+  font-size: 1.2rem;
+  padding: 9px 0;
+
+  border-bottom: 1px solid var(--font30);
+
+  opacity: var(--font-opacity);
+
+  &:first-child {
+    padding-top: 0;
+  }
+`;
+
+export const ProjectHightlightTitle = styled.span`
+  font-weight: 600;
+`;
+
+export const ProjectMe = styled.div``;
+
+export const ProjectPart = styled.ul`
+  padding: 0;
+  list-style: none;
+  margin: 0;
+`;
+export const ProjectPartItem = styled.li`
+  font-size: 1.2rem;
+  padding: 9px 0;
+
+  border-bottom: 1px solid var(--font30);
+
+  &:first-child {
+    padding-top: 0;
+  }
+`;
+
+export const ProjectPartTitle = styled.span`
+  font-weight: 600;
+  color: var(--font-custom);
+`;
+
+export const ProjectStack = styled.div`
+  opacity: var(--font-opacity);
+  font-weight: 300;
+`;
+
+export const ProjectInsight = styled.div`
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: var(--font-opacity);
+`;
+
+export const MoreButton = styled.button`
+  width: 100%;
+  height: 40px;
+
+  background-color: transparent;
+  border: none;
+  margin-top: 50px;
+
+  display: ${({ $toggle }) => ($toggle ? 'block' : 'none')};
+
+  cursor: pointer;
+
+  & > svg {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 0.5rem;
+    fill: var(--font);
+
+    transition:
+      background-color 0.1s ease,
+      fill 0.1s ease;
+
+    transform: rotate(180deg);
+    /* &:hover {
+      background-color: var(--font);
+      fill: var(--bg);
+    } */
+  }
+
+  // 자식 svg가 hover 상태, 부모의 배경색을 바꾸는 방법
+  &:hover {
+    & > svg {
+      background-color: var(--font);
+      fill: var(--bg);
+    }
+  }
 `;
 
 export const ProjectWindow = styled.div`
@@ -432,4 +601,35 @@ export const ProjectWindow = styled.div`
   }
 
   overflow: hidden;
+`;
+
+export const Test = styled.div`
+  background-color: #44475a;
+
+  width: 695px;
+  height: 360px;
+  color: #bd93f9;
+  font-size: 7rem;
+  font-weight: 400;
+  font-family: monospace;
+  padding-left: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > svg {
+    margin-left: -8px;
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    fill: #000;
+  }
+`;
+
+export const ProjectDivLine = styled.div`
+  margin: 0 auto;
+  width: calc(100% - 20px);
+  height: 1px;
+  background-color: var(--font30);
 `;
