@@ -1,5 +1,5 @@
 import { styled, createGlobalStyle, keyframes } from 'styled-components';
-
+import pv from 'assets/pv.woff2';
 const searchOpacity = keyframes`
   0% {
     opacity: 0;
@@ -19,6 +19,12 @@ const searchOpacity = keyframes`
 `;
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "pv";
+    src: url(${pv}) format("woff2");
+    font-display: block;
+  }
+
   html {
     font-size: 16px;
     font-weight: 400;
@@ -32,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input, button{
-    font-family: "Pretendard Variable", Pretendard;
+    font-family: "pv";
     text-rendering: optimizeLegibility;
   }
 
@@ -74,7 +80,7 @@ export const GlobalStyle = createGlobalStyle`
         animation: ${searchOpacity} 2s ease-in-out;
         
 
-        font-family: "Pretendard Variable", Pretendard;
+        font-family: "pv";
       }
     }
 
