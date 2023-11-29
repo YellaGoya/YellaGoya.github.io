@@ -23,7 +23,7 @@ export const ProfileWrapper = styled.section``;
 
 export const PhotoGraph = styled.div`
   position: relative;
-  max-width: 1125px;
+  max-width: 975px;
   margin: 0 auto;
   margin-top: 75px;
 
@@ -63,7 +63,7 @@ export const PhotoDesc = styled.h2`
 `;
 
 export const Specification = styled.article`
-  max-width: 1125px;
+  max-width: 975px;
   margin: 0 auto;
   @media (min-width: 751px) {
     display: grid;
@@ -156,7 +156,7 @@ export const ProfileText = styled.span`
 `;
 
 export const Skills = styled.ul`
-  max-width: 1105px;
+  max-width: 955px;
   margin: 0 auto;
   list-style: none;
   padding: 0 10px;
@@ -189,6 +189,19 @@ export const SvgWrapper = styled.div`
     }
   }
 
+  & > div {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 18px;
+    height: 18px;
+
+    border-radius: 0.2rem;
+
+    background-color: #000;
+    z-index: 1;
+  }
+
   & > svg {
     width: 24px;
     height: 24px;
@@ -197,6 +210,7 @@ export const SvgWrapper = styled.div`
 
     fill: var(--font);
     transition: fill 0.4s ease;
+    z-index: 2;
   }
 
   fill: var(--font);
@@ -205,7 +219,7 @@ export const SvgWrapper = styled.div`
 
 export const SvgTooltip = styled.span`
   position: absolute;
-  top: -1.6rem;
+  top: -1.55rem;
   left: calc(50% - 1px);
 
   transform: translateX(-50%);
@@ -246,10 +260,16 @@ export const SkillItem = styled.li`
   }
 
   @media (min-width: 516px) {
-    &:hover {
+    /* &:hover {
       & > span:first-child {
-        transform: scale(1.4);
+        transform: scale(1.4) translateY(-8px) translateX(-10px);
+
+        background-color: var(--font10);
       }
+    } */
+    & > span:first-child {
+      transform: ${({ $focus }) => ($focus ? 'scale(1.4) translateY(-8px) translateX(-10px)' : 'scale(1) translateX(-10px);')};
+      background-color: ${({ $focus }) => ($focus ? 'var(--font10)' : 'transparent')};
     }
   }
 `;
@@ -257,13 +277,17 @@ export const SkillItem = styled.li`
 export const SkillTitle = styled.span`
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 5px;
 
   display: flex;
   align-items: center;
 
   transform-origin: left;
-  transition: transform 0.4s ease;
+  transform: translateX(-10px);
+  padding: 4px 10px;
+  border-radius: 0.5rem;
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease;
 
   & > svg {
     &:first-child {
@@ -388,7 +412,7 @@ export const ProjectTitle = styled.h3`
 
 export const ProjectWrapper = styled.section`
   position: relative;
-  max-width: 1125px;
+  max-width: 975px;
   // 높이는 width의 16:9 비율로 맞춤
 
   margin: 0 auto;
@@ -485,11 +509,43 @@ export const ProjectInfo = styled.div`
   justify-content: center;
 `;
 
-export const ProjectName = styled.h2`
+export const ProjectName = styled.span`
   font-size: 1.8rem;
   font-weight: 600;
   margin: 0;
+
+  display: flex;
+  align-items: center;
   /* margin-top: -16px; */
+`;
+
+export const GithubLink = styled.a`
+  position: absolute;
+  right: 5px;
+  margin-left: 30px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--fontcc);
+
+  display: flex;
+  align-items: center;
+  transition: color 0.1s ease;
+
+  & > svg {
+    margin-left: 5px;
+    transform: translateY(-1px);
+    fill: var(--fontcc);
+    transition: fill 0.1s ease;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--font);
+    & > svg {
+      fill: var(--font);
+    }
+  }
 `;
 
 export const ProjectDesc = styled.span`
@@ -501,19 +557,54 @@ export const ProjectDetail = styled.span`
   display: block;
   font-size: 1.2rem;
   opacity: var(--font-opacity);
+  margin-bottom: 50px;
 `;
 
 export const ProjectCategory = styled.div`
+  width: 100%;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 50px;
-  margin-bottom: 5px;
+
+  transform: translateX(-10px);
+  padding: 0px 10px;
+  margin-bottom: 3px;
+
+  border-radius: 0.5rem;
+  user-select: none;
+
+  transition: background-color 0.1s ease;
+
+  display: flex;
+  align-items: center;
+
+  &.highlight {
+    cursor: pointer;
+    &:hover {
+      background-color: var(--bg-button-hover);
+    }
+  }
+
+  & > svg {
+    margin-left: -4px;
+    width: 40px;
+    height: 40px;
+
+    transition:
+      transform 0.25s ease,
+      fill 0.25s ease;
+
+    transform: ${({ $toggle }) => ($toggle ? 'rotate(-90deg)' : 'rotate(0deg)')};
+    fill: ${({ $toggle }) => ($toggle ? 'var(--font-custom)' : 'var(--fontcc)')};
+  }
 `;
 
 export const ProjectHighlight = styled.ul`
+  height: ${({ $toggle }) => ($toggle ? 'auto' : '0')};
   padding: 0;
   list-style: none;
   margin: 0;
+  margin-bottom: ${({ $toggle }) => ($toggle ? '50px' : '0')};
+  overflow: hidden;
 `;
 export const ProjectHighlightItem = styled.li`
   font-size: 1.2rem;
@@ -538,6 +629,7 @@ export const ProjectPart = styled.ul`
   padding: 0;
   list-style: none;
   margin: 0;
+  margin-bottom: 50px;
 `;
 export const ProjectPartItem = styled.li`
   font-size: 1.2rem;
@@ -557,13 +649,19 @@ export const ProjectPartTitle = styled.span`
 
 export const ProjectStack = styled.div`
   opacity: var(--font-opacity);
-  font-weight: 300;
+  font-weight: 400;
+  margin-bottom: 50px;
 `;
 
 export const ProjectInsight = styled.div`
   font-size: 1.2rem;
   font-weight: 300;
   opacity: var(--font-opacity);
+
+  & > span {
+    color: var(--font-custom);
+    font-weight: 400;
+  }
 `;
 
 export const MoreButton = styled.button`

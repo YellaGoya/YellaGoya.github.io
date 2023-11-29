@@ -95,6 +95,7 @@ export const GlobalStyle = createGlobalStyle`
     --border-lite: #ccc;
 
     --font: #fff;
+    --font10: #ffffff10;
     --font20: #ffffff20;
     --font30: #ffffff30;
     --font40: #ffffff40; 
@@ -121,6 +122,7 @@ export const GlobalStyle = createGlobalStyle`
       --border-lite: #333;
 
       --font: #000;
+      --font10: #00000010;
       --font20: #00000020;
       --font30: #00000030;
       --font40: #00000040; 

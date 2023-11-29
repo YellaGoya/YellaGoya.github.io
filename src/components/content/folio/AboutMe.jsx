@@ -27,6 +27,7 @@ import NotionIcon from './svg/notion.inline.svg';
 import LinuxIcon from './svg/linux.inline.svg';
 import DockerIcon from './svg/docker.inline.svg';
 import UbuntuIcon from './svg/ubuntu.inline.svg';
+import RockyLinux from './svg/rockylinux.inline.svg';
 
 import GitIcon from './svg/git.inline.svg';
 import GithubIcon from './svg/github.inline.svg';
@@ -37,25 +38,28 @@ import { Wrapper } from 'style/content/folio/Folio';
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LightbulbRoundedIcon from '@mui/icons-material/LightbulbRounded';
+import ArrowLeftRoundedIcon from '@mui/icons-material/ArrowLeftRounded';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import * as s from 'style/content/folio/AboutMe';
 const AboutMe = () => {
-  const [mode, setMode] = useState(false);
   const [suggest, setSuggest] = useState(false);
   const { isFocus, setIsFocus, light, setLight } = useContext(TopBarContext);
   const [firstScroll, setFirstScroll] = useState(true);
   const focusRef = useRef(null);
   const buttonRef = useRef(null);
+  const [focused, setFocused] = useState(0);
 
   const [dddevToggle, setDddevToggle] = useState(false);
   const [nashdaToggle, setNashdaToggle] = useState(false);
   const [stvdyToggle, setStvdyToggle] = useState(false);
 
-  // const handleFocus = () => {
-  //   if (isFocus) return;
-  //   setIsFocus(true);
-  // };
+  const [dddevHighlightToggle, setDddevHighlightToggle] = useState(false);
+  const [nashdaHighlightToggle, setNashdaHighlightToggle] = useState(false);
+  const [stvdyHighlightToggle, setStvdyHighlightToggle] = useState(false);
 
   useEffect(() => {
+    setLight(true);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -100,7 +104,7 @@ const AboutMe = () => {
   }, [suggest]);
 
   return (
-    <Wrapper $lightmode={mode} $isFocus={isFocus}>
+    <Wrapper $isFocus={isFocus}>
       <s.WordHighlight>
         청년
         <br />
@@ -121,13 +125,12 @@ const AboutMe = () => {
           <s.ModeButtonWrapper
             id="light-mode"
             onClick={() => {
-              setMode(false);
               setLight(!light);
             }}
           >
             <s.TopLocation ref={buttonRef} />
             <LightbulbRoundedIcon />
-            <h4>라이트 모드</h4>
+            <h4>라이트 토글</h4>
           </s.ModeButtonWrapper>
         </s.PhotoGraph>
         <s.Specification>
@@ -186,27 +189,33 @@ const AboutMe = () => {
           </s.History>
         </s.Specification>
         <s.Skills>
-          <s.SkillItem>
+          <s.SkillItem
+            $focus={focused === 0}
+            onMouseOver={() => {
+              setFocused(0);
+            }}
+          >
             <s.SkillTitle>
               [ 프론트엔드 스택
               <s.SvgWrapper>
-                <JavascriptIcon />
+                <div />
+                <JavascriptIcon style={{ fill: '#f7df1e' }} />
                 <s.SvgTooltip>JavaScript</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <ReactIcon />
+                <ReactIcon style={{ fill: '#42d1f8' }} />
                 <s.SvgTooltip>React</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <ReduxIcon />
+                <ReduxIcon style={{ fill: '#7f42c3' }} />
                 <s.SvgTooltip>Redux</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <VueIcon />
+                <VueIcon style={{ fill: '#00bd82' }} />
                 <s.SvgTooltip>Vue</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <FigmaIcon />
+                <FigmaIcon style={{ fill: '#ee4f2b' }} />
                 <s.SvgTooltip>Figma</s.SvgTooltip>
               </s.SvgWrapper>
               &nbsp;]
@@ -225,31 +234,36 @@ const AboutMe = () => {
               이전의 4번의 프로젝트에서 모두 Figma를 사용하였으며 디자인을 전담하였습니다.
             </s.SkillItemDesc>
           </s.SkillItem>
-          <s.SkillItem>
+          <s.SkillItem
+            $focus={focused === 1}
+            onMouseOver={() => {
+              setFocused(1);
+            }}
+          >
             <s.SkillTitle>
               [ 백엔드 스택
               <s.SvgWrapper>
-                <PythonIcon />
+                <PythonIcon style={{ fill: '#1fee75' }} />
                 <s.SvgTooltip>Python</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <JavaIcon />
+                <JavaIcon style={{ fill: '#ec2025' }} />
                 <s.SvgTooltip>Java</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <SpringIcon />
+                <SpringIcon style={{ fill: '#72b545' }} />
                 <s.SvgTooltip>Spring</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <SwaggerIcon />
+                <SwaggerIcon style={{ fill: '#89bf04' }} />
                 <s.SvgTooltip>Swagger</s.SvgTooltip>
               </s.SvgWrapper>
-              <s.SvgWrapper>
-                <MysqlIcon />
-                <s.SvgTooltip>Mysql</s.SvgTooltip>
+              <s.SvgWrapper style={{ width: '37px', height: '37px', transform: 'translateY(1px)' }}>
+                <MysqlIcon style={{ fill: '#0088a6', width: '37px', height: '37px' }} />
+                <s.SvgTooltip style={{ top: '-19px' }}>Mysql</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <InfluxDBIcon />
+                <InfluxDBIcon style={{ fill: '#22adf6' }} />
                 <s.SvgTooltip>InfluxDB</s.SvgTooltip>
               </s.SvgWrapper>
               &nbsp;]
@@ -261,11 +275,16 @@ const AboutMe = () => {
               <s.SkillLineDiv />그 이전 학부연구생 시절에는 파이썬을 활용하여 데이터를 전처리하거나 연구실의 데이터베이스 관련 과제를 진행 하였습니다.
             </s.SkillItemDesc>
           </s.SkillItem>
-          <s.SkillItem>
+          <s.SkillItem
+            $focus={focused === 2}
+            onMouseOver={() => {
+              setFocused(2);
+            }}
+          >
             <s.SkillTitle>
               [ 코드 관리
               <s.SvgWrapper>
-                <GitIcon />
+                <GitIcon style={{ fill: '#f05539' }} />
                 <s.SvgTooltip>Git</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
@@ -273,11 +292,11 @@ const AboutMe = () => {
                 <s.SvgTooltip>Github</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <GitlabIcon />
+                <GitlabIcon style={{ fill: '#fc6d26' }} />
                 <s.SvgTooltip>Gitlab</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <ESLintIcon />
+                <ESLintIcon style={{ fill: '#4b32c3' }} />
                 <s.SvgTooltip>ESLint</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
@@ -295,7 +314,12 @@ const AboutMe = () => {
               XO 규칙을 커스텀하여 사용 중 이며 Prettier를 ESLint에 통합하여 사용하고 있습니다.
             </s.SkillItemDesc>
           </s.SkillItem>
-          <s.SkillItem>
+          <s.SkillItem
+            $focus={focused === 3}
+            onMouseOver={() => {
+              setFocused(3);
+            }}
+          >
             <s.SkillTitle>
               [ 서버
               <s.SvgWrapper>
@@ -303,11 +327,15 @@ const AboutMe = () => {
                 <s.SvgTooltip>Linux</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <UbuntuIcon />
+                <UbuntuIcon style={{ fill: '#e95420' }} />
                 <s.SvgTooltip>Ubuntu</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <DockerIcon />
+                <RockyLinux style={{ fill: '#0fb37d' }} />
+                <s.SvgTooltip>RockyLinux</s.SvgTooltip>
+              </s.SvgWrapper>
+              <s.SvgWrapper>
+                <DockerIcon style={{ fill: '#1072d8' }} />
                 <s.SvgTooltip>Docker</s.SvgTooltip>
               </s.SvgWrapper>
               &nbsp;]
@@ -318,19 +346,24 @@ const AboutMe = () => {
               c언어를 활용한 간단한 시스템 프로그래밍이 가능하며, 리눅스 환경에서 개발을 할 때에도 불편함이 없습니다.
             </s.SkillItemDesc>
           </s.SkillItem>
-          <s.SkillItem>
+          <s.SkillItem
+            $focus={focused === 4}
+            onMouseOver={() => {
+              setFocused(4);
+            }}
+          >
             <s.SkillTitle>
               [ 협업
               <s.SvgWrapper>
-                <JiraIcon />
+                <JiraIcon style={{ fill: '#2d88ff' }} />
                 <s.SvgTooltip>Jira</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <SlackIcon />
+                <SlackIcon style={{ fill: '#6f1f71' }} />
                 <s.SvgTooltip>Slack</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
-                <MatterMostIcon />
+                <MatterMostIcon style={{ fill: '#4264ad' }} />
                 <s.SvgTooltip>MatterMost</s.SvgTooltip>
               </s.SvgWrapper>
               <s.SvgWrapper>
@@ -361,7 +394,18 @@ const AboutMe = () => {
                   <StaticImage src="logo/dddev2.png" />
                 </s.LogoWrapper>
                 <s.ProjectInfo>
-                  <s.ProjectName>dddev</s.ProjectName>
+                  <s.ProjectName>
+                    dddev
+                    <s.GithubLink
+                      href="https://www.naver.com"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                    >
+                      GitHub-dddev
+                      <GitHubIcon />
+                    </s.GithubLink>
+                  </s.ProjectName>
                   <s.ProjectDesc>
                     학생 개발자들의 협업 툴, <br />
                     협업에 필요한 모든 것을 하나의 툴로 담아낸 프로젝트.
@@ -373,11 +417,18 @@ const AboutMe = () => {
                   개발자가 프로젝트 진행에 최소 2~3개의 협업 툴을 필요로 하는 시대, 초보 개발자 들도 프로젝트에 바로 활용할 수 있는 올인원 협업 툴
                   개발을 목표로 하였다.
                 </s.ProjectDetail>
-                <s.ProjectCategory>
+                <s.ProjectCategory
+                  className="highlight"
+                  $toggle={dddevHighlightToggle}
+                  onClick={() => {
+                    setDddevHighlightToggle(!dddevHighlightToggle);
+                  }}
+                >
                   <s.HistoryDiv />
                   주요 기능
+                  <ArrowLeftRoundedIcon />
                 </s.ProjectCategory>
-                <s.ProjectHighlight>
+                <s.ProjectHighlight $toggle={dddevHighlightToggle}>
                   <s.ProjectHighlightItem>
                     <s.ProjectHightlightTitle>문서 기반 : </s.ProjectHightlightTitle>모든 협업 문서는 트리 구조로 되어 부모와 자식이 존재하며 자식은
                     부모 속성에 의해 정렬되고 그 역할이 정의 된다. 사용자는 원하는 형태로 문서 카테고리 및 환경을 구성할 수 있다.
@@ -438,12 +489,16 @@ const AboutMe = () => {
                   회고
                 </s.ProjectCategory>
                 <s.ProjectInsight>
-                  내쉬다 프로젝트에서 느낀 협업 환경의 불편함을 개선하고자 진행된 프로젝트입니다. / 코드의 간결함과 재사용성, 시맨틱 마크업을 염두에
-                  두고 프로젝트에 임하였습니다. 회고를 통해 알게된 이전 프로젝트 들의 미흡했던 점 3가지로 리액트를 활용한 두 번째 프로젝트이기에 같은
-                  실수를 반복하지 않기위해 스스로 리마인드 하며 진행한 프로젝트였습니다. / 본인의 아이디어가 프로젝트에 그대로 반영 및 구현되어
-                  개발자로서 좋은 경험이 된 프로젝트였으나 본인이 원하는 기능의 방향과 팀원들이 생각한 바에 차이가 생기는 등 협업 툴을 개발하면서도
-                  협업 과정에 작은 문제점들이 있어 아쉬운 프로젝트입니다. 혼자 열정에 넘쳐 모든 것들을 처리하려 하기 보다는 팀원 들과 자주 기획 회의를
-                  하며 서로에게 기댈 부분은 기댈 수 있는 개발자가 되어야 겠다는 생각이 들었습니다.
+                  내쉬다 프로젝트에서 느낀 협업 환경의 불편함을 개선하고자 진행된 프로젝트입니다. /
+                  <span>
+                    &nbsp;코드의 간결함과 재사용성, 시맨틱 마크업을 염두에 두고 프로젝트에 임하였습니다. 회고를 통해 알게된 이전 프로젝트 들의
+                    미흡했던 점 3가지로 리액트를 활용한 두 번째 프로젝트이기에 같은 실수를 반복하지 않기위해 스스로 리마인드 하며 진행한
+                    프로젝트였습니다.
+                  </span>
+                  / 본인의 아이디어가 프로젝트에 그대로 반영 및 구현되어 개발자로서 좋은 경험이 된 프로젝트였으나 본인이 원하는 기능의 방향과 팀원들이
+                  생각한 바에 차이가 생기는 등 협업 툴을 개발하면서도 협업 과정에 작은 문제점들이 있어 아쉬운 프로젝트입니다. 혼자 열정에 넘쳐 모든
+                  것들을 처리하려 하기 보다는 팀원 들과 자주 기획 회의를 하며 서로에게 기댈 부분은 기댈 수 있는 개발자가 되어야 겠다는 생각이
+                  들었습니다.
                 </s.ProjectInsight>
               </s.ProjectMore>
               <s.MoreButton
@@ -469,7 +524,18 @@ const AboutMe = () => {
                   <StaticImage src="logo/nashda.png" />
                 </s.LogoWrapper>
                 <s.ProjectInfo>
-                  <s.ProjectName>내쉬다</s.ProjectName>
+                  <s.ProjectName>
+                    내쉬다
+                    <s.GithubLink
+                      href="https://github.com/YellaGoya/NASHDA"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                    >
+                      GitHub-nashda
+                      <GitHubIcon />
+                    </s.GithubLink>
+                  </s.ProjectName>
                   <s.ProjectDesc>뇌질환 환자들을 위한 발음 재활 어플리케이션.</s.ProjectDesc>
                 </s.ProjectInfo>
               </s.ProjectIntro>
@@ -479,11 +545,18 @@ const AboutMe = () => {
                   발음 및 대화에 어려움이 생기는 등, 후유증이 발생한 실제 뇌질환 환자의 열악한 재활 과정을 보고 더 좋은 재활 환경을 제공하기 위해
                   진행한 프로젝트이다.
                 </s.ProjectDetail>
-                <s.ProjectCategory>
+                <s.ProjectCategory
+                  className="highlight"
+                  $toggle={nashdaHighlightToggle}
+                  onClick={() => {
+                    setNashdaHighlightToggle(!nashdaHighlightToggle);
+                  }}
+                >
                   <s.HistoryDiv />
                   주요 기능
+                  <ArrowLeftRoundedIcon />
                 </s.ProjectCategory>
-                <s.ProjectHighlight>
+                <s.ProjectHighlight $toggle={nashdaHighlightToggle}>
                   <s.ProjectHighlightItem>
                     <s.ProjectHightlightTitle>음성 인식 : </s.ProjectHightlightTitle>
                     직접 비교, 학습한 음성 인식 모델을 사용하여 사용자의 발음을 그대로 인식하여 발음 교정에 사용할 수 있게 하였다.
@@ -559,10 +632,13 @@ const AboutMe = () => {
                   회고
                 </s.ProjectCategory>
                 <s.ProjectInsight>
-                  React 로는 처음 진행하는 프로젝트인 만큼 배움으로 가득채우고자 하는 마음가짐으로 시작하였습니다. / 팀원과의 소통이 가장 중요하며
-                  모든 요청 및 피드백, 답변을 문서화 하여 작성하는 것의 필요성을 크게 느낀 프로젝트였습니다. 프로젝트 중반부터는 모든 소통을 문서화
-                  하여 팀원끼리 다시 한번 같은 내용을 확인 하는 프로세스를 줄일 수 있었습니다. / Jira, Notion, Mattermost 등의 다양한 협업 툴을 한
-                  프로젝트에서 활용하다 보니 개발자 협업 환경에 개선이 필요하다는 생각이 들었습니다.
+                  React 로는 처음 진행하는 프로젝트인 만큼 배움으로 가득채우고자 하는 마음가짐으로 시작하였습니다. /{' '}
+                  <span>
+                    &nbsp;팀원과의 소통이 가장 중요하며 모든 요청 및 피드백, 답변을 문서화 하여 작성하는 것의 필요성을 크게 느낀 프로젝트였습니다.
+                    프로젝트 중반부터는 모든 소통을 문서화 하여 팀원끼리 다시 한번 같은 내용을 확인 하는 프로세스를 줄일 수 있었습니다.{' '}
+                  </span>
+                  / Jira, Notion, Mattermost 등의 다양한 협업 툴을 한 프로젝트에서 활용하다 보니 개발자 협업 환경에 개선이 필요하다는 생각이
+                  들었습니다.
                 </s.ProjectInsight>
               </s.ProjectMore>
               <s.MoreButton
@@ -588,7 +664,18 @@ const AboutMe = () => {
                   <StaticImage src="logo/stvdy.png" />
                 </s.LogoWrapper>
                 <s.ProjectInfo>
-                  <s.ProjectName>STVDY</s.ProjectName>
+                  <s.ProjectName>
+                    STVDY
+                    <s.GithubLink
+                      href="https://github.com/YellaGoya/STVDY"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                      }}
+                    >
+                      GitHub-stvdy
+                      <GitHubIcon />
+                    </s.GithubLink>
+                  </s.ProjectName>
                   <s.ProjectDesc>그룹원 들과 함께 실시간 스터디 진행이 가능한 화상 스터디 플랫폼.</s.ProjectDesc>
                 </s.ProjectInfo>
               </s.ProjectIntro>
@@ -597,11 +684,18 @@ const AboutMe = () => {
                 <s.ProjectDetail>
                   현대인들의 기본 소양이 된 자기 개발에 동기부여 하기 위해 그룹으로 스터디를 진행하며 실시간 화상 회의가 가능하다.
                 </s.ProjectDetail>
-                <s.ProjectCategory>
+                <s.ProjectCategory
+                  className="highlight"
+                  $toggle={stvdyHighlightToggle}
+                  onClick={() => {
+                    setStvdyHighlightToggle(!stvdyHighlightToggle);
+                  }}
+                >
                   <s.HistoryDiv />
                   주요 기능
+                  <ArrowLeftRoundedIcon />
                 </s.ProjectCategory>
-                <s.ProjectHighlight>
+                <s.ProjectHighlight $toggle={stvdyHighlightToggle}>
                   <s.ProjectHighlightItem>
                     <s.ProjectHightlightTitle>화상 스터디 : </s.ProjectHightlightTitle>
                     Web-RTC 기술을 활용하여 스터디 그룹원들은 실시간으로 화상 스터디를 할 수 있다.
@@ -660,9 +754,12 @@ const AboutMe = () => {
                 </s.ProjectCategory>
                 <s.ProjectInsight>
                   처음 프론트엔드로 진행한 프로젝트이자 6인이라는 많은 인원과 진행한 프로젝트 였습니다. Vue3 프레임워크로 개발을 하며 코드의
-                  재사용성과 가시성을 고려하며 개발 하였습니다. / 점유율이 높은 React 라이브러리를 사용하지 않고 자바스크립트의 문법을 벗어난 Vue3 로
-                  첫 프론트엔드 프로젝트를 진행한 것이 아쉬움이 남지만 우려한 것과 다르게 Vue3 의 상태 관리 및 라우팅 등의 기능은 편리했고 개발에
-                  부족함이 없었습니다. 어떤 프레임워크를 사용하던 이해를 기반한 개발을 한다면 문제가 없다는 것을 다시 한번 깨달았습니다.
+                  재사용성과 가시성을 고려하며 개발 하였습니다. /
+                  <span>
+                    &nbsp; 점유율이 높은 React 라이브러리를 사용하지 않고 자바스크립트의 문법을 벗어난 Vue3 로 첫 프론트엔드 프로젝트를 진행한 것이
+                    아쉬움이 남지만 우려한 것과 다르게 Vue3 의 상태 관리 및 라우팅 등의 기능은 편리했고 개발에 부족함이 없었습니다. 어떤 프레임워크를
+                    사용하던 이해를 기반한 개발을 한다면 문제가 없다는 것을 다시 한번 깨달았습니다.{' '}
+                  </span>
                 </s.ProjectInsight>
               </s.ProjectMore>
               <s.MoreButton
