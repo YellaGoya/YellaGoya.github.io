@@ -372,7 +372,7 @@ export const ModeButtonWrapper = styled.button`
       opacity: 1;
     }
 
-    background-color: var(--bg-button-hover);
+    background-color: var(--font10);
 
     & > svg {
       fill: #ffab41;
@@ -447,7 +447,7 @@ export const ProjectIntro = styled.div`
 
   cursor: pointer;
   &:hover {
-    background-color: var(--bg-button-hover);
+    background-color: var(--font10);
   }
 `;
 

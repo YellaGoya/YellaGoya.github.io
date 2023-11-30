@@ -1,5 +1,5 @@
 import Recent from 'components/content/malog/Recent';
-import LatestProject from 'components/content/malog/LatestProject';
+// import LatestProject from 'components/content/malog/LatestProject';
 
 import { graphql } from 'gatsby';
 
@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <Recent nodes={nodes} />
-      <LatestProject />
+      {/* <LatestProject /> */}
     </>
   );
 };

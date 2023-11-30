@@ -35,6 +35,12 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     color: var(--font);
+
+    ::selection {
+      background: var(--selection-bg);
+      color: var(--selection-font);
+    }
+
   }
 
   body, input, button{
@@ -107,6 +113,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --scroll: #888;
     --scroll-hover: #ccc;
+    --selection-bg: #eee;
+    --selection-font: #000;
 
     --font-opacity: 0.85;
 
@@ -134,6 +142,8 @@ export const GlobalStyle = createGlobalStyle`
 
       --scroll: #888;
       --scroll-hover: #ccc;
+      --selection-bg: #444;
+      --selection-font: #fff;
 
       --font-opacity: 1;
     }
