@@ -41,7 +41,6 @@
     "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-sharp": "^5.12.0",
     "gatsby-plugin-styled-components": "^6.12.0",
-    "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-highlight-code": "^3.3.0",
     "gatsby-remark-images": "^7.12.0",
@@ -68,6 +67,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "gatsby-plugin-root-import": "^2.0.9",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.31",
+    "gatsby-remark-code-buttons": "^2.0.7",
     "prettier": "^3.0.3"
   }
 }

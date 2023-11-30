@@ -34,7 +34,7 @@ export const TitleWrapper = styled.nav`
     fill: var(--font-highlight);
     transition:
       opacity 0.2s ease,
-      color 0.4s ease;
+      fill 0.4s ease;
     opacity: ${(props) => (props.$isFolio ? '0.5' : '1')};
   }
 

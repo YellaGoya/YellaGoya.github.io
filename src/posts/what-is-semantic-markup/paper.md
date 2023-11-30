@@ -6,19 +6,13 @@ thumbnail: './thumbnail.jpg'
 categories:
   - web
 ---
-
-# 시멘틱 마크업
-
-생성일: August 31, 2023 5:20 PM
-카테고리: 컨셉
-태그: html, markup language, semantic
-
 ### 인트로
-
-평소 html을 작성할 때 div를 난무하지 말라는 말을 많이 들었다. 바로 옆 친구의 12단 div를 보고 왜 하지 말라는 것인지 이해했다. 그럼 div를 적게 쓰는 것보다 더 가시 성이 뛰어난 방법은 무엇일까? 다른 친구가 시멘틱 마크업에 대해 알려주었다. 한번 알아보자.
+---
+평소 html을 작성할 때 div를 난무하지 말라는 말을 많이 들었다. 바로 옆 친구의 12단 div를 보고 왜 하지 말라는 것인지 이해했다. 그럼 div를 적게 쓰는 것보다 더 가시 성이 뛰어난 방법은 무엇일까? 다른 친구가 시멘틱 마크업에 대해 알려주었다. 
+한번 알아보자.<br/><br/>
 
 ### HTML Semantic Markup
-
+---
 > **[semantic](https://en.dict.naver.com/#/entry/enko/74453940307f4c45ba76b0aa988fc5c3)**
 > 
 > 미국∙영국*[sɪˈmæntɪk]*

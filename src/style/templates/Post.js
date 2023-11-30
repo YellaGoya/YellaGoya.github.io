@@ -55,7 +55,6 @@ export const Content = styled.article`
   position: relative;
   padding: 20px;
   margin-bottom: 100px;
-
   div > * {
     position: relative;
   }
@@ -66,7 +65,7 @@ export const Content = styled.article`
 
   * {
     margin: 0 0 15px 0;
-    line-height: 1.5;
+    line-height: 1.7;
   }
 
   h1 {
@@ -93,6 +92,12 @@ export const Content = styled.article`
     font-size: 1rem;
   }
 
+  p,
+  li {
+    color: #eee;
+    //텍스트 높이
+  }
+
   a {
     color: var(--font-highlight);
     text-underline-offset: 3px;
@@ -105,7 +110,10 @@ export const Content = styled.article`
   }
 
   hr {
+    margin-top: -15px;
     border: 1px solid var(--border);
+
+    opacity: 0.3;
   }
 
   p > code,
@@ -129,7 +137,7 @@ export const Content = styled.article`
     font-weight: inherit;
     font-size: inherit;
 
-    background-color: var(--bg-code)
+    background-color: var(--bg-code);
     border-radius: 5px;
   }
 
@@ -247,6 +255,10 @@ export const Content = styled.article`
 
     &:hover {
       background-color: var(--bg-blur-44);
+    }
+
+    & > p {
+      color: var(--font);
     }
 
     box-shadow:

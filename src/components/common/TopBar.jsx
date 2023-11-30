@@ -57,10 +57,6 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
   };
 
   useEffect(() => {
-    console.log(isFocus);
-  }, [isFocus]);
-
-  useEffect(() => {
     if (location.pathname.startsWith('/search')) inputRef.current.focus();
     else setSearchQuery('');
   }, [location.pathname]);

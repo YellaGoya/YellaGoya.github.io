@@ -1,11 +1,9 @@
 import { graphql } from 'gatsby';
 
-import parse from 'html-react-parser';
-
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as s from 'style/templates/Post.js';
 
-const PostTemplate = ({ data }) => {
+const Post = ({ data }) => {
   const post = data.markdownRemark;
   const thumbnailImg = getImage(post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData);
 
@@ -21,7 +19,7 @@ const PostTemplate = ({ data }) => {
             {post.frontmatter.categories && post.frontmatter.categories.map((category) => <span key={category}>{category}</span>)}
           </s.Categories>
           <h1>{post.frontmatter.title}</h1>
-          <article>{parse(post.html)}</article>
+          <article dangerouslySetInnerHTML={{ __html: post.html }} />
         </s.Content>
       </s.Post>
     </s.Wrapper>
@@ -45,4 +43,4 @@ export const query = graphql`
   }
 `;
 
-export default PostTemplate;
+export default Post;
