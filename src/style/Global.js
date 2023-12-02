@@ -51,6 +51,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     background-color: var(--bg);
+    transition:background-color 0.4s ease;
 
     & > .gatsby-code-button-toaster{
       position: fixed;
@@ -117,6 +118,8 @@ export const GlobalStyle = createGlobalStyle`
     --selection-font: #000;
 
     --font-opacity: 0.85;
+    --wght-highlight: 430;
+    --wght-normal: 300;
 
     &.light {
       --bg: #fff;
@@ -146,6 +149,8 @@ export const GlobalStyle = createGlobalStyle`
       --selection-font: #fff;
 
       --font-opacity: 1;
+      --wght-highlight: 550;
+      --wght-normal: 420;
     }
   }
 

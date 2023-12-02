@@ -103,8 +103,8 @@ export const NavBtn = styled.button`
   }
 
   & > svg {
-    color: ${(props) => (props.$isToggle ? 'var(--font)' : 'var(--font-highlight)')};
-    transition: color 0.2s ease;
+    fill: ${(props) => (props.$isToggle ? 'var(--font)' : 'var(--font-highlight)')};
+    transition: fill 0.2s ease;
   }
 
   &#search > svg {

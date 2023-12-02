@@ -28,14 +28,18 @@ export const wrapPageElement = ({ element }) => {
 
   useEffect(() => {
     const body = document.querySelector('body');
-    if (topBarState.light && location.pathname.startsWith('/folio')) {
+    if (topBarState.light) {
       body.classList.add('light');
     } else {
       body.classList.remove('light');
     }
-  }, [topBarState.light, location.pathname]);
+  }, [topBarState.light]);
+
+  useEffect(() => {}, [location.pathname]);
 
   useEffect(() => {
+    if (location.pathname.startsWith('/folio')) topBarState.setLight(true);
+    else topBarState.setLight(false);
     if (contentsRef.current) {
       contentsRef.current.scrollTop = 0;
     }

@@ -5,7 +5,6 @@ export const SearchWrapper = styled.div`
   max-width: 960px;
 
   color: white;
-  background-color: var(--bg);
 
   margin-bottom: 120px;
 

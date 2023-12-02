@@ -91,7 +91,7 @@ export const HistoryTitle = styled.li`
 
 export const HistoryItem = styled.li`
   font-size: 1.2rem;
-  font-weight: 400;
+  font-variation-settings: 'wght' var(--wght-normal);
 
   opacity: var(--font-opacity);
   height: 29px;
@@ -148,6 +148,7 @@ export const ProfileDesc = styled.span`
 export const ProfileText = styled.span`
   margin: 0;
   opacity: var(--font-opacity);
+  font-variation-settings: 'wght' var(--wght-normal);
 
   & > p {
     margin: 0;
@@ -309,7 +310,16 @@ export const SkillItemDesc = styled.span`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  opacity: var(--font-opacity);
+`;
+
+export const SkillItemDescHighlight = styled.span`
+  font-variation-settings: 'wght' var(--wght-highlight);
+  opacity: 0.95;
+`;
+
+export const SkillItemDescNormal = styled.span`
+  font-variation-settings: 'wght' var(--wght-normal);
+  opacity: 0.85;
 `;
 
 export const SkillLineDiv = styled.span`
@@ -418,24 +428,29 @@ export const ProjectWrapper = styled.section`
   margin: 0 auto;
 `;
 
-export const Project = styled.article``;
+export const Project = styled.article`
+  & > div {
+    padding: ${({ $toggle }) => ($toggle ? '50px 0' : '5px 0')};
+  }
+
+  &:nth-child(2) > div {
+    padding: ${({ $toggle }) => ($toggle ? '5px 0 50px 0' : '5px 0')};
+  }
+`;
 
 export const ProjectInterlude = styled.div`
   position: relative;
-  padding: 5px 0 5px 0;
   border-radius: 0.5rem;
 
   min-height: 128px;
 
-  transition: background-color 0.1s ease;
-
-  /* cursor: ${({ $toggle }) => ($toggle ? 'default' : 'pointer')};
-  &:hover {
-    background-color: ${({ $toggle }) => ($toggle ? 'transparent' : 'var(--bg-button-hover)')};
-  } */
+  transition:
+    background-color 0.1s ease,
+    padding 0.8s ease;
 `;
 
 export const ProjectIntro = styled.div`
+  position: relative;
   height: 128px;
   padding: 10px;
 
@@ -476,9 +491,15 @@ export const LogoWrapper = styled.div`
     object-fit: cover;
   }
 `;
-export const ProjectMore = styled.div`
-  height: ${({ $toggle }) => ($toggle ? 'auto' : '0')};
+
+export const ProjectMoreWrapper = styled.div`
+  height: ${({ $toggle, height }) => ($toggle ? `${height + 15}px` : '0')};
+  transition: height 0.8s ease;
   overflow: hidden;
+`;
+export const ProjectMore = styled.div`
+  height: auto;
+  transition: max-height 2s linear;
   padding: 0 10px;
 `;
 export const ProjectDate = styled.h2`
@@ -524,7 +545,7 @@ export const GithubLink = styled.a`
   right: 5px;
   margin-left: 30px;
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: var(--wght-normal);
   color: var(--fontcc);
 
   display: flex;
@@ -550,12 +571,14 @@ export const GithubLink = styled.a`
 
 export const ProjectDesc = styled.span`
   font-size: 1.2rem;
+  font-weight: var(--wght-normal);
 `;
 
 export const ProjectDetail = styled.span`
   margin-top: 10px;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: var(--wght-normal);
   opacity: var(--font-opacity);
   margin-bottom: 50px;
 `;
@@ -580,7 +603,7 @@ export const ProjectCategory = styled.div`
   &.highlight {
     cursor: pointer;
     &:hover {
-      background-color: var(--bg-button-hover);
+      background-color: var(--font10);
     }
   }
 
@@ -608,6 +631,7 @@ export const ProjectHighlight = styled.ul`
 `;
 export const ProjectHighlightItem = styled.li`
   font-size: 1.2rem;
+  font-weight: var(--wght-normal);
   padding: 9px 0;
 
   border-bottom: 1px solid var(--font30);
@@ -620,7 +644,7 @@ export const ProjectHighlightItem = styled.li`
 `;
 
 export const ProjectHightlightTitle = styled.span`
-  font-weight: 600;
+  font-weight: var(--wght-highlight);
 `;
 
 export const ProjectMe = styled.div``;
@@ -649,18 +673,19 @@ export const ProjectPartTitle = styled.span`
 
 export const ProjectStack = styled.div`
   opacity: var(--font-opacity);
-  font-weight: 400;
+  font-weight: var(--wght-normal);
   margin-bottom: 50px;
 `;
 
 export const ProjectInsight = styled.div`
   font-size: 1.2rem;
   font-weight: 300;
-  opacity: var(--font-opacity);
+  opacity: 0.85;
+  font-weight: var(--wght-normal);
 
   & > span {
     color: var(--font-custom);
-    font-weight: 400;
+    font-weight: var(--wght-highlight);
   }
 `;
 
