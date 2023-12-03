@@ -33,6 +33,12 @@ import GitIcon from './svg/git.inline.svg';
 import GithubIcon from './svg/github.inline.svg';
 import GitlabIcon from './svg/gitlab.inline.svg';
 
+import nashda1 from './nashda/1.gif';
+import nashda2 from './nashda/2.gif';
+import nashda3 from './nashda/3.gif';
+import nashda4 from './nashda/4.gif';
+import nashda5 from './nashda/5.gif';
+
 // import Project from 'components/content/folio/project/Project';
 import { Wrapper } from 'style/content/folio/Folio';
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
@@ -64,6 +70,10 @@ const AboutMe = () => {
   const [dddevHighlightToggle, setDddevHighlightToggle] = useState(false);
   const [nashdaHighlightToggle, setNashdaHighlightToggle] = useState(false);
   const [stvdyHighlightToggle, setStvdyHighlightToggle] = useState(false);
+
+  const [dddevViewToggle, setDddevViewToggle] = useState(false);
+  const [nashdaViewToggle, setNashdaViewToggle] = useState(false);
+  const [stvdyViewToggle, setStvdyViewToggle] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -456,7 +466,7 @@ const AboutMe = () => {
                   <s.ProjectName>
                     dddev
                     <s.GithubLink
-                      href="https://www.naver.com"
+                      href="https://github.com/YellaGoya/dddev"
                       onClick={(event) => {
                         event.stopPropagation();
                       }}
@@ -477,6 +487,16 @@ const AboutMe = () => {
                     개발자가 프로젝트 진행에 최소 2~3개의 협업 툴을 필요로 하는 시대, 초보 개발자 들도 프로젝트에 바로 활용할 수 있는 올인원 협업 툴
                     개발을 목표로 하였다.
                   </s.ProjectDetail>
+                  <s.ProjectImageGrid
+                    onClick={() => {
+                      setDddevViewToggle(true);
+                    }}
+                  >
+                    <StaticImage src="dddev/1.jpg" />
+                    <StaticImage src="dddev/2.jpg" />
+                    <StaticImage src="dddev/3.jpg" />
+                    <StaticImage src="dddev/4.jpg" />
+                  </s.ProjectImageGrid>
                   <s.ProjectCategory
                     className="highlight"
                     $toggle={dddevHighlightToggle}
@@ -533,7 +553,7 @@ const AboutMe = () => {
                     <s.ProjectPartItem>
                       <s.ProjectPartTitle>프론트엔드 : </s.ProjectPartTitle>
                       6인 팀에서 1인 프론트엔드를 맡아. 웹 클라이언트의 기반 부터 시작하여 각 기능의 구현 과 API 객체 관리, UX/UI 디자인 및 작성 까지
-                      프론트엔드 전반에 기여 하였습니다.{' '}
+                      프론트엔드 전반에 기여 하였습니다.
                     </s.ProjectPartItem>
                     <s.ProjectPartItem>
                       <s.ProjectPartTitle>대쉬보드 : </s.ProjectPartTitle>
@@ -609,6 +629,17 @@ const AboutMe = () => {
                     발음 및 대화에 어려움이 생기는 등, 후유증이 발생한 실제 뇌질환 환자의 열악한 재활 과정을 보고 더 좋은 재활 환경을 제공하기 위해
                     진행한 프로젝트이다.
                   </s.ProjectDetail>
+                  <s.ProjectImageGrid
+                    onClick={() => {
+                      setNashdaViewToggle(true);
+                    }}
+                  >
+                    <img src={nashda1} />
+                    <img src={nashda2} />
+                    <img src={nashda3} />
+                    <img src={nashda4} />
+                    <img src={nashda5} />
+                  </s.ProjectImageGrid>
                   <s.ProjectCategory
                     className="highlight"
                     $toggle={nashdaHighlightToggle}
@@ -750,6 +781,17 @@ const AboutMe = () => {
                   <s.ProjectDetail>
                     현대인들의 기본 소양이 된 자기 개발에 동기부여 하기 위해 그룹으로 스터디를 진행하며 실시간 화상 회의가 가능하다.
                   </s.ProjectDetail>
+                  <s.ProjectImageGrid
+                    onClick={() => {
+                      setStvdyViewToggle(true);
+                    }}
+                  >
+                    <StaticImage src="stvdy/1.PNG" />
+                    <StaticImage src="stvdy/2.PNG" />
+                    <StaticImage src="stvdy/3.PNG" />
+                    <StaticImage src="stvdy/4.PNG" />
+                    <StaticImage src="stvdy/5.PNG" />
+                  </s.ProjectImageGrid>
                   <s.ProjectCategory
                     className="highlight"
                     $toggle={stvdyHighlightToggle}
@@ -861,8 +903,47 @@ const AboutMe = () => {
         <VerticalAlignTopIcon />
         처음으로
       </s.ToTopButton>
-
-      {/* <s.Test>STVDY.</s.Test> */}
+      <s.ImageViewer
+        $toggle={dddevViewToggle}
+        onClick={() => {
+          setDddevViewToggle(false);
+        }}
+      >
+        <s.ImageViewerWrapper>
+          <StaticImage src="dddev/1.jpg" />
+          <StaticImage src="dddev/2.jpg" />
+          <StaticImage src="dddev/3.jpg" />
+          <StaticImage src="dddev/4.jpg" />
+        </s.ImageViewerWrapper>
+      </s.ImageViewer>
+      <s.ImageViewer
+        $toggle={nashdaViewToggle}
+        onClick={() => {
+          setNashdaViewToggle(false);
+        }}
+      >
+        <s.ImageViewerWrapper>
+          <img src={nashda1} />
+          <img src={nashda2} />
+          <img src={nashda3} />
+          <img src={nashda4} />
+          <img src={nashda5} />
+        </s.ImageViewerWrapper>
+      </s.ImageViewer>
+      <s.ImageViewer
+        $toggle={stvdyViewToggle}
+        onClick={() => {
+          setStvdyViewToggle(false);
+        }}
+      >
+        <s.ImageViewerWrapper>
+          <StaticImage src="stvdy/1.PNG" />
+          <StaticImage src="stvdy/2.PNG" />
+          <StaticImage src="stvdy/3.PNG" />
+          <StaticImage src="stvdy/4.PNG" />
+          <StaticImage src="stvdy/5.PNG" />
+        </s.ImageViewerWrapper>
+      </s.ImageViewer>
     </Wrapper>
   );
 };

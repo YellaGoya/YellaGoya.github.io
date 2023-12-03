@@ -476,6 +476,10 @@ export const LogoWrapper = styled.div`
 
   user-select: none;
 
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 2px 2px,
+    rgba(0, 0, 0, 0.24) 0px 4px 4px;
+
   @media (max-width: 500px) {
     width: 100%;
     height: auto;
@@ -808,4 +812,92 @@ export const ToTopButton = styled.button`
 export const TopLocation = styled.div`
   position: absolute;
   top: -15px;
+`;
+
+export const ProjectImageGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto;
+
+  & > div {
+    border-radius: 0.5rem;
+    box-shadow:
+      rgba(0, 0, 0, 0.12) 0px 2px 2px,
+      rgba(0, 0, 0, 0.24) 0px 4px 4px;
+
+    cursor: pointer;
+  }
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow:
+      rgba(0, 0, 0, 0.12) 0px 2px 2px,
+      rgba(0, 0, 0, 0.24) 0px 4px 4px;
+
+    cursor: pointer;
+  }
+
+  // 상하 gap 20px
+  gap: 12px;
+  grid-row-gap: 24px;
+
+  margin-bottom: 50px;
+`;
+
+export const ImageViewer = styled.div`
+  position: fixed;
+  left: 0;
+  top: 65px;
+  width: 100vw;
+  height: calc(100vh - 65px);
+
+  visibility: ${({ $toggle }) => ($toggle ? 'visible' : 'hidden')};
+  opacity: ${({ $toggle }) => ($toggle ? '1' : '0')};
+
+  transition:
+    visibility 0.1s ease,
+    opacity 0.1s ease;
+
+  background-color: var(--bg);
+
+  overflow-y: auto;
+
+  //흐리게
+  backdrop-filter: blur(7px);
+  cursor: pointer;
+
+  z-index: 100;
+`;
+
+export const ImageViewerWrapper = styled.div`
+  padding: 50px 30px;
+  max-width: 1035px;
+  margin: 0 auto;
+
+  & > img {
+    margin-bottom: 50px;
+
+    border-radius: 0.5rem;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    box-shadow:
+      rgba(0, 0, 0, 0.12) 0px 2px 2px,
+      rgba(0, 0, 0, 0.24) 0px 4px 4px;
+  }
+
+  & > div {
+    margin-bottom: 50px;
+
+    border-radius: 0.5rem;
+
+    box-shadow:
+      rgba(0, 0, 0, 0.12) 0px 2px 2px,
+      rgba(0, 0, 0, 0.24) 0px 4px 4px;
+  }
 `;
