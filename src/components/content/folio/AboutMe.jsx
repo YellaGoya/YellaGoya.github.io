@@ -551,13 +551,24 @@ const AboutMe = () => {
                       기획이 원하는 모습으로 실제 구현되는 모습을 볼 수 있어 좋은 경험이 되었습니다.
                     </s.ProjectPartItem>
                     <s.ProjectPartItem>
-                      <s.ProjectPartTitle>프론트엔드 : </s.ProjectPartTitle>
-                      6인 팀에서 1인 프론트엔드를 맡아. 웹 클라이언트의 기반 부터 시작하여 각 기능의 구현 과 API 객체 관리, UX/UI 디자인 및 작성 까지
-                      프론트엔드 전반에 기여 하였습니다.
+                      <s.ProjectPartTitle> API 객체 관리 : </s.ProjectPartTitle>웹 JWT의 토큰 유효성 및 보안을 확보하기 위해 전체 API를 객체로
+                      관리하였으며, 재사용성 및 활용성을 높임.
+                    </s.ProjectPartItem>
+                    <s.ProjectPartItem>
+                      <s.ProjectPartTitle> Redux 상태 관리 : </s.ProjectPartTitle>
+                      리덕스를 활용하여 사용자, 그라운드, UI 상태관리.
+                    </s.ProjectPartItem>
+                    <s.ProjectPartItem>
+                      <s.ProjectPartTitle> UX/UI 및 컨셉 디자인, 스토리보드 제작 : </s.ProjectPartTitle>
+                      GitHub을 레퍼런스로 Figma를 활용하여 어플리케이션 디자인 및 스토리보드 제작.
                     </s.ProjectPartItem>
                     <s.ProjectPartItem>
                       <s.ProjectPartTitle>대쉬보드 : </s.ProjectPartTitle>
                       번다운 차트, 이슈 평균 소비 시간등의 프로젝트 분석 그래프와 최신 요청등의 정보를 한눈에 확인할 수 있는 대쉬보드를 구현.
+                    </s.ProjectPartItem>
+                    <s.ProjectPartItem>
+                      <s.ProjectPartTitle>페이지 구현 : </s.ProjectPartTitle>
+                      프로젝트 내 전체 페이지 구현.
                     </s.ProjectPartItem>
                     <s.ProjectPartItem>
                       <s.ProjectPartTitle>실시간 문서 협업 : </s.ProjectPartTitle>웹 소켓 서버와 Quill 에디터를 활용하여 실시간 문서 협업 기능을 구현.
