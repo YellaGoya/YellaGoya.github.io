@@ -282,6 +282,8 @@ export const SkillTitle = styled.span`
   display: flex;
   align-items: center;
 
+  white-space: nowrap;
+
   transform-origin: left;
   transform: translateX(-10px);
   padding: 4px 10px;
