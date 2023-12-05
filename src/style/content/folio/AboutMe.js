@@ -781,41 +781,6 @@ export const ProjectDivLine = styled.div`
   background-color: var(--font30);
 `;
 
-export const ToTopButton = styled.button`
-  margin: 0 auto;
-  margin-top: 50px;
-
-  background-color: transparent;
-  border: none;
-
-  display: flex;
-  align-items: center;
-
-  font-size: 1.2rem;
-  padding: 12px 15px 12px 12px;
-  border-radius: 0.5rem;
-
-  user-select: none;
-
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--bg-button-hover);
-  }
-
-  & > svg {
-    width: 22px;
-    height: 22px;
-    margin-right: 3px;
-    transform: translateY(1px);
-  }
-`;
-
-export const TopLocation = styled.div`
-  position: absolute;
-  top: -15px;
-`;
-
 export const ProjectImageGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -863,15 +828,10 @@ export const ImageViewer = styled.div`
     visibility 0.1s ease,
     opacity 0.1s ease;
 
-  background-color: var(--bg);
-
   overflow-y: auto;
 
-  //흐리게
-  backdrop-filter: blur(7px);
+  background-color: var(--bg);
   cursor: pointer;
-
-  z-index: 100;
 `;
 
 export const ImageViewerWrapper = styled.div`
@@ -902,4 +862,53 @@ export const ImageViewerWrapper = styled.div`
       rgba(0, 0, 0, 0.12) 0px 2px 2px,
       rgba(0, 0, 0, 0.24) 0px 4px 4px;
   }
+`;
+
+export const ToWrapper = styled.section`
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  & > button,
+  a {
+    background-color: transparent;
+    border: none;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 1.2rem;
+    padding: 12px 15px 12px 12px;
+    border-radius: 0.5rem;
+
+    user-select: none;
+    text-decoration: none;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--bg-button-hover);
+    }
+
+    & > svg {
+      width: 22px;
+      height: 22px;
+      margin-right: 3px;
+    }
+  }
+`;
+
+export const ToGithubLink = styled.a``;
+
+export const ToTopButton = styled.button`
+  margin-right: 30px;
+`;
+
+export const TopLocation = styled.div`
+  position: absolute;
+  top: -15px;
 `;
