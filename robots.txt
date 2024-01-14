@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://ahnsehyeok.info/sitemap-index.xml
+Host: https://ahnsehyeok.info
