@@ -52,6 +52,7 @@ export const wrapPageElement = ({ element }) => {
         <meta charset="UTF-8" />
         <meta name="description" content="YellaGoya Malog." />
         <meta name="author" content="YellaGoya" />
+        <meta name="description" content="Dev blog of Yellagoya" />
         <title>malog</title>
       </Helmet>
       <GlobalStyle />

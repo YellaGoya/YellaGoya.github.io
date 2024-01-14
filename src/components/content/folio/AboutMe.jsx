@@ -11,6 +11,10 @@ import ReduxIcon from './svg/redux.inline.svg';
 import VueIcon from './svg/vuedotjs.inline.svg';
 import ESLintIcon from './svg/eslint.inline.svg';
 import PrettierIcon from './svg/prettier.inline.svg';
+import NextjsIcon from './svg/nextdotjs.inline.svg';
+import GatsbyIcon from './svg/gatsby.inline.svg';
+import StyledComponentsIcon from './svg/styledcomponents.inline.svg';
+import StylexIcon from './svg/stylex.inline.svg';
 
 import SpringIcon from './svg/spring.inline.svg';
 import SwaggerIcon from './svg/swagger.inline.svg';
@@ -274,6 +278,22 @@ const AboutMe = () => {
                   <s.SvgTooltip>Vue</s.SvgTooltip>
                 </s.SvgWrapper>
                 <s.SvgWrapper>
+                  <NextjsIcon />
+                  <s.SvgTooltip>Next.js</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <GatsbyIcon style={{ fill: '#663399' }} />
+                  <s.SvgTooltip>Gatsby</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper style={{ width: '37px', height: '37px' }}>
+                  <StyledComponentsIcon style={{ fill: '#de7496', width: '37px', height: '37px' }} />
+                  <s.SvgTooltip style={{ top: '-19px' }}>Styled Components</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper style={{ width: '33px', height: '33px' }}>
+                  <StylexIcon style={{ fill: '#5c45de', width: '33px', height: '33px' }} />
+                  <s.SvgTooltip style={{ top: '-21px' }}>StyleX</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
                   <FigmaIcon style={{ fill: '#ee4f2b' }} />
                   <s.SvgTooltip>Figma</s.SvgTooltip>
                 </s.SvgWrapper>
@@ -399,7 +419,7 @@ const AboutMe = () => {
                 </s.SvgWrapper>
                 <s.SvgWrapper>
                   <RockyLinux style={{ fill: '#0fb37d' }} />
-                  <s.SvgTooltip>RockyLinux</s.SvgTooltip>
+                  <s.SvgTooltip>Rocky Linux</s.SvgTooltip>
                 </s.SvgWrapper>
                 <s.SvgWrapper>
                   <DockerIcon style={{ fill: '#1072d8' }} />
