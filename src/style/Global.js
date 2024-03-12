@@ -92,6 +92,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     --bg: #1b1b1b;
+    --bg-half: #1b1b1baa;
     --bg-blur-22: #ffffff22;
     --bg-blur-44: #ffffff44;
     --bg-blur-66: #ffffff66;
@@ -123,6 +124,7 @@ export const GlobalStyle = createGlobalStyle`
 
     &.light {
       --bg: #fff;
+      --bg-half: #ffffffaa;
       --bg-blur-22: #00000022;
       --bg-blur-44: #00000044;
       --bg-blur-66: #00000066;

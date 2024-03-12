@@ -168,12 +168,52 @@ export const Skills = styled.ul`
   direction: ltr;
 `;
 
+export const SkillTitle = styled.span`
+  /* position: relative; */
+
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  transform-origin: left;
+  transform: translateX(-10px);
+  padding: 4px 10px;
+  border-radius: 0.5rem;
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease;
+
+  & > svg {
+    &:first-child {
+      margin-left: 16px;
+    }
+    width: 24px;
+    height: 24px;
+
+    border-radius: 0.25rem;
+    margin-left: 6px;
+
+    fill: var(--font);
+    transition: fill 0.4s ease;
+  }
+`;
+
+export const SvgContainer = styled.span`
+  display: inline-flex;
+
+  word-break: break-all;
+`;
+
 export const SvgWrapper = styled.div`
   position: relative;
   width: 24px;
   height: 24px;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   &:first-child {
@@ -186,7 +226,7 @@ export const SvgWrapper = styled.div`
   &:hover {
     & > span {
       visibility: visible;
-      opacity: 0.65;
+      opacity: 1;
     }
   }
 
@@ -223,12 +263,21 @@ export const SvgTooltip = styled.span`
   top: -1.55rem;
   left: calc(50% - 1px);
 
-  transform: translateX(-50%);
+  padding: 0 0.3rem;
+
+  white-space: nowrap;
 
   visibility: hidden;
   opacity: 0;
 
+  @media (max-width: 609px) {
+    background-color: var(--bg-half);
+    backdrop-filter: blur(2px);
+    border-radius: 0.5rem;
+  }
+
   font-size: 1rem;
+  transform: translateX(-50%);
 
   transition:
     visibility 0.1s ease,
@@ -256,11 +305,11 @@ export const SkillItem = styled.li`
     fill: var(--font);
   }
 
-  @media (max-width: 750px) {
+  /* @media (max-width: 750px) {
     filter: brightness(1) contrast(1);
-  }
+  } */
 
-  @media (min-width: 516px) {
+  @media (min-width: 610px) {
     /* &:hover {
       & > span:first-child {
         transform: scale(1.4) translateY(-8px) translateX(-10px);
@@ -269,41 +318,9 @@ export const SkillItem = styled.li`
       }
     } */
     & > span:first-child {
-      transform: ${({ $focus }) => ($focus ? 'scale(1.4) translateY(-8px) translateX(-10px)' : 'scale(1) translateX(-10px);')};
+      transform: ${({ $focus }) => ($focus ? 'scale(1.2) translateY(-8px) translateX(-10px)' : 'scale(1) translateX(-10px);')};
       background-color: ${({ $focus }) => ($focus ? 'var(--font10)' : 'transparent')};
     }
-  }
-`;
-
-export const SkillTitle = styled.span`
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  display: flex;
-  align-items: center;
-
-  white-space: nowrap;
-
-  transform-origin: left;
-  transform: translateX(-10px);
-  padding: 4px 10px;
-  border-radius: 0.5rem;
-  transition:
-    transform 0.4s ease,
-    background-color 0.4s ease;
-
-  & > svg {
-    &:first-child {
-      margin-left: 16px;
-    }
-    width: 24px;
-    height: 24px;
-
-    border-radius: 0.25rem;
-    margin-left: 6px;
-
-    fill: var(--font);
-    transition: fill 0.4s ease;
   }
 `;
 

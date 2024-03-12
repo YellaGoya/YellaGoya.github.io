@@ -1,13 +1,22 @@
 import Recent from 'components/content/malog/Recent';
+import { Helmet } from 'react-helmet-async';
 // import LatestProject from 'components/content/malog/LatestProject';
 
 import { graphql } from 'gatsby';
 
 const IndexPage = ({ data }) => {
   const nodes = data.allMarkdownRemark.edges.map(({ node }) => node);
+  console.log(nodes);
 
   return (
     <>
+      <Helmet>
+        <link rel="canonical" href="https://ahnsehyeok.info" />
+        <meta property="og:url" content="https://example.com/page.html" />
+        <meta property="og:title" content="malog | 개발 블로그" />
+        <meta property="og:description" content="어렵다 어려워. 서럽다 서러워." />
+        <meta property="og:url" content="https://ahnsehyeok.info" />
+      </Helmet>
       <Recent nodes={nodes} />
       {/* <LatestProject /> */}
     </>

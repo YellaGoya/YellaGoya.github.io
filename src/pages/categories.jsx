@@ -1,19 +1,19 @@
-import { useState, useEffect, useContext } from "react";
-import { graphql } from "gatsby";
-import Fuse from "fuse.js";
+import { useState, useEffect, useContext } from 'react';
+import { graphql } from 'gatsby';
+import Fuse from 'fuse.js';
 
-import Recent from "components/content/malog/Recent";
-import { CategoryContext } from "context/category.jsx";
+import Recent from 'components/content/malog/Recent';
+import { CategoryContext } from 'context/category.jsx';
 
 const CategoriesPage = ({ data }) => {
   const { category } = useContext(CategoryContext);
-  const [nodes, setNodes] = useState("");
+  const [nodes, setNodes] = useState('');
 
   const fuseIndexes = data.allMarkdownRemark.edges.map(({ node }) => node);
-  const fuseInstance = new Fuse(fuseIndexes, { keys: ["frontmatter.categories"] });
+  const fuseInstance = new Fuse(fuseIndexes, { keys: ['frontmatter.categories'] });
 
   useEffect(() => {
-    if (category === "") setNodes(fuseIndexes);
+    if (category === '') setNodes(fuseIndexes);
     else {
       const resultsRawData = fuseInstance.search(category);
       const resultsParsedData = resultsRawData.map((result) => result.item);

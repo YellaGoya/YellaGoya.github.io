@@ -1,5 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://ahnsehyeok.info',
+  },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-webpack-bundle-analyser-v2',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-root-import',
@@ -8,6 +12,13 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-preload-fonts',
     'gatsby-plugin-react-helmet-async',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://ahnsehyeok.info',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

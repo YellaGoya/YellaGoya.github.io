@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { Helmet } from 'react-helmet-async';
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as s from 'style/templates/Post.js';
@@ -7,8 +8,19 @@ const Post = ({ data }) => {
   const post = data.markdownRemark;
   const thumbnailImg = getImage(post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData);
 
+  console.log(post);
+
   return (
     <s.Wrapper>
+      <Helmet>
+        <title>{post.frontmatter.title}</title>
+        <link rel="canonical" href={`https://ahnsehyeok.info/post${post.fields.slug}`} />
+        <meta name="description" content={post.frontmatter.description} />
+        <meta property="og:url" content="https://example.com/page.html" />
+        <meta property="og:title" content={post.frontmatter.title} />
+        <meta property="og:description" content={post.frontmatter.description} />
+        <meta property="og:url" content={`https://ahnsehyeok.info/post${post.fields.slug}`} />
+      </Helmet>
       <s.Post>
         <s.ThumbnailWrapper>
           <GatsbyImage image={thumbnailImg} alt="Thumbnail" />
@@ -30,9 +42,13 @@ export const query = graphql`
   query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         categories
+        description
         thumbnail {
           childImageSharp {
             gatsbyImageData

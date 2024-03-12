@@ -301,7 +301,7 @@ const AboutMe = () => {
               </s.SkillTitle>
               <s.SkillItemDesc>
                 <s.SkillItemDescHighlight>
-                  React를 메인으로 개발합니다.
+                  React와 Next.js를 메인으로 개발합니다.
                   <br />
                   이전에는 vue2, 3를 활용한 경험이 있으며 바로 프로젝트에 기여 할 수 있습니다.
                 </s.SkillItemDescHighlight>
@@ -429,7 +429,7 @@ const AboutMe = () => {
               </s.SkillTitle>
               <s.SkillItemDesc>
                 <s.SkillItemDescNormal>
-                  연구실 서버를 Ubuntu로 운영한 경험이 있으며 현재 랩탑의 경우 Rocky Linux 환경을 사용하고 있습니다.
+                  연구실 서버를 Ubuntu로 운영한 경험이 있으며 현재 랩탑과 개인 개발서버는 Rocky Linux 환경을 사용하고 있습니다.
                   <br />
                   c언어를 활용한 간단한 시스템 프로그래밍이 가능하며, 리눅스 환경에서 개발을 할 때에도 불편함이 없습니다.
                 </s.SkillItemDescNormal>
