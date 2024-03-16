@@ -8,8 +8,6 @@ const Post = ({ data }) => {
   const post = data.markdownRemark;
   const thumbnailImg = getImage(post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData);
 
-  console.log(post);
-
   return (
     <s.Wrapper>
       <Helmet>

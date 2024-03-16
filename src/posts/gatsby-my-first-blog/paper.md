@@ -1,7 +1,7 @@
 ---
 title: 블로그를 시작한 이유, 개츠비?
 date: "2023-10-25T20:36:03.284Z"
-description: 블로그를 시작한 간략한 이유와 함께 왜 하필 Gatsby를 선택하였는지에 대하여
+description: 블로그를 시작한 간략한 이유와 함께 왜 하필 Gatsby를 선택하였는지에 대하여.
 thumbnail: './thumbnail.webp'
 categories:
   - gatsby

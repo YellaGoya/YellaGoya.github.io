@@ -1,6 +1,6 @@
 ---
 title: 마크다운 치트시트
-date: "2023-10-26T23:25:30.0000"
+date: "2023-10-24T23:25:30.0000"
 description: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 thumbnail: './thumbnail.png'
 categories:

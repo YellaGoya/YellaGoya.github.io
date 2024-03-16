@@ -16,7 +16,6 @@ const Recent = ({ nodes }) => {
           Posts
         </ContentTitle>
       )}
-      {}
       <s.RecentWrapper>
         {nodes &&
           nodes.map((node) => (
