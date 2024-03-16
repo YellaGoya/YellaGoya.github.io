@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
         <link rel="canonical" href="https://ahnsehyeok.info" />
         <meta property="og:url" content="https://example.com/page.html" />
         <meta property="og:title" content="malog | 개발 블로그" />
-        <meta property="og:description" content="어렵다 어려워. 서럽다 서러워." />
+        <meta name="description" content="Dev blog of Yellagoya. 개발 블로그" />
         <meta property="og:url" content="https://ahnsehyeok.info" />
       </Helmet>
       <Works />

@@ -55,6 +55,7 @@ export const Content = styled.article`
   position: relative;
   padding: 20px;
   margin-bottom: 100px;
+
   div > * {
     position: relative;
   }
