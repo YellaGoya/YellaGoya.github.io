@@ -5,20 +5,23 @@ import { StaticImage } from 'gatsby-plugin-image';
 import JavascriptIcon from './svg/javascript.inline.svg';
 import JavaIcon from './svg/java.inline.svg';
 import PythonIcon from './svg/python.inline.svg';
+import NodeDotJs from './svg/nodedotjs.inline.svg';
 
 import ReactIcon from './svg/react.inline.svg';
 import ReduxIcon from './svg/redux.inline.svg';
 import VueIcon from './svg/vuedotjs.inline.svg';
 import ESLintIcon from './svg/eslint.inline.svg';
 import PrettierIcon from './svg/prettier.inline.svg';
+import GerritIcon from './svg/gerrit.inline.svg';
 import NextjsIcon from './svg/nextdotjs.inline.svg';
 import GatsbyIcon from './svg/gatsby.inline.svg';
 import StyledComponentsIcon from './svg/styledcomponents.inline.svg';
-import StylexIcon from './svg/stylex.inline.svg';
+import RecoilIcon from './svg/recoil.inline.svg';
 
 import SpringIcon from './svg/spring.inline.svg';
 import SwaggerIcon from './svg/swagger.inline.svg';
 
+import PostgreSQL from './svg/postgresql.inline.svg';
 import MysqlIcon from './svg/mysql.inline.svg';
 import InfluxDBIcon from './svg/influxdb.inline.svg';
 
@@ -37,6 +40,8 @@ import GitIcon from './svg/git.inline.svg';
 import GithubIcon from './svg/github.inline.svg';
 import GitlabIcon from './svg/gitlab.inline.svg';
 
+import FlareIcon from '@mui/icons-material/Flare';
+
 import nashda1 from './nashda/1.gif';
 import nashda2 from './nashda/2.gif';
 import nashda3 from './nashda/3.gif';
@@ -45,11 +50,13 @@ import nashda5 from './nashda/5.gif';
 
 // import Project from 'components/content/folio/project/Project';
 import { Wrapper } from 'style/content/folio/Folio';
+
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LightbulbRoundedIcon from '@mui/icons-material/LightbulbRounded';
 import ArrowLeftRoundedIcon from '@mui/icons-material/ArrowLeftRounded';
 import GitHubIcon from '@mui/icons-material/GitHub';
+
 import * as s from 'style/content/folio/AboutMe';
 const AboutMe = () => {
   const [suggest, setSuggest] = useState(false);
@@ -171,11 +178,11 @@ const AboutMe = () => {
         <s.WordHighlight>
           청년
           <br />
-          개발자,
+          개발자
           <br />
-          맛난
+          외길
           <br />
-          프론트.
+          프론트
         </s.WordHighlight>
         <s.HighLightLine />
         <s.ProfileWrapper>
@@ -202,19 +209,23 @@ const AboutMe = () => {
               <s.ProfileText>
                 안녕하세요. 개발자 안세혁입니다.
                 <p />
-                제 직업은 사용자에게 편리함을 제공하는 웹 서비스를 만드는 것이며, 그 과정에 디자인과 상호작용을 섞어 마법을 부리는 것을 좋아합니다.
+                스스로 코드 앞에 당당하기 위해 더 읽기 좋은 코드, 더 효율적인 코드를 작성하는 것을 최우선으로 개발하고 있습니다.
                 <p />
-                가장 영향을 많이 받은 디자이너는 디터 람스입니다. 사용자의 편의를 위해 불필요한 것을 제거하는 것, 디터 람스의 깨달음을 마음에 새기고
-                언제나 유용하며 세련된 프론트엔드 개발을 하려 노력하고 있습니다.
+                디자인은 디터 람스에 영향을 많이 받았습니다.
+                <br /> 최대한 배제된 디자인을 선호하며, 이를 통해 사용자가 집중할 수 있는 환경을 만들고자 합니다.
                 <p />
-                최근 여가 시간에는 키보드를 만들거나 이미 봤던 영화들을 보며 쉬고 있습니다.
+                프론트엔드 개발에 가장 큰 즐거움과 가능성을 느끼며,
+                <br />
+                [외길 프론트] 라는 슬로건은 개발자로서의 다짐입니다.
+                <p />
+                여가 시간에는 토이 프로젝트를 진행하거나 키보드를 만들고 있습니다.
               </s.ProfileText>
             </s.ProfileDesc>
             <s.History>
               <s.HistoryTitle>[ 학업 ]</s.HistoryTitle>
               <s.HistoryItem>
                 <s.HistoryDiv />
-                <p>NPLAB 인공지능 연구실 학부연구생</p>
+                <p>삼성 SW 아카데미 수료</p>
               </s.HistoryItem>
               <s.HistoryItem>
                 <s.HistoryDiv />
@@ -222,24 +233,12 @@ const AboutMe = () => {
               </s.HistoryItem>
               <s.HistoryItem>
                 <s.HistoryDiv />
-                <p>삼성 SW 아카데미 수료</p>
+                <p>NPLAB 인공지능 연구실 학부연구생</p>
               </s.HistoryItem>
-              <s.HistoryTitle>[ 프로젝트 이력 ]</s.HistoryTitle>
+              <s.HistoryTitle>[ 팀 프로젝트 이력 ]</s.HistoryTitle>
               <s.HistoryItem>
                 <s.HistoryDiv />
-                <p>삼성 과제 RDBMS, 시계열 DB 성능 비교</p>
-              </s.HistoryItem>
-              <s.HistoryItem>
-                <s.HistoryDiv />
-                <p>기업 연계 프로젝트 감정 분석 스마트 라이트</p>
-              </s.HistoryItem>
-              <s.HistoryItem>
-                <s.HistoryDiv />
-                <p>회 AI 분석 플랫폼, 사랑회요</p>
-              </s.HistoryItem>
-              <s.HistoryItem>
-                <s.HistoryDiv />
-                <p>실시간 화상 스터디 플랫폼, STVDY</p>
+                <p>학생용 협업 툴, dddev</p>
               </s.HistoryItem>
               <s.HistoryItem>
                 <s.HistoryDiv />
@@ -247,10 +246,32 @@ const AboutMe = () => {
               </s.HistoryItem>
               <s.HistoryItem>
                 <s.HistoryDiv />
-                <p>학생용 협업 툴, dddev</p>
+                <p>실시간 화상 스터디 플랫폼, STVDY</p>
+              </s.HistoryItem>
+              <s.HistoryItem>
+                <s.HistoryDiv />
+                <p>회 AI 분석 플랫폼, 사랑회요</p>
+              </s.HistoryItem>
+              <s.HistoryItem>
+                <s.HistoryDiv />
+                <p>기업 연계 프로젝트 감정 분석 스마트 라이트</p>
+              </s.HistoryItem>
+              <s.HistoryItem>
+                <s.HistoryDiv />
+                <p>삼성 과제 RDBMS, 시계열 DB 성능 비교</p>
               </s.HistoryItem>
             </s.History>
           </s.Specification>
+          <s.ToWrapper>
+            <s.ToGithubLink href="https://github.com/YellaGoya" target="_blank">
+              <GitHubIcon />
+              깃허브 프로필
+            </s.ToGithubLink>
+            <s.ToGithubLink href="https://ahnsehyeok.info/" target="_blank">
+              <FlareIcon />
+              개인 프로젝트
+            </s.ToGithubLink>
+          </s.ToWrapper>
           <s.Skills>
             <s.SkillItem
               $focus={focused === 0}
@@ -274,6 +295,10 @@ const AboutMe = () => {
                   <s.SvgTooltip>Redux</s.SvgTooltip>
                 </s.SvgWrapper>
                 <s.SvgWrapper>
+                  <RecoilIcon style={{ fill: '#3578e5' }} />
+                  <s.SvgTooltip>Recoil</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
                   <VueIcon style={{ fill: '#00bd82' }} />
                   <s.SvgTooltip>Vue</s.SvgTooltip>
                 </s.SvgWrapper>
@@ -289,10 +314,6 @@ const AboutMe = () => {
                   <StyledComponentsIcon style={{ fill: '#de7496', width: '37px', height: '37px' }} />
                   <s.SvgTooltip style={{ top: '-19px' }}>Styled Components</s.SvgTooltip>
                 </s.SvgWrapper>
-                <s.SvgWrapper style={{ width: '33px', height: '33px' }}>
-                  <StylexIcon style={{ fill: '#5c45de', width: '33px', height: '33px' }} />
-                  <s.SvgTooltip style={{ top: '-21px' }}>StyleX</s.SvgTooltip>
-                </s.SvgWrapper>
                 <s.SvgWrapper>
                   <FigmaIcon style={{ fill: '#ee4f2b' }} />
                   <s.SvgTooltip>Figma</s.SvgTooltip>
@@ -301,13 +322,31 @@ const AboutMe = () => {
               </s.SkillTitle>
               <s.SkillItemDesc>
                 <s.SkillItemDescHighlight>
-                  React와 Next.js를 메인으로 개발합니다.
+                  * React, Next를 메인으로 사용합니다.
                   <br />
-                  이전에는 vue2, 3를 활용한 경험이 있으며 바로 프로젝트에 기여 할 수 있습니다.
+                  CSS 디자인 및 컴포넌트 작성 등 기초 부터 프로젝트 유지보수 및 배포까지 전반에 기여할 수 있습니다.
+                  <br />
+                  상태관리는 프로젝트의 규모와 상황에 따라 Redux, Recoil 중 선택하여 사용하고 있습니다.
+                </s.SkillItemDescHighlight>
+                <s.SkillLineDiv />
+                <s.SkillItemDescHighlight>
+                  프로젝트를 진행할 때는 SSR, CSR과 같은 렌더링 방식,
+                  <br />
+                  메모이제이션, 캐싱 등의 상황에 따른 최적화를 최우선으로 고려하여 개발합니다.
+                </s.SkillItemDescHighlight>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>Vue2, 3 소규모 팀 프로젝트, Gatsby SSR 블로그 운영 경험이 있습니다.</s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescHighlight>
+                  * 백엔드 경험을 기반으로 백엔드 API 연동과 같은 협업에 적극적으로 임할 수 있습니다.
                 </s.SkillItemDescHighlight>
                 <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
-                  컨셉, UX/UI 디자인, 와이어프레임 및 스토리보드 작성에는 Figma를 사용하며,
+                  CSS-in-CSS 방식과 module.css 를 선호합니다.
+                  <br />
+                  상태 공유 및 인터렉션을 위한 컴포넌트 디자인에는 styled-components를 사용하기도 합니다.
+                  <br />
+                  컨셉, UX/UI 디자인, 와이어 프레임 및 스토리보드 작성에는 Figma를 사용하며,
                   <br />
                   최근 4번의 프로젝트를 Figma와 함께하며 디자인을 전담하였습니다.
                 </s.SkillItemDescNormal>
@@ -322,8 +361,8 @@ const AboutMe = () => {
               <s.SkillTitle>
                 [ 백엔드 스택
                 <s.SvgWrapper>
-                  <PythonIcon style={{ fill: '#1fee75' }} />
-                  <s.SvgTooltip>Python</s.SvgTooltip>
+                  <NodeDotJs style={{ fill: '#7cb701' }} />
+                  <s.SvgTooltip>Node.js</s.SvgTooltip>
                 </s.SvgWrapper>
                 <s.SvgWrapper>
                   <JavaIcon style={{ fill: '#ec2025' }} />
@@ -337,6 +376,14 @@ const AboutMe = () => {
                   <SwaggerIcon style={{ fill: '#89bf04' }} />
                   <s.SvgTooltip>Swagger</s.SvgTooltip>
                 </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <PythonIcon style={{ fill: '#1fee75' }} />
+                  <s.SvgTooltip>Python</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <PostgreSQL style={{ fill: '#305d8d' }} />
+                  <s.SvgTooltip>PostgreSQL</s.SvgTooltip>
+                </s.SvgWrapper>
                 <s.SvgWrapper style={{ width: '37px', height: '37px', transform: 'translateY(1px)' }}>
                   <MysqlIcon style={{ fill: '#0088a6', width: '37px', height: '37px' }} />
                   <s.SvgTooltip style={{ top: '-19px' }}>Mysql</s.SvgTooltip>
@@ -349,13 +396,21 @@ const AboutMe = () => {
               </s.SkillTitle>
               <s.SkillItemDesc>
                 <s.SkillItemDescHighlight>
-                  Java, Spring 프레임워크로 서버를 구축한 경험이 있습니다.
+                  * 최근에는 Next 백엔드 서버 및 API로 개인 프로젝트를 완성하여 운영 중입니다.
                   <br />
-                  현재 node.js로 백엔드 서버를 구축하는 토이 프로젝트를 진행 중 입니다.
+                  다수의 프로젝트 경험을 통해 얻은 백엔드 REST API 설계 및 구현 지식으로 백엔드 개발자와 원활한 협업이 가능합니다.
                 </s.SkillItemDescHighlight>
                 <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
-                  학부연구생 시절 Python, Pandas 등을 활용하여 데이터를 전처리하거나, 연구실의 데이터베이스 관련 과제를 진행 하였습니다.
+                  처음에는 Java, Spring 프레임워크를 사용하여 백엔드 서버를 구축하였으며, 현재는 js를 선호합니다.
+                  <br />
+                  학부 연구생 시절 Python, Pandas 등을 활용하여 데이터를 전처리하거나,
+                  <br />
+                  연구실의 데이터베이스 관련 과제를 진행한 경험이 있습니다.
+                </s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>
+                  PostgreSQL, MySQL, MsSQL 및 influxDB 등 프로젝트에 적합한 데이터베이스를 선택하여 사용합니다.
                 </s.SkillItemDescNormal>
               </s.SkillItemDesc>
             </s.SkillItem>
@@ -380,6 +435,10 @@ const AboutMe = () => {
                   <s.SvgTooltip>Gitlab</s.SvgTooltip>
                 </s.SvgWrapper>
                 <s.SvgWrapper>
+                  <GerritIcon style={{ fill: '#347dbe' }} />
+                  <s.SvgTooltip>Gerrit</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
                   <ESLintIcon style={{ fill: '#4b32c3' }} />
                   <s.SvgTooltip>ESLint</s.SvgTooltip>
                 </s.SvgWrapper>
@@ -391,13 +450,18 @@ const AboutMe = () => {
               </s.SkillTitle>
               <s.SkillItemDesc>
                 <s.SkillItemDescHighlight>
-                  1작성 1커밋을 지향하며, Git으로 코드를 관리합니다.
+                  * 1구현 1커밋을 좌우명으로 Git을 통해 코드를 관리하고 있습니다.
                   <br />
-                  현재 Github에서 개인 및 팀 프로젝트 코드를 관리 중 입니다.
+                  현재는 GitHub으로 프로젝트 코드를 관리 중이며 이외 코드는 팀 GitLab을 통해 관리하였습니다.
                 </s.SkillItemDescHighlight>
                 <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
-                  ESLint, Prettier로 프론트엔드 코드의 일관성을 유지하며, XO 규칙을 커스텀하여 사용하고 있습니다.
+                  코드 스타일을 유지하는 일관성, 컨벤션을 준수하는 것을 중요시하며, 코드 리뷰를 통해 코드의 품질을 높이고자 합니다.
+                  <br />팀 프로젝트를 진행할 때는 Gerrit을 사용하여 코드 리뷰를 강제하는 방식으로 코드의 품질을 높이고자 하였습니다..
+                </s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>
+                  ESLint, Prettier로 프론트엔드 코드의 일관성을 유지하며, XO를 커스텀하여 사용하고 있습니다.
                 </s.SkillItemDescNormal>
               </s.SkillItemDesc>
             </s.SkillItem>
@@ -429,10 +493,12 @@ const AboutMe = () => {
               </s.SkillTitle>
               <s.SkillItemDesc>
                 <s.SkillItemDescNormal>
-                  연구실 서버를 Ubuntu로 운영한 경험이 있으며 현재 랩탑과 개인 개발서버는 Rocky Linux 환경을 사용하고 있습니다.
+                  프로젝트를 진행하며 서버를 구축하고 운영한 경험이 있습니다.
                   <br />
-                  c언어를 활용한 간단한 시스템 프로그래밍이 가능하며, 리눅스 환경에서 개발을 할 때에도 불편함이 없습니다.
+                  개인 프로젝트의 경우 오라클 인스턴스로 Rocky Linux를 사용 중이며, 학부 연구생 시절에는 Ubuntu를 사용하였습니다.
                 </s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>현재 포트폴리오, 블로그 및 개인 프로젝트들은 모두 개인 서버에서 배포 중입니다.</s.SkillItemDescNormal>
               </s.SkillItemDesc>
             </s.SkillItem>
             <s.SkillItem
@@ -462,17 +528,18 @@ const AboutMe = () => {
                 &nbsp;]
               </s.SkillTitle>
               <s.SkillItemDesc>
-                <s.SkillItemDescHighlight>협업에서 소통을 가장 중요시 여기며, 문서화는 협업의 정수라 생각합니다.</s.SkillItemDescHighlight>
+                <s.SkillItemDescHighlight>* 협업에서 소통을 가장 중요시하며, 문서화는 협업의 정수라 생각합니다.</s.SkillItemDescHighlight>
                 <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
-                  프로젝트를 진행할 때에는 Jira로 이슈를 관리하며 팀원들 간 대화는 Slack 또는 MatterMost, 간단한 소통용 문서는 Notion을 활용하는 것을
-                  좋아합니다.
+                  Jira로 이슈를 관리하며 팀원들 간 대화는 Slack 또는 MatterMost, 간단한 소통용 문서는 Notion을 활용하는 것을 좋아합니다.
+                  <br />
+                  스크럼과 같은 짧은 미팅을 통해 팀원들의 진행 상황을 파악하고, 팀원들의 의견을 수렴하여 프로젝트를 진행하길 선호합니다.
                 </s.SkillItemDescNormal>
               </s.SkillItemDesc>
             </s.SkillItem>
           </s.Skills>
           <s.ProjectWrapper>
-            <s.ProjectTitle>[ 프로젝트 상세 ]</s.ProjectTitle>
+            <s.ProjectTitle>[ 팀 프로젝트 상세 ]</s.ProjectTitle>
             <s.Project $toggle={dddevToggle}>
               <s.ProjectInterlude>
                 <s.ProjectIntro
@@ -488,6 +555,7 @@ const AboutMe = () => {
                       dddev
                       <s.GithubLink
                         href="https://github.com/YellaGoya/dddev"
+                        target="_blank"
                         onClick={(event) => {
                           event.stopPropagation();
                         }}
@@ -568,7 +636,7 @@ const AboutMe = () => {
                     <s.ProjectPart>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>프로젝트 기획 : </s.ProjectPartTitle>
-                        프로젝트의 컨셉부터 세부 기능에 이르기 까지 모든 기능에 직접 기획 및 참여 하였습니다. 아이디어가 팀원들의 마음에 들어 본인의
+                        프로젝트의 컨셉부터 세부 기능에 이르기까지 모든 기능에 직접 기획 및 참여 하였습니다. 아이디어가 팀원들의 마음에 들어 본인의
                         기획이 원하는 모습으로 실제 구현되는 모습을 볼 수 있어 좋은 경험이 되었습니다.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
@@ -584,8 +652,8 @@ const AboutMe = () => {
                         GitHub을 레퍼런스로 Figma를 활용하여 어플리케이션 디자인 및 스토리보드 제작.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
-                        <s.ProjectPartTitle>대쉬보드 : </s.ProjectPartTitle>
-                        번다운 차트, 이슈 평균 소비 시간등의 프로젝트 분석 그래프와 최신 요청등의 정보를 한눈에 확인할 수 있는 대쉬보드를 구현.
+                        <s.ProjectPartTitle>대시보드 : </s.ProjectPartTitle>
+                        번다운 차트, 이슈 평균 소비 시간 등의 프로젝트 분석 그래프와 최신 요청 등의 정보를 한눈에 확인할 수 있는 대시보드를 구현.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>페이지 구현 : </s.ProjectPartTitle>
@@ -604,14 +672,11 @@ const AboutMe = () => {
                     <s.ProjectInsight>
                       내쉬다 프로젝트에서 느낀 협업 환경의 불편함을 개선하고자 진행된 프로젝트입니다. /
                       <span>
-                        &nbsp;코드의 간결함과 재사용성, 시맨틱 마크업을 염두에 두고 프로젝트에 임하였습니다. 회고를 통해 알게된 이전 프로젝트 들의
-                        미흡했던 점 3가지로 리액트를 활용한 두 번째 프로젝트이기에 같은 실수를 반복하지 않기위해 스스로 리마인드 하며 진행한
-                        프로젝트였습니다.&nbsp;
+                        &nbsp;개발자 친화적인 레이아웃 구성 및 디자인을 적용하기 위해 GitHub, Vercel 등을 레퍼런스로 삼았습니다. 기존 노션과 같은
+                        협업툴의 학습 곡선이 높았던 것을 고려하여 직관적이고 간단한 기능들로 필요한 업무를 수행할 수 있도록 하였습니다.&nbsp;
                       </span>
-                      / 본인의 아이디어가 프로젝트에 그대로 반영 및 구현되어 개발자로서 좋은 경험이 된 프로젝트였으나 본인이 원하는 기능의 방향과
-                      팀원들이 생각한 바에 차이가 생기는 등 협업 툴을 개발하면서도 협업 과정에 작은 문제점들이 있어 아쉬운 프로젝트입니다. 혼자 열정에
-                      넘쳐 모든 것들을 처리하려 하기 보다는 팀원 들과 자주 기획 회의를 하며 서로에게 기댈 부분은 기댈 수 있는 개발자가 되어야 겠다는
-                      생각이 들었습니다.
+                      / 처음으로 혼자 프론트엔드 개발을 모두 수행한 프로젝트로 백엔드 5인과의 협업 과정에 크고 작은 문제들이 있었지만 모든 과정을
+                      문서화하여 이슈를 사전에 줄이고자 노력하였습니다.
                     </s.ProjectInsight>
                   </s.ProjectMore>
                 </s.ProjectMoreWrapper>
@@ -643,6 +708,7 @@ const AboutMe = () => {
                       내쉬다
                       <s.GithubLink
                         href="https://github.com/YellaGoya/NASHDA"
+                        target="_blank"
                         onClick={(event) => {
                           event.stopPropagation();
                         }}
@@ -658,7 +724,7 @@ const AboutMe = () => {
                 <s.ProjectMoreWrapper $toggle={nashdaToggle} height={nashdaHeight}>
                   <s.ProjectMore ref={nashdaMoreRef}>
                     <s.ProjectDetail>
-                      발음 및 대화에 어려움이 생기는 등, 후유증이 발생한 실제 뇌질환 환자의 열악한 재활 과정을 보고 더 좋은 재활 환경을 제공하기 위해
+                      발음 및 대화에 어려움이 생기는 등, 후유증이 발생한 실제 뇌 질환 환자의 열악한 재활 과정을 보고 더 좋은 재활 환경을 제공하기 위해
                       진행한 프로젝트이다.
                     </s.ProjectDetail>
                     <s.ProjectImageGrid
@@ -694,7 +760,7 @@ const AboutMe = () => {
                       </s.ProjectHighlightItem>
                       <s.ProjectHighlightItem>
                         <s.ProjectHightlightTitle>대화 연습 : </s.ProjectHightlightTitle>
-                        GPT 모델을 사용하여 실제 상황 처럼 대화가 가능하다. 상황에 맞지 않는 답변은 기록되며 복습이 가능하다.
+                        GPT 모델을 사용하여 실제 상황처럼 대화가 가능하다. 상황에 맞지 않는 답변은 기록되며 복습이 가능하다.
                       </s.ProjectHighlightItem>
                       <s.ProjectHighlightItem>
                         <s.ProjectHightlightTitle>드라마 플레이 : </s.ProjectHightlightTitle>
@@ -710,12 +776,12 @@ const AboutMe = () => {
                       </s.ProjectHighlightItem>
                       <s.ProjectHighlightItem>
                         <s.ProjectHightlightTitle>스트릭 : </s.ProjectHightlightTitle>
-                        최근 연습동향, 로그인 등을 스트릭을 통해 확인 및 동기부여, 조건이 달성되면 업적이 해금되어 스트릭을 꾸밀 수 있다.
+                        최근 연습 동향, 로그인 등을 스트릭을 통해 확인 및 동기부여, 조건이 달성되면 업적이 해금되어 스트릭을 꾸밀 수 있다.
                       </s.ProjectHighlightItem>
                       <s.ProjectHighlightItem>
                         <s.ProjectHightlightTitle>통계 : </s.ProjectHightlightTitle>
-                        4가지 정보를 확인할 수 있다. 사용자가 많이 틀린 발음 순 통계, 주간시험의 분석 결과를 정답과 발음 복습을 통해 확인, 대화 연습의
-                        부자연스러운 대화, 달성한 업적 등의 정보 확인이 가능하다.
+                        4가지 정보를 확인할 수 있다. 사용자가 많이 틀린 발음 순 통계, 주간 시험의 분석 결과를 정답과 발음 복습을 통해 확인, 대화
+                        연습의 부자연스러운 대화, 달성한 업적 등의 정보 확인이 가능하다.
                       </s.ProjectHighlightItem>
                     </s.ProjectHighlight>
                     <s.ProjectCategory>
@@ -732,17 +798,17 @@ const AboutMe = () => {
                     <s.ProjectPart>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>프로젝트 기획 : </s.ProjectPartTitle>
-                        프로젝트의 시작은 가족의 재활 과정 중 불편함을 바로 옆에서 지켜본 본인의 작은 불편함이였습니다. 본인의 아이디어 이기에
+                        프로젝트의 시작은 가족의 재활 과정 중 불편함을 바로 옆에서 지켜보고 느낀 작은 불편함이었습니다. 본인의 아이디어 이기에
                         책임감을 가지고 기획에 중심이 되어 프로젝트를 진행 하였습니다.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>UX/UI 디자인 : </s.ProjectPartTitle>
-                        애플과 네이버, 백준 등의 화이트 계열 웹 사이트들을 레퍼런스로 삼아 UX/UI 디자인을 하였으며 인지에 어려움이 있는 뇌질환자들에
-                        적합한 어고노믹 디자인을 적용 하였습니다.
+                        애플과 네이버, 백준 등의 화이트 계열 웹 사이트들을 레퍼런스로 삼아 UX/UI 디자인을 하였으며 인지에 어려움이 있는 뇌 질환자들에
+                        적합한 어고노믹 디자인을 적용하였습니다.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>통계 : </s.ProjectPartTitle>
-                        Nivo 차트와 직접 작성한 그래프를 활용하여 사용자의 현재 수준을 파악 가능한 통계 페이지를 구현. 이 또한 뇌질환자의 상태를
+                        Nivo 차트와 직접 작성한 그래프를 활용하여 사용자의 현재 수준을 파악 가능한 통계 페이지를 구현. 이 또한 뇌 질환자의 상태를
                         고려하여 상단에서 하단으로 내려가며 확인할 수 있도록 레이아웃을 구성하였습니다.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
@@ -759,10 +825,10 @@ const AboutMe = () => {
                       회고
                     </s.ProjectCategory>
                     <s.ProjectInsight>
-                      React 로는 처음 진행하는 프로젝트인 만큼 배움으로 가득채우고자 하는 마음가짐으로 시작하였습니다. /{' '}
+                      처음으로 타인을 위해 시작한 프로젝트입니다. 사회적 약자들의 힘듦을 이해하기 위해 노력하였습니다. /
                       <span>
-                        &nbsp;팀원과의 소통이 가장 중요하며 모든 요청 및 피드백, 답변을 문서화 하여 작성하는 것의 필요성을 크게 느낀 프로젝트였습니다.
-                        프로젝트 중반부터는 모든 소통을 문서화 하여 팀원끼리 다시 한번 같은 내용을 확인 하는 프로세스를 줄일 수 있었습니다.{' '}
+                        &nbsp;인지 장애를 가진 이들에게 너무 많은 정보는 받아들이기 쉽지 않습니다. 이를 해결하고자 화면 중앙으로 레이아웃을 집중시키고
+                        큰 사이즈의 폰트, 단순한 도형 및 색상으로 인터렉티브한 디자인 시도해 보았습니다.&nbsp;
                       </span>
                       / Jira, Notion, Mattermost 등의 다양한 협업 툴을 한 프로젝트에서 활용하다 보니 개발자 협업 환경에 개선이 필요하다는 생각이
                       들었습니다.
@@ -797,6 +863,7 @@ const AboutMe = () => {
                       STVDY
                       <s.GithubLink
                         href="https://github.com/YellaGoya/STVDY"
+                        target="_blank"
                         onClick={(event) => {
                           event.stopPropagation();
                         }}
@@ -805,13 +872,13 @@ const AboutMe = () => {
                         <GitHubIcon />
                       </s.GithubLink>
                     </s.ProjectName>
-                    <s.ProjectDesc>그룹원 들과 함께 실시간 스터디 진행이 가능한 화상 스터디 플랫폼.</s.ProjectDesc>
+                    <s.ProjectDesc>그룹원들과 함께 실시간 스터디 진행이 가능한 화상 스터디 플랫폼.</s.ProjectDesc>
                   </s.ProjectInfo>
                 </s.ProjectIntro>
                 <s.ProjectMoreWrapper $toggle={stvdyToggle} height={stvdyHeight}>
                   <s.ProjectMore ref={stvdyMoreRef}>
                     <s.ProjectDetail>
-                      현대인들의 기본 소양이 된 자기 개발에 동기부여 하기 위해 그룹으로 스터디를 진행하며 실시간 화상 회의가 가능하다.
+                      현대인들의 기본 소양이 된 자기 계발에 동기부여 하기 위해 그룹으로 스터디를 진행하며 실시간 화상 회의가 가능하다.
                     </s.ProjectDetail>
                     <s.ProjectImageGrid
                       onClick={() => {
@@ -858,7 +925,7 @@ const AboutMe = () => {
                       사용 기술 스택
                     </s.ProjectCategory>
                     <s.ProjectStack>
-                      프레임 워크 : Vue3 / 상태 관리 : pinia / 기능 구현 및 API 객체 구현 : Javascript / 포맷팅 : Prettier
+                      프레임워크 : Vue3 / 상태 관리 : pinia / 기능 구현 및 API 객체 구현 : Javascript / 포맷팅 : Prettier
                     </s.ProjectStack>
                     <s.ProjectCategory>
                       <s.HistoryDiv />
@@ -871,8 +938,8 @@ const AboutMe = () => {
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>메인 : </s.ProjectPartTitle>
-                        새로운 질문 등을 확인할 수 있는 메인페이지를 구현. 다양한 플랫폼의 메인 처럼 한눈에 최신 동향을 한눈에 확인 가능하도록
-                        레이아웃을 구성 하였습니다.
+                        새로운 질문 등을 확인할 수 있는 메인페이지를 구현. 다양한 플랫폼의 메인처럼 한눈에 최신 동향을 한눈에 확인 가능하도록
+                        레이아웃을 구성하였습니다.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>질문 게시판 : </s.ProjectPartTitle>웹 질문 및 답변, 게시판 페이지 구현.
@@ -882,12 +949,12 @@ const AboutMe = () => {
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>커스텀 테마 : </s.ProjectPartTitle>
-                        json 포맷으로 UI의 색상을 사용자 취향에 맞게 수정가능한 기능을 구현. 다크 모드를 기본으로 하며 라이트 모드를 json 포맷 예시로
+                        json 포맷으로 UI의 색상을 사용자 취향에 맞게 수정 가능한 기능을 구현. 다크 모드를 기본으로 하며 라이트 모드를 json 포맷 예시로
                         제공하였습니다.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>스켈레톤 코드 작성 및 pinia 상태 관리 구현 : </s.ProjectPartTitle>
-                        프론트엔드 팀원들이 사용 할 Vue3 Composition API를 기반으로 한 스켈레톤 코드 작성, pinia 상태 관리 구현.
+                        프론트엔드 팀원들이 사용할 Vue3 Composition API를 기반으로 한 스켈레톤 코드 작성, pinia 상태 관리 구현.
                       </s.ProjectPartItem>
                     </s.ProjectPart>
                     <s.ProjectCategory>
@@ -895,12 +962,10 @@ const AboutMe = () => {
                       회고
                     </s.ProjectCategory>
                     <s.ProjectInsight>
-                      처음 프론트엔드로 진행한 프로젝트이자 6인이라는 많은 인원과 진행한 프로젝트 였습니다. Vue3 프레임워크로 개발을 하며 코드의
-                      재사용성과 가시성을 고려하며 개발 하였습니다. /
+                      Discord, Apple FaceTime, Skype를 레퍼런스로 삼아 처음으로 디자인을 담당해 본 프로젝트입니다. /
                       <span>
-                        &nbsp; 점유율이 높은 React 라이브러리를 사용하지 않고 자바스크립트의 문법을 벗어난 Vue3 로 첫 프론트엔드 프로젝트를 진행한
-                        것이 아쉬움이 남지만 우려한 것과 다르게 Vue3 의 상태 관리 및 라우팅 등의 기능은 편리했고 개발에 부족함이 없었습니다. 어떤
-                        프레임워크를 사용하던 이해를 기반한 개발을 한다면 문제가 없다는 것을 다시 한번 깨달았습니다.&nbsp;
+                        &nbsp;젊은 사용자층을 겨냥하여 커스텀 가능한 UI, 컬러 테마를 적용하였습니다. 웹 어플리케이션이지만 PC 환경에서 네이티브 한
+                        경험을 줄 수 있도록 레이아웃을 구성 하였습니다.
                       </span>
                     </s.ProjectInsight>
                   </s.ProjectMore>
@@ -936,9 +1001,9 @@ const AboutMe = () => {
             <VerticalAlignTopIcon />
             처음으로
           </s.ToTopButton>
-          <s.ToGithubLink href="https://github.com/YellaGoya">
+          <s.ToGithubLink href="https://github.com/YellaGoya" target="_blank">
             <GitHubIcon />
-            GitHub프로필
+            깃허브 프로필
           </s.ToGithubLink>
         </s.ToWrapper>
       </Wrapper>

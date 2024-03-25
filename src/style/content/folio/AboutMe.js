@@ -161,7 +161,7 @@ export const Skills = styled.ul`
   margin: 0 auto;
   list-style: none;
   padding: 0 10px;
-  margin-top: 200px;
+  margin-top: 170px;
 
   transition: color 0.4s ease;
   color: var(--font);
@@ -430,7 +430,7 @@ export const ModeButtonWrapper = styled.button`
 `;
 
 export const ProjectTitle = styled.h3`
-  margin-top: 200px;
+  margin-top: 170px;
   padding: 0 10px;
 
   color: var(--font);
@@ -473,6 +473,8 @@ export const ProjectIntro = styled.div`
   height: 128px;
   padding: 10px;
 
+  transition: background-color 0.1s ease;
+
   @media (max-width: 500px) {
     height: auto;
   }
@@ -496,8 +498,8 @@ export const LogoWrapper = styled.div`
   user-select: none;
 
   box-shadow:
-    rgba(0, 0, 0, 0.12) 0px 2px 2px,
-    rgba(0, 0, 0, 0.24) 0px 4px 4px;
+    rgba(0, 0, 0, 0.06) 0px 2px 3px,
+    rgba(0, 0, 0, 0.18) 0px 1px 6px;
 
   @media (max-width: 500px) {
     width: 100%;
@@ -584,10 +586,9 @@ export const GithubLink = styled.a`
 
   &:hover {
     text-decoration: underline;
-    text-underline-offset: 3px;
-    color: var(--font);
+    color: var(--font-custom);
     & > svg {
-      fill: var(--font);
+      fill: var(--font-custom);
     }
   }
 `;
@@ -742,7 +743,6 @@ export const MoreButton = styled.button`
     } */
   }
 
-  // 자식 svg가 hover 상태, 부모의 배경색을 바꾸는 방법
   &:hover {
     & > svg {
       background-color: var(--font);
@@ -805,9 +805,10 @@ export const ProjectImageGrid = styled.div`
 
   & > div {
     border-radius: 0.5rem;
+
     box-shadow:
-      rgba(0, 0, 0, 0.12) 0px 2px 2px,
-      rgba(0, 0, 0, 0.24) 0px 4px 4px;
+      rgba(0, 0, 0, 0.06) 0px 2px 3px,
+      rgba(0, 0, 0, 0.18) 0px 1px 6px;
 
     cursor: pointer;
   }
@@ -817,9 +818,10 @@ export const ProjectImageGrid = styled.div`
     height: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
+
     box-shadow:
-      rgba(0, 0, 0, 0.12) 0px 2px 2px,
-      rgba(0, 0, 0, 0.24) 0px 4px 4px;
+      rgba(0, 0, 0, 0.06) 0px 2px 3px,
+      rgba(0, 0, 0, 0.18) 0px 1px 6px;
 
     cursor: pointer;
   }
@@ -866,8 +868,8 @@ export const ImageViewerWrapper = styled.div`
     object-fit: cover;
 
     box-shadow:
-      rgba(0, 0, 0, 0.12) 0px 2px 2px,
-      rgba(0, 0, 0, 0.24) 0px 4px 4px;
+      rgba(0, 0, 0, 0.06) 0px 2px 3px,
+      rgba(0, 0, 0, 0.18) 0px 1px 6px;
   }
 
   & > div {
@@ -876,8 +878,8 @@ export const ImageViewerWrapper = styled.div`
     border-radius: 0.5rem;
 
     box-shadow:
-      rgba(0, 0, 0, 0.12) 0px 2px 2px,
-      rgba(0, 0, 0, 0.24) 0px 4px 4px;
+      rgba(0, 0, 0, 0.06) 0px 2px 3px,
+      rgba(0, 0, 0, 0.18) 0px 1px 6px;
   }
 `;
 
@@ -906,6 +908,8 @@ export const ToWrapper = styled.section`
     line-height: 1;
 
     cursor: pointer;
+
+    transition: background-color 0.1s ease;
 
     &:hover {
       background-color: var(--bg-button-hover);

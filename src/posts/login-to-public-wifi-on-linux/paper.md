@@ -20,9 +20,11 @@ categories:
 
 ### neverssl.com
 ---
+우선 해결 방법에 앞서 기존 방법이 통하지 않는 이유를 알아야 한다.<br>`캡티브 포털`이 무엇인지 알아보자.
 > A **captive portal** is a web page accessed with a [web browser](https://en.wikipedia.org/wiki/Web_browser "Web browser") that is displayed to newly connected users of a [Wi-Fi](https://en.wikipedia.org/wiki/Wi-Fi "Wi-Fi") or wired network before they are granted broader access to network resources.
+<center>출처: 위키피디아</center>
 
-출처: 위키피디아
+<br>
 
 위 설명을 읽어보면 `캡티브 포털` 은 와이파이 혹은 네트워크에 처음 연결된 유저를<br>
 접속 권한을 주기 전 납치하는 웹 페이지로의 이동을 의미한다.
@@ -34,11 +36,11 @@ categories:
 하지만 우리가 브라우저를 열고 접속하는 거의 모든 웹 사이트들은 HTTPS를 사용하며 보안을 위해 리다이렉트를 허용하지 않는다.<br>
 그렇기에 리다이렉트가 가능한 HTTP 웹 사이트로 접속하면 바로 와이파이 로그인 페이지로 납치가 되고 우리는 퍼블릭 와이파이 이용이 가능해진다.
 
-이런 목적으로 만들어진 웹 사이트가 `neverssl.com` 이다.
+이런 목적으로 만들어진 웹 사이트가 [neverssl.com](http://neverssl.com) 이다.
 
 ![](./20231220065058.png)
 
-neverssl.com 은 이름 그대로 SSL( HTTPS )을 사용하지 않는다.<br>
+NeverSSL은 이름 그대로 SSL( HTTPS )을 사용하지 않는다.<br>
 캡티브 포털의 로그인 페이지를 안전하게 띄울 수 있는 것이다.
 
 ### Network Manager

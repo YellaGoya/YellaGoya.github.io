@@ -83,8 +83,8 @@ const TopBar = ({ menuHeight, setMenuHeight }) => {
     <>
       <s.Menu ref={menuRef} $isMenu={isMenu} $isFocus={isFocus} $menuHeight={menuHeight}>
         <s.Category onClick={() => handleCategories('')}>전체</s.Category>
-        <s.Category onClick={() => handleCategories('Javascript')}>Javascript</s.Category>
-        <s.Category onClick={() => handleCategories('gatsby')}>gatsby</s.Category>
+        <s.Category onClick={() => handleCategories('개발 환경')}>개발 환경</s.Category>
+        <s.Category onClick={() => handleCategories('Web')}>Web</s.Category>
       </s.Menu>
       <s.Search $isSearch={isSearch} $isFocus={isFocus}>
         <input ref={inputRef} value={searchQuery} placeholder="검색어 입력" type="text" onChange={handleInputChange} onKeyDown={handleKeyPress} />

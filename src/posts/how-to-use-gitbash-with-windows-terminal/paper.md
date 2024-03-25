@@ -5,7 +5,7 @@ description: Windows Terminal과 Git Bash를 활용해 더 효율적인 개발 �
 thumbnail: './thumbnail.webp'
 categories:
   - 개발 환경
-  - Bash
+  - bash
   - Terminal
 ---
 
@@ -46,7 +46,7 @@ Bash는 유닉스/리눅스 시스템에서 널리 사용되는 Shell이며, 복
 
 ### Git Bash 설치
 ---
-https://git-scm.com/downloads 로 들어가 `Windows > Standalone Installer > 본인 OS 32 / 64 bit 선택` 을 통해 Git 설치 파일을 다운받는다.
+https://git-scm.com/downloads 로 들어가 `Windows > Standalone Installer > 본인 OS 32 / 64 bit 선택`을 통해 Git 설치 파일을 다운받는다.
 
 ![](./1.png)
 ![](./2.png)
@@ -86,7 +86,7 @@ Git 설정에 앞서 터미널 설치 및 설정을 먼저 해주도록 하자.
 
 ### Windows Terminal 앱
 ---
-Terminal 앱은 따로 흩어져있는 shell, interface 를 한 어플리케이션을 통해 컨트롤 할 수 있게 해준다.
+Terminal 앱은 따로 흩어져있는 shell, interface를 한 어플리케이션을 통해 컨트롤 할 수 있게 해준다.
 
 그 외에도 폰트 및 테마 커스터마이징에 용이하니 윈도우 환경이라면 반갑지 아니할 수 없다.
 
@@ -101,11 +101,11 @@ Terminal 앱은 따로 흩어져있는 shell, interface 를 한 어플리케이�
 
 <br>
 
-Git Bash 를 Terminal 앱에 추가하기 위해서는 GUI 환경에서 설정창이 아닌 Settings.json 파일의 Profiles 를 수정해주어야 한다.
+Git Bash를 Terminal 앱에 추가하기 위해서는 GUI 환경에서 설정창이 아닌 Settings.json 파일의 Profiles를 수정해주어야 한다.
 
-Terminal 앱에서 `Ctrl + Shift + ,` 를 누르거나 상단의 더보기 표시를 눌러 `설정 > 좌측 하단 톱니바퀴` 버튼을 누르면 Settings.json 편집 창이 뜬다.
+Terminal 앱에서 `Ctrl + Shift + ,`를 누르거나 상단의 더보기 표시를 눌러 `설정 > 좌측 하단 톱니바퀴`버튼을 누르면 Settings.json 편집 창이 뜬다.
 
-아래의 프로파일을 `profiles > list` 에 추가해주면 Git Bash 를 Terminal 앱에서 사용할 수 있다.
+아래의 프로파일을 `profiles > list`에 추가해주면 Git Bash를 Terminal 앱에서 사용할 수 있다.
 
 <br>
 
