@@ -1,5 +1,6 @@
 import { styled, createGlobalStyle, keyframes } from 'styled-components';
 import pv from 'assets/pv.woff2';
+
 const searchOpacity = keyframes`
   0% {
     opacity: 0;

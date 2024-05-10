@@ -55,6 +55,9 @@ import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LightbulbRoundedIcon from '@mui/icons-material/LightbulbRounded';
 import ArrowLeftRoundedIcon from '@mui/icons-material/ArrowLeftRounded';
+import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
+import LowPriorityRoundedIcon from '@mui/icons-material/LowPriorityRounded';
+import SaveRoundedIcon from '@mui/icons-material/SaveRounded';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 import * as s from 'style/content/folio/AboutMe';
@@ -69,22 +72,28 @@ const AboutMe = () => {
   const dddevMoreRef = useRef(null);
   const nashdaMoreRef = useRef(null);
   const stvdyMoreRef = useRef(null);
+  const markaMoreRef = useRef(null);
 
   const [dddevHeight, setDddevHeight] = useState(0);
   const [nashdaHeight, setNashdaHeight] = useState(0);
   const [stvdyHeight, setStvdyHeight] = useState(0);
+  const [markaHeight, setMarkaHeight] = useState(0);
 
   const [dddevToggle, setDddevToggle] = useState(false);
   const [nashdaToggle, setNashdaToggle] = useState(false);
   const [stvdyToggle, setStvdyToggle] = useState(false);
+  const [markaToggle, setMarkaToggle] = useState(false);
 
   const [dddevHighlightToggle, setDddevHighlightToggle] = useState(false);
   const [nashdaHighlightToggle, setNashdaHighlightToggle] = useState(false);
   const [stvdyHighlightToggle, setStvdyHighlightToggle] = useState(false);
+  const [markaHighlightToggle, setMarkaHighlightToggle] = useState(false);
 
   const [dddevViewToggle, setDddevViewToggle] = useState(false);
   const [nashdaViewToggle, setNashdaViewToggle] = useState(false);
   const [stvdyViewToggle, setStvdyViewToggle] = useState(false);
+
+  const [markaGreeting, setMarkaGreeting] = useState('안녕하세요?');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -146,6 +155,36 @@ const AboutMe = () => {
       stvdyObserver.observe(stvdyMoreRef.current);
     }
 
+    const markaObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setMarkaHeight(entry.contentRect.height);
+      }
+    });
+
+    if (markaMoreRef.current) {
+      markaObserver.observe(markaMoreRef.current);
+    }
+
+    // markaGreeting 의 '새로운' 를 '새로운 앱 마카 다이어리 경험해보기. 클릭으로 이동.' 으로 타이핑 하는 것 처럼 한글자씩 추가되게
+
+    let i = 0;
+    const typing = () => {
+      const speed = 120;
+      if (i < txt.length) {
+        setMarkaGreeting(txt[i]);
+        i++;
+        setTimeout(typing, speed + Math.random() * 120 - 60);
+      } else {
+        i = 0;
+        setTimeout(() => {
+          setMarkaGreeting('안녕하세요?');
+          typing();
+        }, speed + 1000);
+      }
+    };
+
+    typing();
+
     return () => {
       if (dddevMoreRef.current) {
         dddevObserver.unobserve(dddevMoreRef.current);
@@ -157,6 +196,10 @@ const AboutMe = () => {
 
       if (stvdyMoreRef.current) {
         stvdyObserver.unobserve(stvdyMoreRef.current);
+      }
+
+      if (markaMoreRef.current) {
+        markaObserver.unobserve(markaMoreRef.current);
       }
 
       window.removeEventListener('wheel', handleScroll);
@@ -250,15 +293,20 @@ const AboutMe = () => {
               </s.HistoryItem>
               <s.HistoryItem>
                 <s.HistoryDiv />
-                <p>회 AI 분석 플랫폼, 사랑회요</p>
-              </s.HistoryItem>
-              <s.HistoryItem>
-                <s.HistoryDiv />
                 <p>기업 연계 프로젝트 감정 분석 스마트 라이트</p>
               </s.HistoryItem>
               <s.HistoryItem>
                 <s.HistoryDiv />
                 <p>삼성 과제 RDBMS, 시계열 DB 성능 비교</p>
+              </s.HistoryItem>
+              <s.HistoryTitle>[ 안세혁 · 연락처 ]</s.HistoryTitle>
+              <s.HistoryItem>
+                <s.HistoryDiv />
+                <p>he2kape@gmail.com</p>
+              </s.HistoryItem>
+              <s.HistoryItem>
+                <s.HistoryDiv />
+                <p>010 · 2991 · 1153</p>
               </s.HistoryItem>
             </s.History>
           </s.Specification>
@@ -724,7 +772,7 @@ const AboutMe = () => {
                 <s.ProjectMoreWrapper $toggle={nashdaToggle} height={nashdaHeight}>
                   <s.ProjectMore ref={nashdaMoreRef}>
                     <s.ProjectDetail>
-                      발음 및 대화에 어려움이 생기는 등, 후유증이 발생한 실제 뇌 질환 환자의 열악한 재활 과정을 보고 더 좋은 재활 환경을 제공하기 위해
+                      발음 및 대화에 어려움이 생기는 등, 후유증이 발생한 실제 뇌질환 환자의 열악한 재활 과정을 보고 더 좋은 재활 환경을 제공하기 위해
                       진행한 프로젝트이다.
                     </s.ProjectDetail>
                     <s.ProjectImageGrid
@@ -803,12 +851,12 @@ const AboutMe = () => {
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>UX/UI 디자인 : </s.ProjectPartTitle>
-                        애플과 네이버, 백준 등의 화이트 계열 웹 사이트들을 레퍼런스로 삼아 UX/UI 디자인을 하였으며 인지에 어려움이 있는 뇌 질환자들에
+                        애플과 네이버, 백준 등의 화이트 계열 웹 사이트들을 레퍼런스로 삼아 UX/UI 디자인을 하였으며 인지에 어려움이 있는 뇌질환자들에
                         적합한 어고노믹 디자인을 적용하였습니다.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
                         <s.ProjectPartTitle>통계 : </s.ProjectPartTitle>
-                        Nivo 차트와 직접 작성한 그래프를 활용하여 사용자의 현재 수준을 파악 가능한 통계 페이지를 구현. 이 또한 뇌 질환자의 상태를
+                        Nivo 차트와 직접 작성한 그래프를 활용하여 사용자의 현재 수준을 파악 가능한 통계 페이지를 구현. 이 또한 뇌질환자의 상태를
                         고려하여 상단에서 하단으로 내려가며 확인할 수 있도록 레이아웃을 구성하였습니다.
                       </s.ProjectPartItem>
                       <s.ProjectPartItem>
@@ -982,9 +1030,134 @@ const AboutMe = () => {
                 </s.MoreButton>
               </s.ProjectInterlude>
             </s.Project>
-            {/* <s.ProjectWindow>
-            <Project />
-          </s.ProjectWindow> */}
+          </s.ProjectWrapper>
+          <s.ProjectWrapper>
+            <s.ProjectTitle>[ 사이드 프로젝트 상세 ]</s.ProjectTitle>
+            <s.Project $toggle={markaToggle}>
+              <s.ProjectInterlude>
+                <s.ProjectIntro
+                  onClick={() => {
+                    setMarkaToggle(!markaToggle);
+                  }}
+                >
+                  <s.LogoWrapper>
+                    <StaticImage src="logo/marka.png" />
+                  </s.LogoWrapper>
+                  <s.ProjectInfo>
+                    <s.ProjectName>
+                      Marka
+                      <s.GithubLink
+                        href="https://github.com/YellaGoya/app-marka"
+                        target="_blank"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                        }}
+                      >
+                        GitHub-marka
+                        <GitHubIcon />
+                      </s.GithubLink>
+                    </s.ProjectName>
+                    <s.ProjectDesc>단순한 상호작용, 다이어리 & 투두리스트 어플리케이션.</s.ProjectDesc>
+                  </s.ProjectInfo>
+                </s.ProjectIntro>
+                <s.ProjectMoreWrapper $toggle={markaToggle} height={markaHeight}>
+                  <s.ProjectMore ref={markaMoreRef}>
+                    <s.ProjectDetail>
+                      다이어리 & 투두리스트 어플리케이션이 필요하여 직접 만들어 보았다. 서버 환경 구축부터 시작하여 Next.js 사이드 프로젝트를 스스로
+                      완성, 풀스택 개발 능력을 키울 수 있었다.
+                    </s.ProjectDetail>
+                    <s.CloneContainer
+                      onClick={() => {
+                        window.open('https://ahnsehyeok.info/app-marka');
+                      }}
+                    >
+                      <form>
+                        <input value="Greetings. App Marka." />
+                        <div />
+                        <textarea value={markaGreeting} />
+                        <div />
+                        <section>
+                          <span>
+                            추가
+                            <AddBoxRoundedIcon />
+                          </span>
+                          <span>
+                            <LowPriorityRoundedIcon />
+                            <SaveRoundedIcon />
+                          </span>
+                        </section>
+                      </form>
+                    </s.CloneContainer>
+                    <s.ProjectCategory
+                      className="highlight"
+                      $toggle={markaHighlightToggle}
+                      onClick={() => {
+                        setMarkaHighlightToggle(!markaHighlightToggle);
+                      }}
+                    >
+                      <s.HistoryDiv />
+                      주요 기능
+                      <ArrowLeftRoundedIcon />
+                    </s.ProjectCategory>
+                    <s.ProjectHighlight $toggle={markaHighlightToggle}>
+                      <s.ProjectHighlightItem>
+                        <s.ProjectHightlightTitle>데이터 연동 : </s.ProjectHightlightTitle>비연동 상태에서는 로컬 indexedDB에 데이터를 저장, 연동
+                        상태에서는 서버에 데이터를 저장한다. 연동 상태에서 어플리케이션 실행 시 서버와 로컬 데이터를 비교하여 각각의 데이터를
+                        최신화한다.
+                      </s.ProjectHighlightItem>
+                      <s.ProjectHighlightItem>
+                        <s.ProjectHightlightTitle>팔로우 : </s.ProjectHightlightTitle>다른 사용자를 팔로우하고 해당 사용자의 투두리스트를 확인할 수
+                        있다.
+                      </s.ProjectHighlightItem>
+                      <s.ProjectHighlightItem>
+                        <s.ProjectHightlightTitle>하이라이트 : </s.ProjectHightlightTitle>
+                        다이어리에서 특정 문장을 하이라이트 처리한 후 투두리스트로 변환할 수 있다. 사용자 경험을 높이기 위해 더블클릭시 단어 뒤 빈칸과
+                        함께 선택되는 브라우저의 기본 텍스트 선택을 javascript로 수정하였다.
+                      </s.ProjectHighlightItem>
+                      <s.ProjectHighlightItem>
+                        <s.ProjectHightlightTitle>색상 커스텀 : </s.ProjectHightlightTitle>
+                        하이라이트 색상을 개인 취향에 맞게 설정할 수 있다.
+                      </s.ProjectHighlightItem>
+                    </s.ProjectHighlight>
+                    <s.ProjectCategory>
+                      <s.HistoryDiv />
+                      사용 기술 스택
+                    </s.ProjectCategory>
+                    <s.ProjectStack>
+                      상태 관리 : Recoil / 프레임워크 : Javascript, Next.js / 데이터베이스 : PostgreSQL / 텍스트 에디터 : Slate / 포맷팅 : ESLint,
+                      Prettier
+                    </s.ProjectStack>
+                    <s.ProjectCategory>
+                      <s.HistoryDiv />
+                      회고
+                    </s.ProjectCategory>
+                    <s.ProjectInsight>
+                      <span>
+                        데이터를 연동하는 과정에 고민이 많았다. 깃의 commit 기록 방식을 떠올렸고 데이터 변동 사항을 각 DB에 기록, 연동시 비교하여 실제
+                        데이터를 최신화하는 방식을 채택하였다.&nbsp;
+                      </span>
+                      / 많은 기능을 추가하기보다는 본인이 필요로 하는 다이어리, 투두리스트를 만들어 보았다. 사실 간단한 텍스트 기록 어플리케이션은
+                      많지만 종이( 다이어리 )같은 디자인을 적용하여 만들고 싶었다. /
+                      <span>
+                        &nbsp;더블클릭으로 단어 선택 시 trailing space가 따라오는 브라우저의 기본동작을 이해하기 어려웠다. 사용자 경험을 낮추는
+                        요인이라 판단, 서칭으로는 원하는 결과를 찾을 수 없어 직접 js, css를 적절히 섞어 구현하였다.&nbsp;/ 처음 1인 프로젝트로 풀스택
+                        개발을 한 의미 있는 프로젝트였다.
+                      </span>
+                    </s.ProjectInsight>
+                  </s.ProjectMore>
+                </s.ProjectMoreWrapper>
+                <s.MoreButton
+                  $toggle={markaToggle}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setMarkaToggle(!markaToggle);
+                    setMarkaHighlightToggle(false);
+                  }}
+                >
+                  <ExpandMoreIcon />
+                </s.MoreButton>
+              </s.ProjectInterlude>
+            </s.Project>
           </s.ProjectWrapper>
         </s.ProfileWrapper>
         <s.ToWrapper>
@@ -1056,3 +1229,67 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
+const txt = [
+  '안녕하세요?\n',
+  '안녕하세요?\n\n',
+  '안녕하세요?\n\nㅅ',
+  '안녕하세요?\n\n새',
+  '안녕하세요?\n\n새ㄹ',
+  '안녕하세요?\n\n새로',
+  '안녕하세요?\n\n새로ㅇ',
+  '안녕하세요?\n\n새로우',
+  '안녕하세요?\n\n새로운',
+  '안녕하세요?\n\n새로운 ',
+  '안녕하세요?\n\n새로운 ㅇ',
+  '안녕하세요?\n\n새로운 애',
+  '안녕하세요?\n\n새로운 앱',
+  '안녕하세요?\n\n새로운 앱 ',
+  '안녕하세요?\n\n새로운 앱 ㅁ',
+  '안녕하세요?\n\n새로운 앱 마',
+  '안녕하세요?\n\n새로운 앱 마ㅋ',
+  '안녕하세요?\n\n새로운 앱 마카',
+  '안녕하세요?\n\n새로운 앱 마카 ',
+  '안녕하세요?\n\n새로운 앱 마카 ㄷ',
+  '안녕하세요?\n\n새로운 앱 마카 다',
+  '안녕하세요?\n\n새로운 앱 마카 다ㅇ',
+  '안녕하세요?\n\n새로운 앱 마카 다이',
+  '안녕하세요?\n\n새로운 앱 마카 다이ㅇ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어',
+  '안녕하세요?\n\n새로운 앱 마카 다이어ㄹ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 ㄱ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 겨',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경ㅎ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경허',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험ㅎ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해ㅂ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보ㄱ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기. ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \nㅋ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n크',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클ㄹ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클리',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭ㅇ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으ㄹ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으로',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으로 ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으로 ㅇ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으로 이',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으로 이ㄷ',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으로 이도',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으로 이동',
+  '안녕하세요?\n\n새로운 앱 마카 다이어리 경험해보기.  \n클릭으로 이동.',
+];

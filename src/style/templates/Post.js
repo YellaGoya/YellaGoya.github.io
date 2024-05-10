@@ -15,22 +15,23 @@ export const Post = styled.section`
 export const ThumbnailWrapper = styled.div`
   position: relative;
   width: calc(100% - 40px);
-  height: 300px;
+  height: 220px;
 
   padding: 20px;
 
   display: flex;
   justify-content: center;
-
-  margin-bottom: 30px;
-
+  
   .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
 
+    border-radius: 12px;
+    overflow: hidden;
+
     img {
       object-fit: cover;
-    }
+      // 이미지 태그 속성 어둡게
   }
 `;
 
@@ -130,8 +131,8 @@ export const Content = styled.article`
   li > code,
   table > code,
   blockquote > code {
-    padding: 3px 6px;
-    margin: 0 2px;
+    padding: 2px 6px;
+    margin-right: 2px;
 
     color: var(--font);
     font-family: inherit;
@@ -147,6 +148,11 @@ export const Content = styled.article`
 
     > * {
       margin: 10px 0;
+    }
+
+    strong {
+      font-weight: 400;
+      color: #faf3ba;
     }
   }
 
@@ -259,6 +265,9 @@ export const Content = styled.article`
 
     & > p {
       color: var(--font);
+      &:last-child {
+        margin: 0;
+      }
     }
 
     box-shadow:

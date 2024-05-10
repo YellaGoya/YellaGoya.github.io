@@ -19,7 +19,7 @@ categories:
 > 
 > 태그는 원래 텍스트와는 별도로 원고의 교정부호와 주석을 표현하기 위한 것이었으나 용도가 점차 확장되어 문서의 구조를 표현하는 역할을 하게 되었다. 이러한 태그 방법의 체계를 마크업 언어라 한다.
 
-- **표현적 마크업**(Presentational markup): 전통적인 워드 처리 시스템이 사용하는 마크업. <br/>[위지위그](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%A7%80%EC%9C%84%EA%B7%B8) 효과를 내는 문서 텍스트에 포함되니 이진 코드. <br/>이러한 마크업은 사람(저자나 편집자도 포함)의 눈에는 보이지 않도록 설계되는 것이 일반적이다.
+- **표현적 마크업**(Presentational markup): 전통적인 워드 처리 시스템이 사용하는 마크업.<br/>[위지위그](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%A7%80%EC%9C%84%EA%B7%B8) 효과를 내는 문서 텍스트에 포함되니 이진 코드. <br/>이러한 마크업은 사람(저자나 편집자도 포함)의 눈에는 보이지 않도록 설계되는 것이 일반적이다.
 - **절차적 마크업**(Procedural markup): 마크업은 텍스트에 포함되며 문자를 처리할 프로그램의 명령을 제공한다. <br/>[troff](https://ko.wikipedia.org/w/index.php?title=Troff&action=edit&redlink=1), [LaTeX](https://ko.wikipedia.org/wiki/LaTeX), [포스트스크립트](https://ko.wikipedia.org/wiki/%ED%8F%AC%EC%8A%A4%ED%8A%B8%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8)를 예로 들 수 있다.
 - **기술적 마크업**(Descriptive markup): 마크업은 문서의 일부에 이름을 다는 데 사용된다. <br/>예로, HTML의 인용의 이름을 다는 `<cite>`  태그를 들 수 있다.
 

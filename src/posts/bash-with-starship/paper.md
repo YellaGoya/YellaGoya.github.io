@@ -7,7 +7,6 @@ categories:
   - 개발 환경
   - bash
   - starship
-  - prompt
 ---
 
 ### 인트로

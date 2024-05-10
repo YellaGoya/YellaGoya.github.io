@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ga1 from 'assets/ga1.woff2';
 
 export const WordHighlight = styled.h1`
   margin-bottom: 20px;
@@ -101,9 +102,9 @@ export const HistoryItem = styled.li`
 
   & > p {
     margin: 0;
-    height: 17px;
+    height: 29px;
 
-    line-height: 1;
+    line-height: 29px;
 
     display: flex;
     align-items: center;
@@ -640,7 +641,7 @@ export const ProjectCategory = styled.div`
       transform 0.25s ease,
       fill 0.25s ease;
 
-    transform: ${({ $toggle }) => ($toggle ? 'rotate(-90deg)' : 'rotate(0deg)')};
+    transform: ${({ $toggle }) => ($toggle ? 'rotate(90deg)' : 'rotate(270deg)')};
     fill: ${({ $toggle }) => ($toggle ? 'var(--font-custom)' : 'var(--fontcc)')};
   }
 `;
@@ -932,4 +933,169 @@ export const ToTopButton = styled.button`
 export const TopLocation = styled.div`
   position: absolute;
   top: -15px;
+`;
+
+export const CloneContainer = styled.div`
+  @font-face {
+    font-family: 'ga1';
+    src: url(${ga1}) format('woff2');
+    font-display: block;
+  }
+  position: relative;
+
+  padding: 15px;
+
+  border-radius: 1.4rem;
+  background-color: #fefcff;
+
+  font-family: 'ga1';
+
+  box-shadow:
+    rgba(0, 0, 0, 0.06) 0px 2px 3px,
+    rgba(0, 0, 0, 0.18) 0px 1px 6px;
+
+  margin-bottom: 50px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 1.4rem;
+    z-index: 0;
+    background: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
+    opacity: 0.2;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  &::after {
+    content: 'App Marka 이동하기';
+    //텍스트를 중앙으로
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+    border-radius: 1.4rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    color: #fff;
+    font-size: 27px;
+    font-family: 'pv';
+    background-color: #000;
+
+    cursor: pointer;
+  }
+
+  & form > input {
+    position: relative;
+    width: 100%;
+
+    color: #202020;
+    font-size: 27px;
+    font-weight: 700;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    white-space: nowrap;
+
+    opacity: 0.65;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  & form > textarea {
+    font-family: 'Malgun Gothic';
+    font-size: 18px;
+    font-weight: 400px;
+
+    line-height: 1.73;
+
+    width: 100%;
+    min-height: 200px;
+    resize: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  & form > div {
+    position: relative;
+    max-width: 970px;
+    width: 100%;
+    height: 1px;
+
+    /* background-color: #e0e0e0; */
+    background-color: #aaa;
+    opacity: 0.3;
+
+    margin: 9px auto;
+  }
+
+  & section {
+    display: flex;
+    align-items: center;
+  }
+
+  & section > span {
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    opacity: 0.5;
+
+    &:first-child {
+      width: 100px;
+    }
+
+    &:not(:first-child) {
+      width: 50px;
+    }
+
+    & > svg {
+      margin-left: 2px;
+      height: 22px;
+      width: 22px;
+    }
+
+    &:nth-child(2) {
+      //우측 끝으로 붙이기
+      margin-left: auto;
+      margin-right: 20px;
+
+      svg:nth-child(1) {
+        height: 31px;
+        width: 31px;
+
+        margin-right: 8px;
+      }
+
+      svg:nth-child(2) {
+        height: 27px;
+        width: 27px;
+      }
+    }
+  }
 `;
