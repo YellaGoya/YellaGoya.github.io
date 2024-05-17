@@ -12,7 +12,7 @@
   },
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build -p 3010",
     "clean": "gatsby clean",
     "deploy": "gatsby build && gh-pages -d public -b deploy",
     "develop": "gatsby develop",

@@ -51,6 +51,13 @@ export const wrapPageElement = ({ element }) => {
         <html lang="ko" />
         <meta charset="UTF-8" />
         <meta name="author" content="YellaGoya" />
+        <meta name="description" content="Dev blog of Yellagoya" />
+        <link
+          crossOrigin
+          rel="stylesheet"
+          as="style"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
         <meta
           name="keywords"
           content="YellaGoya, malog, 개발자, 블로그, 개발 블로그, 개발, 개발자 블로그, 프론트엔드, 백엔드, 공부, 코딩, 프로그래밍, 자바스크립트, js, react, 리액트, gatsby, next.js, 넥스트, vanilla js, 바닐라 js,"

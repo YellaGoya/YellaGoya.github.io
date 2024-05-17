@@ -21,16 +21,16 @@ export const RecentCard = styled.article`
   padding-bottom: 30px;
   cursor: pointer;
 
-  .gatsby-image-wrapper {
+  & > .gatsby-image-wrapper {
     width: 100% !important;
     height: 200px !important;
     border: 1px solid rgba(0, 0, 0, 1);
     box-shadow: rgba(0, 0, 0, 1) 5px 5px;
-  }
 
-  img {
-    object-fit: cover;
-    object-position: center;
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
   }
 `;
 
@@ -58,6 +58,8 @@ export const Categories = styled.div`
 `;
 
 export const CardTitle = styled.h2`
+  display: flex;
+  align-items: center;
   margin: 0;
   padding: 16px 0 8px 0;
 
@@ -65,6 +67,36 @@ export const CardTitle = styled.h2`
 
   font-size: 2rem;
   color: var(--font);
+`;
+
+export const MarkaIcon = styled.div`
+  display: inline-block;
+
+  div {
+    width: 2.35rem !important;
+    height: 2.35rem !important;
+    margin-right: 1px;
+
+    img {
+      // 이미지 높이제한에 맞춰 가로 사이즈 조절
+      width: auto;
+    }
+  }
+`;
+
+export const PolorsIcon = styled.div`
+  display: inline-block;
+
+  div {
+    width: 1.1rem !important;
+    height: 1.6rem !important;
+    margin-right: 6px;
+
+    img {
+      // 이미지 높이제한에 맞춰 가로 사이즈 조절
+      width: auto;
+    }
+  }
 `;
 
 export const CardDescription = styled.p`

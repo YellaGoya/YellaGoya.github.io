@@ -996,7 +996,7 @@ export const CloneContainer = styled.div`
 
     color: #fff;
     font-size: 27px;
-    font-family: 'pv';
+    font-family: 'Pretendard Variable';
     background-color: #000;
 
     cursor: pointer;
