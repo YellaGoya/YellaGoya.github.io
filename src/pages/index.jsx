@@ -1,7 +1,6 @@
 import Works from 'components/content/malog/Works';
 import Recent from 'components/content/malog/Recent';
 import { Helmet } from 'react-helmet-async';
-// import LatestProject from 'components/content/malog/LatestProject';
 
 import { graphql } from 'gatsby';
 
@@ -19,7 +18,6 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <Works />
       <Recent nodes={nodes} />
-      {/* <LatestProject /> */}
     </>
   );
 };

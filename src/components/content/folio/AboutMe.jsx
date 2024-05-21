@@ -252,16 +252,15 @@ const AboutMe = () => {
               <s.ProfileText>
                 안녕하세요. 개발자 안세혁입니다.
                 <p />
-                스스로 코드 앞에 당당하기 위해 더 읽기 좋은 코드, 더 효율적인 코드를 작성하는 것을 최우선으로 개발하고 있습니다.
+                스스로 코드 앞에 당당하기 위해 더 읽기 좋은 코드, 효율적인 코드를 목표로 개발하고 있습니다.
                 <p />
-                디자인은 디터 람스에 영향을 많이 받았습니다.
-                <br /> 최대한 배제된 디자인을 선호하며, 이를 통해 사용자가 집중할 수 있는 환경을 만들고자 합니다.
+                [외길 프론트] 라는 슬로건은 개발자로서의 정체성입니다.
                 <p />
-                프론트엔드 개발에 가장 큰 즐거움과 가능성을 느끼며,
+                " 개발 경험 중 가장 즐거웠던 것은 무엇인가? "
                 <br />
-                [외길 프론트] 라는 슬로건은 개발자로서의 다짐입니다.
+                라는 질문에 프론트엔드라 답하며, 그 이유는 사용자 경험과 디자인을 중요시하는 가치관을 가졌기 때문입니다.
                 <p />
-                여가 시간에는 토이 프로젝트를 진행하거나 키보드를 만들고 있습니다.
+                사용자에게 더 나은 경험을 제공할 때 개발자로서 보람과 성취감을 느낍니다.
               </s.ProfileText>
             </s.ProfileDesc>
             <s.History>
@@ -320,272 +319,6 @@ const AboutMe = () => {
               개인 프로젝트
             </s.ToGithubLink>
           </s.ToWrapper>
-          <s.Skills>
-            <s.SkillItem
-              $focus={focused === 0}
-              onMouseOver={() => {
-                setFocused(0);
-              }}
-            >
-              <s.SkillTitle>
-                [ 프론트엔드 스택
-                <s.SvgWrapper>
-                  <div />
-                  <JavascriptIcon style={{ fill: '#f7df1e' }} />
-                  <s.SvgTooltip>JavaScript</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <ReactIcon style={{ fill: '#42d1f8' }} />
-                  <s.SvgTooltip>React</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <ReduxIcon style={{ fill: '#7f42c3' }} />
-                  <s.SvgTooltip>Redux</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <RecoilIcon style={{ fill: '#3578e5' }} />
-                  <s.SvgTooltip>Recoil</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <VueIcon style={{ fill: '#00bd82' }} />
-                  <s.SvgTooltip>Vue</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <NextjsIcon />
-                  <s.SvgTooltip>Next.js</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <GatsbyIcon style={{ fill: '#663399' }} />
-                  <s.SvgTooltip>Gatsby</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper style={{ width: '37px', height: '37px' }}>
-                  <StyledComponentsIcon style={{ fill: '#de7496', width: '37px', height: '37px' }} />
-                  <s.SvgTooltip style={{ top: '-19px' }}>Styled Components</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <FigmaIcon style={{ fill: '#ee4f2b' }} />
-                  <s.SvgTooltip>Figma</s.SvgTooltip>
-                </s.SvgWrapper>
-                &nbsp;]
-              </s.SkillTitle>
-              <s.SkillItemDesc>
-                <s.SkillItemDescHighlight>
-                  * React, Next를 메인으로 사용합니다.
-                  <br />
-                  CSS 디자인 및 컴포넌트 작성 등 기초 부터 프로젝트 유지보수 및 배포까지 전반에 기여할 수 있습니다.
-                  <br />
-                  상태관리는 프로젝트의 규모와 상황에 따라 Redux, Recoil 중 선택하여 사용하고 있습니다.
-                </s.SkillItemDescHighlight>
-                <s.SkillLineDiv />
-                <s.SkillItemDescHighlight>
-                  프로젝트를 진행할 때는 SSR, CSR과 같은 렌더링 방식,
-                  <br />
-                  메모이제이션, 캐싱 등의 상황에 따른 최적화를 최우선으로 고려하여 개발합니다.
-                </s.SkillItemDescHighlight>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>Vue2, 3 소규모 팀 프로젝트, Gatsby SSR 블로그 운영 경험이 있습니다.</s.SkillItemDescNormal>
-                <s.SkillLineDiv />
-                <s.SkillItemDescHighlight>
-                  * 백엔드 경험을 기반으로 백엔드 API 연동과 같은 협업에 적극적으로 임할 수 있습니다.
-                </s.SkillItemDescHighlight>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>
-                  CSS-in-CSS 방식과 module.css 를 선호합니다.
-                  <br />
-                  상태 공유 및 인터렉션을 위한 컴포넌트 디자인에는 styled-components를 사용하기도 합니다.
-                  <br />
-                  컨셉, UX/UI 디자인, 와이어 프레임 및 스토리보드 작성에는 Figma를 사용하며,
-                  <br />
-                  최근 4번의 프로젝트를 Figma와 함께하며 디자인을 전담하였습니다.
-                </s.SkillItemDescNormal>
-              </s.SkillItemDesc>
-            </s.SkillItem>
-            <s.SkillItem
-              $focus={focused === 1}
-              onMouseOver={() => {
-                setFocused(1);
-              }}
-            >
-              <s.SkillTitle>
-                [ 백엔드 스택
-                <s.SvgWrapper>
-                  <NodeDotJs style={{ fill: '#7cb701' }} />
-                  <s.SvgTooltip>Node.js</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <JavaIcon style={{ fill: '#ec2025' }} />
-                  <s.SvgTooltip>Java</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <SpringIcon style={{ fill: '#72b545' }} />
-                  <s.SvgTooltip>Spring</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <SwaggerIcon style={{ fill: '#89bf04' }} />
-                  <s.SvgTooltip>Swagger</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <PythonIcon style={{ fill: '#1fee75' }} />
-                  <s.SvgTooltip>Python</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <PostgreSQL style={{ fill: '#305d8d' }} />
-                  <s.SvgTooltip>PostgreSQL</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper style={{ width: '37px', height: '37px', transform: 'translateY(1px)' }}>
-                  <MysqlIcon style={{ fill: '#0088a6', width: '37px', height: '37px' }} />
-                  <s.SvgTooltip style={{ top: '-19px' }}>Mysql</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <InfluxDBIcon style={{ fill: '#22adf6' }} />
-                  <s.SvgTooltip>InfluxDB</s.SvgTooltip>
-                </s.SvgWrapper>
-                &nbsp;]
-              </s.SkillTitle>
-              <s.SkillItemDesc>
-                <s.SkillItemDescHighlight>
-                  * 최근에는 Next 백엔드 서버 및 API로 개인 프로젝트를 완성하여 운영 중입니다.
-                  <br />
-                  다수의 프로젝트 경험을 통해 얻은 백엔드 REST API 설계 및 구현 지식으로 백엔드 개발자와 원활한 협업이 가능합니다.
-                </s.SkillItemDescHighlight>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>
-                  처음에는 Java, Spring 프레임워크를 사용하여 백엔드 서버를 구축하였으며, 현재는 js를 선호합니다.
-                  <br />
-                  학부 연구생 시절 Python, Pandas 등을 활용하여 데이터를 전처리하거나,
-                  <br />
-                  연구실의 데이터베이스 관련 과제를 진행한 경험이 있습니다.
-                </s.SkillItemDescNormal>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>
-                  PostgreSQL, MySQL, MsSQL 및 influxDB 등 프로젝트에 적합한 데이터베이스를 선택하여 사용합니다.
-                </s.SkillItemDescNormal>
-              </s.SkillItemDesc>
-            </s.SkillItem>
-            <s.SkillItem
-              $focus={focused === 2}
-              onMouseOver={() => {
-                setFocused(2);
-              }}
-            >
-              <s.SkillTitle>
-                [ 코드 관리
-                <s.SvgWrapper>
-                  <GitIcon style={{ fill: '#f05539' }} />
-                  <s.SvgTooltip>Git</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <GithubIcon />
-                  <s.SvgTooltip>Github</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <GitlabIcon style={{ fill: '#fc6d26' }} />
-                  <s.SvgTooltip>Gitlab</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <GerritIcon style={{ fill: '#347dbe' }} />
-                  <s.SvgTooltip>Gerrit</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <ESLintIcon style={{ fill: '#4b32c3' }} />
-                  <s.SvgTooltip>ESLint</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <PrettierIcon />
-                  <s.SvgTooltip>Prettier</s.SvgTooltip>
-                </s.SvgWrapper>
-                &nbsp;]
-              </s.SkillTitle>
-              <s.SkillItemDesc>
-                <s.SkillItemDescHighlight>
-                  * 1구현 1커밋을 좌우명으로 Git을 통해 코드를 관리하고 있습니다.
-                  <br />
-                  현재는 GitHub으로 프로젝트 코드를 관리 중이며 이외 코드는 팀 GitLab을 통해 관리하였습니다.
-                </s.SkillItemDescHighlight>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>
-                  코드 스타일을 유지하는 일관성, 컨벤션을 준수하는 것을 중요시하며, 코드 리뷰를 통해 코드의 품질을 높이고자 합니다.
-                  <br />팀 프로젝트를 진행할 때는 Gerrit을 사용하여 코드 리뷰를 강제하는 방식으로 코드의 품질을 높이고자 하였습니다..
-                </s.SkillItemDescNormal>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>
-                  ESLint, Prettier로 프론트엔드 코드의 일관성을 유지하며, XO를 커스텀하여 사용하고 있습니다.
-                </s.SkillItemDescNormal>
-              </s.SkillItemDesc>
-            </s.SkillItem>
-            <s.SkillItem
-              $focus={focused === 3}
-              onMouseOver={() => {
-                setFocused(3);
-              }}
-            >
-              <s.SkillTitle>
-                [ 서버
-                <s.SvgWrapper>
-                  <LinuxIcon />
-                  <s.SvgTooltip>Linux</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <UbuntuIcon style={{ fill: '#e95420' }} />
-                  <s.SvgTooltip>Ubuntu</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <RockyLinux style={{ fill: '#0fb37d' }} />
-                  <s.SvgTooltip>Rocky Linux</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <DockerIcon style={{ fill: '#1072d8' }} />
-                  <s.SvgTooltip>Docker</s.SvgTooltip>
-                </s.SvgWrapper>
-                &nbsp;]
-              </s.SkillTitle>
-              <s.SkillItemDesc>
-                <s.SkillItemDescNormal>
-                  프로젝트를 진행하며 서버를 구축하고 운영한 경험이 있습니다.
-                  <br />
-                  개인 프로젝트의 경우 오라클 인스턴스로 Rocky Linux를 사용 중이며, 학부 연구생 시절에는 Ubuntu를 사용하였습니다.
-                </s.SkillItemDescNormal>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>현재 포트폴리오, 블로그 및 개인 프로젝트들은 모두 개인 서버에서 배포 중입니다.</s.SkillItemDescNormal>
-              </s.SkillItemDesc>
-            </s.SkillItem>
-            <s.SkillItem
-              $focus={focused === 4}
-              onMouseOver={() => {
-                setFocused(4);
-              }}
-            >
-              <s.SkillTitle>
-                [ 협업
-                <s.SvgWrapper>
-                  <JiraIcon style={{ fill: '#2d88ff' }} />
-                  <s.SvgTooltip>Jira</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <SlackIcon style={{ fill: '#6f1f71' }} />
-                  <s.SvgTooltip>Slack</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <MatterMostIcon style={{ fill: '#4264ad' }} />
-                  <s.SvgTooltip>MatterMost</s.SvgTooltip>
-                </s.SvgWrapper>
-                <s.SvgWrapper>
-                  <NotionIcon />
-                  <s.SvgTooltip>Notion</s.SvgTooltip>
-                </s.SvgWrapper>
-                &nbsp;]
-              </s.SkillTitle>
-              <s.SkillItemDesc>
-                <s.SkillItemDescHighlight>* 협업에서 소통을 가장 중요시하며, 문서화는 협업의 정수라 생각합니다.</s.SkillItemDescHighlight>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>
-                  Jira로 이슈를 관리하며 팀원들 간 대화는 Slack 또는 MatterMost, 간단한 소통용 문서는 Notion을 활용하는 것을 좋아합니다.
-                  <br />
-                  스크럼과 같은 짧은 미팅을 통해 팀원들의 진행 상황을 파악하고, 팀원들의 의견을 수렴하여 프로젝트를 진행하길 선호합니다.
-                </s.SkillItemDescNormal>
-              </s.SkillItemDesc>
-            </s.SkillItem>
-          </s.Skills>
           <s.ProjectWrapper>
             <s.ProjectTitle>[ 팀 프로젝트 상세 ]</s.ProjectTitle>
             <s.Project $toggle={dddevToggle}>
@@ -1159,6 +892,272 @@ const AboutMe = () => {
               </s.ProjectInterlude>
             </s.Project>
           </s.ProjectWrapper>
+          <s.Skills>
+            <s.SkillItem
+              $focus={focused === 0}
+              onMouseOver={() => {
+                setFocused(0);
+              }}
+            >
+              <s.SkillTitle>
+                [ 프론트엔드 스택
+                <s.SvgWrapper>
+                  <div />
+                  <JavascriptIcon style={{ fill: '#f7df1e' }} />
+                  <s.SvgTooltip>JavaScript</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <ReactIcon style={{ fill: '#42d1f8' }} />
+                  <s.SvgTooltip>React</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <ReduxIcon style={{ fill: '#7f42c3' }} />
+                  <s.SvgTooltip>Redux</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <RecoilIcon style={{ fill: '#3578e5' }} />
+                  <s.SvgTooltip>Recoil</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <VueIcon style={{ fill: '#00bd82' }} />
+                  <s.SvgTooltip>Vue</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <NextjsIcon />
+                  <s.SvgTooltip>Next.js</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <GatsbyIcon style={{ fill: '#663399' }} />
+                  <s.SvgTooltip>Gatsby</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper style={{ width: '37px', height: '37px' }}>
+                  <StyledComponentsIcon style={{ fill: '#de7496', width: '37px', height: '37px' }} />
+                  <s.SvgTooltip style={{ top: '-19px' }}>Styled Components</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <FigmaIcon style={{ fill: '#ee4f2b' }} />
+                  <s.SvgTooltip>Figma</s.SvgTooltip>
+                </s.SvgWrapper>
+                &nbsp;]
+              </s.SkillTitle>
+              <s.SkillItemDesc>
+                <s.SkillItemDescHighlight>
+                  * React, Next를 메인으로 사용합니다.
+                  <br />
+                  CSS 디자인 및 컴포넌트 작성 등 기초 부터 프로젝트 유지보수 및 배포까지 전반에 기여할 수 있습니다.
+                  <br />
+                  상태관리는 프로젝트의 규모와 상황에 따라 Redux, Recoil 중 선택하여 사용하고 있습니다.
+                </s.SkillItemDescHighlight>
+                <s.SkillLineDiv />
+                <s.SkillItemDescHighlight>
+                  프로젝트를 진행할 때는 SSR, CSR과 같은 렌더링 방식,
+                  <br />
+                  메모이제이션, 캐싱 등의 상황에 따른 최적화를 최우선으로 고려하여 개발합니다.
+                </s.SkillItemDescHighlight>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>Vue2, 3 소규모 팀 프로젝트, Gatsby SSR 블로그 운영 경험이 있습니다.</s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescHighlight>
+                  * 백엔드 경험을 기반으로 백엔드 API 연동과 같은 협업에 적극적으로 임할 수 있습니다.
+                </s.SkillItemDescHighlight>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>
+                  CSS-in-CSS 방식과 module.css 를 선호합니다.
+                  <br />
+                  상태 공유 및 인터렉션을 위한 컴포넌트 디자인에는 styled-components를 사용하기도 합니다.
+                  <br />
+                  컨셉, UX/UI 디자인, 와이어 프레임 및 스토리보드 작성에는 Figma를 사용하며,
+                  <br />
+                  최근 4번의 프로젝트를 Figma와 함께하며 디자인을 전담하였습니다.
+                </s.SkillItemDescNormal>
+              </s.SkillItemDesc>
+            </s.SkillItem>
+            <s.SkillItem
+              $focus={focused === 1}
+              onMouseOver={() => {
+                setFocused(1);
+              }}
+            >
+              <s.SkillTitle>
+                [ 백엔드 스택
+                <s.SvgWrapper>
+                  <NodeDotJs style={{ fill: '#7cb701' }} />
+                  <s.SvgTooltip>Node.js</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <JavaIcon style={{ fill: '#ec2025' }} />
+                  <s.SvgTooltip>Java</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <SpringIcon style={{ fill: '#72b545' }} />
+                  <s.SvgTooltip>Spring</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <SwaggerIcon style={{ fill: '#89bf04' }} />
+                  <s.SvgTooltip>Swagger</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <PythonIcon style={{ fill: '#1fee75' }} />
+                  <s.SvgTooltip>Python</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <PostgreSQL style={{ fill: '#305d8d' }} />
+                  <s.SvgTooltip>PostgreSQL</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper style={{ width: '37px', height: '37px', transform: 'translateY(1px)' }}>
+                  <MysqlIcon style={{ fill: '#0088a6', width: '37px', height: '37px' }} />
+                  <s.SvgTooltip style={{ top: '-19px' }}>Mysql</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <InfluxDBIcon style={{ fill: '#22adf6' }} />
+                  <s.SvgTooltip>InfluxDB</s.SvgTooltip>
+                </s.SvgWrapper>
+                &nbsp;]
+              </s.SkillTitle>
+              <s.SkillItemDesc>
+                <s.SkillItemDescHighlight>
+                  * 최근에는 Next 백엔드 서버 및 API로 개인 프로젝트를 완성하여 운영 중입니다.
+                  <br />
+                  다수의 프로젝트 경험을 통해 얻은 백엔드 REST API 설계 및 구현 지식으로 백엔드 개발자와 원활한 협업이 가능합니다.
+                </s.SkillItemDescHighlight>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>
+                  처음에는 Java, Spring 프레임워크를 사용하여 백엔드 서버를 구축하였으며, 현재는 js를 선호합니다.
+                  <br />
+                  학부 연구생 시절 Python, Pandas 등을 활용하여 데이터를 전처리하거나,
+                  <br />
+                  연구실의 데이터베이스 관련 과제를 진행한 경험이 있습니다.
+                </s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>
+                  PostgreSQL, MySQL, MsSQL 및 influxDB 등 프로젝트에 적합한 데이터베이스를 선택하여 사용합니다.
+                </s.SkillItemDescNormal>
+              </s.SkillItemDesc>
+            </s.SkillItem>
+            <s.SkillItem
+              $focus={focused === 2}
+              onMouseOver={() => {
+                setFocused(2);
+              }}
+            >
+              <s.SkillTitle>
+                [ 코드 관리
+                <s.SvgWrapper>
+                  <GitIcon style={{ fill: '#f05539' }} />
+                  <s.SvgTooltip>Git</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <GithubIcon />
+                  <s.SvgTooltip>Github</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <GitlabIcon style={{ fill: '#fc6d26' }} />
+                  <s.SvgTooltip>Gitlab</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <GerritIcon style={{ fill: '#347dbe' }} />
+                  <s.SvgTooltip>Gerrit</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <ESLintIcon style={{ fill: '#4b32c3' }} />
+                  <s.SvgTooltip>ESLint</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <PrettierIcon />
+                  <s.SvgTooltip>Prettier</s.SvgTooltip>
+                </s.SvgWrapper>
+                &nbsp;]
+              </s.SkillTitle>
+              <s.SkillItemDesc>
+                <s.SkillItemDescHighlight>
+                  * 1구현 1커밋을 좌우명으로 Git을 통해 코드를 관리하고 있습니다.
+                  <br />
+                  현재는 GitHub으로 프로젝트 코드를 관리 중이며 이외 코드는 팀 GitLab을 통해 관리하였습니다.
+                </s.SkillItemDescHighlight>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>
+                  코드 스타일을 유지하는 일관성, 컨벤션을 준수하는 것을 중요시하며, 코드 리뷰를 통해 코드의 품질을 높이고자 합니다.
+                  <br />팀 프로젝트를 진행할 때는 Gerrit을 사용하여 코드 리뷰를 강제하는 방식으로 코드의 품질을 높이고자 하였습니다..
+                </s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>
+                  ESLint, Prettier로 프론트엔드 코드의 일관성을 유지하며, XO를 커스텀하여 사용하고 있습니다.
+                </s.SkillItemDescNormal>
+              </s.SkillItemDesc>
+            </s.SkillItem>
+            <s.SkillItem
+              $focus={focused === 3}
+              onMouseOver={() => {
+                setFocused(3);
+              }}
+            >
+              <s.SkillTitle>
+                [ 서버
+                <s.SvgWrapper>
+                  <LinuxIcon />
+                  <s.SvgTooltip>Linux</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <UbuntuIcon style={{ fill: '#e95420' }} />
+                  <s.SvgTooltip>Ubuntu</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <RockyLinux style={{ fill: '#0fb37d' }} />
+                  <s.SvgTooltip>Rocky Linux</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <DockerIcon style={{ fill: '#1072d8' }} />
+                  <s.SvgTooltip>Docker</s.SvgTooltip>
+                </s.SvgWrapper>
+                &nbsp;]
+              </s.SkillTitle>
+              <s.SkillItemDesc>
+                <s.SkillItemDescNormal>
+                  프로젝트를 진행하며 서버를 구축하고 운영한 경험이 있습니다.
+                  <br />
+                  개인 프로젝트의 경우 오라클 인스턴스로 Rocky Linux를 사용 중이며, 학부 연구생 시절에는 Ubuntu를 사용하였습니다.
+                </s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>현재 포트폴리오, 블로그 및 개인 프로젝트들은 모두 개인 서버에서 배포 중입니다.</s.SkillItemDescNormal>
+              </s.SkillItemDesc>
+            </s.SkillItem>
+            <s.SkillItem
+              $focus={focused === 4}
+              onMouseOver={() => {
+                setFocused(4);
+              }}
+            >
+              <s.SkillTitle>
+                [ 협업
+                <s.SvgWrapper>
+                  <JiraIcon style={{ fill: '#2d88ff' }} />
+                  <s.SvgTooltip>Jira</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <SlackIcon style={{ fill: '#6f1f71' }} />
+                  <s.SvgTooltip>Slack</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <MatterMostIcon style={{ fill: '#4264ad' }} />
+                  <s.SvgTooltip>MatterMost</s.SvgTooltip>
+                </s.SvgWrapper>
+                <s.SvgWrapper>
+                  <NotionIcon />
+                  <s.SvgTooltip>Notion</s.SvgTooltip>
+                </s.SvgWrapper>
+                &nbsp;]
+              </s.SkillTitle>
+              <s.SkillItemDesc>
+                <s.SkillItemDescHighlight>* 협업에서 소통을 가장 중요시하며, 문서화는 협업의 정수라 생각합니다.</s.SkillItemDescHighlight>
+                <s.SkillLineDiv />
+                <s.SkillItemDescNormal>
+                  Jira로 이슈를 관리하며 팀원들 간 대화는 Slack 또는 MatterMost, 간단한 소통용 문서는 Notion을 활용하는 것을 좋아합니다.
+                  <br />
+                  스크럼과 같은 짧은 미팅을 통해 팀원들의 진행 상황을 파악하고, 팀원들의 의견을 수렴하여 프로젝트를 진행하길 선호합니다.
+                </s.SkillItemDescNormal>
+              </s.SkillItemDesc>
+            </s.SkillItem>
+          </s.Skills>
         </s.ProfileWrapper>
         <s.ToWrapper>
           <s.ToTopButton

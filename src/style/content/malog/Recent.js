@@ -77,8 +77,11 @@ export const MarkaIcon = styled.div`
     height: 2.35rem !important;
     margin-right: 1px;
 
+    transition: opacity 0.1s linear 0s !important;
+    background-color: transparent !important;
+
     img {
-      // 이미지 높이제한에 맞춰 가로 사이즈 조절
+      transition: opacity 0.1s linear 0s !important;
       width: auto;
     }
   }
@@ -92,8 +95,11 @@ export const PolorsIcon = styled.div`
     height: 1.6rem !important;
     margin-right: 6px;
 
+    transition: opacity 0.1s linear 0s !important;
+    background-color: transparent !important;
+
     img {
-      // 이미지 높이제한에 맞춰 가로 사이즈 조절
+      transition: opacity 0.1s linear 0s !important;
       width: auto;
     }
   }

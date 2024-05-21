@@ -150,6 +150,7 @@ export const ProfileText = styled.span`
   margin: 0;
   opacity: var(--font-opacity);
   font-variation-settings: 'wght' var(--wght-normal);
+  word-break: keep-all;
 
   & > p {
     margin: 0;
