@@ -1100,3 +1100,76 @@ export const CloneContainer = styled.div`
     }
   }
 `;
+
+export const PolorsBanner = styled.div`
+  position: relative;
+  margin-bottom: 50px;
+
+  border-radius: 1.4rem;
+  overflow: hidden;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.06) 0px 2px 3px,
+    rgba(0, 0, 0, 0.18) 0px 1px 6px;
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 270px;
+
+    div {
+      width: 100%;
+      height: 270px;
+    }
+  }
+
+  p {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    color: #fff;
+    text-align: center;
+    font-size: 4rem;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0.7;
+    }
+
+    p {
+      opacity: 0;
+    }
+  }
+
+  &::after {
+    content: 'App Polors 이동하기';
+    //텍스트를 중앙으로
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+    border-radius: 1.4rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    color: #fff;
+    font-size: 27px;
+    font-family: 'Pretendard Variable';
+    background-color: #000;
+
+    cursor: pointer;
+  }
+`;

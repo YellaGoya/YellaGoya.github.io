@@ -73,21 +73,25 @@ const AboutMe = () => {
   const nashdaMoreRef = useRef(null);
   const stvdyMoreRef = useRef(null);
   const markaMoreRef = useRef(null);
+  const polorsMoreRef = useRef(null);
 
   const [dddevHeight, setDddevHeight] = useState(0);
   const [nashdaHeight, setNashdaHeight] = useState(0);
   const [stvdyHeight, setStvdyHeight] = useState(0);
   const [markaHeight, setMarkaHeight] = useState(0);
+  const [polorsHeight, setPolorsHeight] = useState(0);
 
   const [dddevToggle, setDddevToggle] = useState(false);
   const [nashdaToggle, setNashdaToggle] = useState(false);
   const [stvdyToggle, setStvdyToggle] = useState(false);
   const [markaToggle, setMarkaToggle] = useState(false);
+  const [polorsToggle, setPolorsToggle] = useState(false);
 
   const [dddevHighlightToggle, setDddevHighlightToggle] = useState(false);
   const [nashdaHighlightToggle, setNashdaHighlightToggle] = useState(false);
   const [stvdyHighlightToggle, setStvdyHighlightToggle] = useState(false);
   const [markaHighlightToggle, setMarkaHighlightToggle] = useState(false);
+  const [polorsHighlightToggle, setPolorsHighlightToggle] = useState(false);
 
   const [dddevViewToggle, setDddevViewToggle] = useState(false);
   const [nashdaViewToggle, setNashdaViewToggle] = useState(false);
@@ -165,6 +169,16 @@ const AboutMe = () => {
       markaObserver.observe(markaMoreRef.current);
     }
 
+    const polorsObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setPolorsHeight(entry.contentRect.height);
+      }
+    });
+
+    if (polorsMoreRef.current) {
+      polorsObserver.observe(polorsMoreRef.current);
+    }
+
     // markaGreeting 의 '새로운' 를 '새로운 앱 마카 다이어리 경험해보기. 클릭으로 이동.' 으로 타이핑 하는 것 처럼 한글자씩 추가되게
 
     let i = 0;
@@ -200,6 +214,10 @@ const AboutMe = () => {
 
       if (markaMoreRef.current) {
         markaObserver.unobserve(markaMoreRef.current);
+      }
+
+      if (polorsMoreRef.current) {
+        polorsObserver.unobserve(polorsMoreRef.current);
       }
 
       window.removeEventListener('wheel', handleScroll);
@@ -885,6 +903,113 @@ const AboutMe = () => {
                     event.stopPropagation();
                     setMarkaToggle(!markaToggle);
                     setMarkaHighlightToggle(false);
+                  }}
+                >
+                  <ExpandMoreIcon />
+                </s.MoreButton>
+              </s.ProjectInterlude>
+            </s.Project>
+            <s.Project $toggle={polorsToggle}>
+              <s.ProjectInterlude>
+                <s.ProjectIntro
+                  onClick={() => {
+                    setPolorsToggle(!polorsToggle);
+                  }}
+                >
+                  <s.LogoWrapper>
+                    <StaticImage src="logo/polors.png" />
+                  </s.LogoWrapper>
+                  <s.ProjectInfo>
+                    <s.ProjectName>
+                      POLORS
+                      <s.GithubLink
+                        href="https://github.com/YellaGoya/app-polors"
+                        target="_blank"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                        }}
+                      >
+                        GitHub-polors
+                        <GitHubIcon />
+                      </s.GithubLink>
+                    </s.ProjectName>
+                    <s.ProjectDesc>고전 명화의 색상 분석 및 색상 스키마 생성 어플리케이션.</s.ProjectDesc>
+                  </s.ProjectInfo>
+                </s.ProjectIntro>
+                <s.ProjectMoreWrapper $toggle={polorsToggle} height={polorsHeight}>
+                  <s.ProjectMore ref={polorsMoreRef}>
+                    <s.ProjectDetail>
+                      저작권이 만료된 명화들을 크롤링 하여 하루 1장의 명화를 보여주고 해당 명화의 색상을 분석하여 색상 스키마를 생성하는 어플리케이션.
+                    </s.ProjectDetail>
+                    <s.PolorsBanner
+                      onClick={() => {
+                        window.open('https://ahnsehyeok.info/app-polors');
+                      }}
+                    >
+                      <StaticImage src="polors/banner.png" />
+                      <p>POLORS</p>
+                    </s.PolorsBanner>
+                    <s.ProjectCategory
+                      className="highlight"
+                      $toggle={polorsHighlightToggle}
+                      onClick={() => {
+                        setPolorsHighlightToggle(!polorsHighlightToggle);
+                      }}
+                    >
+                      <s.HistoryDiv />
+                      주요 기능
+                      <ArrowLeftRoundedIcon />
+                    </s.ProjectCategory>
+                    <s.ProjectHighlight $toggle={polorsHighlightToggle}>
+                      <s.ProjectHighlightItem>
+                        <s.ProjectHightlightTitle>크롤링 : </s.ProjectHightlightTitle>Artvee 에서 저작권이 만료된 구상 미술 명화 이미지 4만 여장 중
+                        1장의 이미지를 중복 없이 랜덤으로 크롤링 하여 보여준다. 매일 자정 새로운 이미지가 업로드된다.
+                      </s.ProjectHighlightItem>
+                      <s.ProjectHighlightItem>
+                        <s.ProjectHightlightTitle>색상 스키마 : </s.ProjectHightlightTitle>이미지를 영역으로 나누어 색상을 분석한다. 사전 설정된 값에
+                        따라 유사한 색상은 합쳐지고 다른 색상은 분리된다. 이를 통해 색상 스키마를 생성한다.
+                      </s.ProjectHighlightItem>
+                      <s.ProjectHighlightItem>
+                        <s.ProjectHightlightTitle>자동화 : </s.ProjectHightlightTitle>
+                        매일 자정 새로운 이미지가 업로드되며 색상 스키마가 자동으로 생성된다. cron을 활용하여 자동화하였으며 에러와 관련된 로그를
+                        파일로 리다이렉션 하여 에러를 추적할 수 있도록 하였다.
+                      </s.ProjectHighlightItem>
+                      <s.ProjectHighlightItem>
+                        <s.ProjectHightlightTitle>단순함 : </s.ProjectHightlightTitle>
+                        사용자가 사용할 수 있는 것에 명화와 색상 스키마 외에는 다른 기능이 없다. 사용자가 명화와 색상 스키마를 보며 감상하는 것이
+                        전부이다.
+                      </s.ProjectHighlightItem>
+                    </s.ProjectHighlight>
+                    <s.ProjectCategory>
+                      <s.HistoryDiv />
+                      사용 기술 스택
+                    </s.ProjectCategory>
+                    <s.ProjectStack>
+                      프레임워크 : Javascript, Next.js / 데이터베이스 : PostgreSQL / 크롤링 : Puppeteer / 색상 스키마 생성 : extractColors / 포맷팅 :
+                      ESLint, Prettier
+                    </s.ProjectStack>
+                    <s.ProjectCategory>
+                      <s.HistoryDiv />
+                      회고
+                    </s.ProjectCategory>
+                    <s.ProjectInsight>
+                      영감을 얻기 위해 새로운 트렌드를 찾아 나서는 모습을 성찰하고자 시작하였다. /
+                      <span>
+                        &nbsp;크롤링 시에는 가상 브라우저 내에서 실행되는 코드와 서버에서 실행되는 코드를 잘 분리해야 했다. 코드가 실행되는 시점에
+                        대한 좋은 공부가 되었다.&nbsp;
+                      </span>
+                      / 색상 스키마를 생성하는 라이브러리 중 인지도가 낮은 라이브러리를 찾아내어 사용하였다. 성능은 좋았지만 도큐먼트의 Node.js 사용
+                      예시, ImageData Object 데이터 입력부의 잘못된 부분을 확인할 수 있었고 리포지터리 이슈를 통해 프로젝트 소유자와 소통 후 수정할 수
+                      있었다.
+                    </s.ProjectInsight>
+                  </s.ProjectMore>
+                </s.ProjectMoreWrapper>
+                <s.MoreButton
+                  $toggle={polorsToggle}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setPolorsToggle(!polorsToggle);
+                    setPolorsHighlightToggle(false);
                   }}
                 >
                   <ExpandMoreIcon />
