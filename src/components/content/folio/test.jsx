@@ -1072,9 +1072,9 @@ const AboutMe = () => {
                 <s.SkillItemDescHighlight>
                   * React, Next를 메인으로 사용합니다.
                   <br />
-                  CSS 디자인 및 컴포넌트 작성 등 기초부터 프로젝트 유지 보수 및 배포까지 전반에 기여할 수 있습니다.
+                  CSS 디자인 및 컴포넌트 작성 등 기초 부터 프로젝트 유지보수 및 배포까지 전반에 기여할 수 있습니다.
                   <br />
-                  상태 관리는 프로젝트의 규모와 상황에 따라 Redux, Recoil 중 선택하여 사용하고 있습니다.
+                  상태관리는 프로젝트의 규모와 상황에 따라 Redux, Recoil 중 선택하여 사용하고 있습니다.
                 </s.SkillItemDescHighlight>
                 <s.SkillLineDiv />
                 <s.SkillItemDescHighlight>

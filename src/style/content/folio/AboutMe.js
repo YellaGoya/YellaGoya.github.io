@@ -978,7 +978,7 @@ export const CloneContainer = styled.div`
   }
 
   &::after {
-    content: 'App Marka 이동하기';
+    content: 'App Marka 클릭으로 이동.';
     //텍스트를 중앙으로
     display: flex;
     justify-content: center;
@@ -1122,7 +1122,7 @@ export const PolorsBanner = styled.div`
     }
   }
 
-  p {
+  span {
     position: absolute;
     margin: 0;
     width: 100%;
@@ -1137,18 +1137,26 @@ export const PolorsBanner = styled.div`
     transition: opacity 0.2s ease;
   }
 
+  p {
+    margin: 0;
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: underline 1px solid;
+    text-underline-offset: 4px;
+  }
+
   &:hover {
     &::after {
       opacity: 0.7;
     }
 
-    p {
+    span {
       opacity: 0;
     }
   }
 
   &::after {
-    content: 'App Polors 이동하기';
+    content: 'App Polors 클릭으로 이동.';
     //텍스트를 중앙으로
     display: flex;
     justify-content: center;
