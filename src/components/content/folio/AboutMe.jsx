@@ -1080,21 +1080,15 @@ const AboutMe = () => {
                   메모이제이션, 캐싱 등의 상황에 따른 최적화를 최우선으로 고려하여 개발합니다.
                 </s.SkillItemDescHighlight>
                 <s.SkillLineDiv />
-                <s.SkillItemDescNormal>Vue2, 3 소규모 팀 프로젝트, Gatsby SSR 블로그 운영 경험이 있습니다.</s.SkillItemDescNormal>
-                <s.SkillLineDiv />
-                <s.SkillItemDescHighlight>
-                  * 백엔드 경험을 기반으로 백엔드 API 연동과 같은 협업에 적극적으로 임할 수 있습니다.
-                </s.SkillItemDescHighlight>
-                <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
                   CSS-in-CSS 방식과 module.css 를 선호합니다.
                   <br />
                   상태 공유 및 인터렉션을 위한 컴포넌트 디자인에는 styled-components를 사용하기도 합니다.
-                  <br />
-                  컨셉, UX/UI 디자인, 와이어 프레임 및 스토리보드 작성에는 Figma를 사용하며,
-                  <br />
-                  최근 4번의 프로젝트를 Figma와 함께하며 디자인을 전담하였습니다.
                 </s.SkillItemDescNormal>
+                <s.SkillLineDiv />
+                <s.SkillItemDescHighlight>
+                  * 백엔드 경험을 기반으로 백엔드 API 연동과 같은 협업에 적극적으로 임할 수 있습니다.
+                </s.SkillItemDescHighlight>
               </s.SkillItemDesc>
             </s.SkillItem>
             <s.SkillItem
@@ -1147,11 +1141,9 @@ const AboutMe = () => {
                 </s.SkillItemDescHighlight>
                 <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
-                  처음에는 Java, Spring 프레임워크를 사용하여 백엔드 서버를 구축하였으며, 현재는 js를 선호합니다.
+                  Java, Spring 프레임워크 백엔드 서버를 구축 경험이 있으며, 현재는 js를 선호합니다.
                   <br />
-                  학부 연구생 시절 Python, Pandas 등을 활용하여 데이터를 전처리하거나,
-                  <br />
-                  연구실의 데이터베이스 관련 과제를 진행한 경험이 있습니다.
+                  Python, Pandas 등을 활용하여 데이터를 전처리하거나, 데이터베이스 과제를 진행한 경험이 있습니다.
                 </s.SkillItemDescNormal>
                 <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
@@ -1202,11 +1194,7 @@ const AboutMe = () => {
                 <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
                   코드 스타일을 유지하는 일관성, 컨벤션을 준수하는 것을 중요시하며, 코드 리뷰를 통해 코드의 품질을 높이고자 합니다.
-                  <br />팀 프로젝트를 진행할 때는 Gerrit을 사용하여 코드 리뷰를 강제하는 방식으로 코드의 품질을 높이고자 하였습니다..
-                </s.SkillItemDescNormal>
-                <s.SkillLineDiv />
-                <s.SkillItemDescNormal>
-                  ESLint, Prettier로 프론트엔드 코드의 일관성을 유지하며, XO를 커스텀하여 사용하고 있습니다.
+                  <br />팀 프로젝트를 진행할 때는 Gerrit을 사용하여 코드 리뷰를 강제하는 방식으로 코드의 품질을 높이고자 하였습니다.
                 </s.SkillItemDescNormal>
               </s.SkillItemDesc>
             </s.SkillItem>
@@ -1276,7 +1264,7 @@ const AboutMe = () => {
                 <s.SkillItemDescHighlight>* 협업에서 소통을 가장 중요시하며, 문서화는 협업의 정수라 생각합니다.</s.SkillItemDescHighlight>
                 <s.SkillLineDiv />
                 <s.SkillItemDescNormal>
-                  Jira로 이슈를 관리하며 팀원들 간 대화는 Slack 또는 MatterMost, 간단한 소통용 문서는 Notion을 활용하는 것을 좋아합니다.
+                  Jira로 이슈를 관리하며 팀원들 간 대화는 Slack 또는 MatterMost, 간단한 소통용 문서는 Notion을 주로 활용합니다.
                   <br />
                   스크럼과 같은 짧은 미팅을 통해 팀원들의 진행 상황을 파악하고, 팀원들의 의견을 수렴하여 프로젝트를 진행하길 선호합니다.
                 </s.SkillItemDescNormal>
