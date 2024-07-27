@@ -14,9 +14,9 @@ export const Wrapper = styled.section`
 
   background-color: var(--bg);
   transition:
-    background-color 0.4s ease,
-    top 0.4s ease,
-    height 0.4s ease;
+    background-color 0.8s ease,
+    top 0.8s ease,
+    height 0.8s ease;
 
   @media (hover: none) and (pointer: coarse) {
     padding-left: 0;

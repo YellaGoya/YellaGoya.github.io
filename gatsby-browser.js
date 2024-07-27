@@ -10,6 +10,8 @@ import { SearchProvider } from 'context/search';
 import { CategoryProvider } from 'context/category';
 import { TopBarProvider, TopBarContext } from 'context/topbar';
 
+document.documentElement.classList.add('no-transition');
+
 export const wrapRootElement = ({ element }) => {
   return (
     <TopBarProvider>
@@ -25,21 +27,25 @@ export const wrapPageElement = ({ element }) => {
   const contentsRef = useRef(null);
   const topBarState = useContext(TopBarContext);
   const [menuHeight, setMenuHeight] = useState(54);
-
   useEffect(() => {
-    const body = document.querySelector('body');
-    if (topBarState.light) {
-      body.classList.add('light');
-    } else {
-      body.classList.remove('light');
-    }
-  }, [topBarState.light]);
+    if (topBarState.light === undefined) return;
+    const { body } = document;
 
-  useEffect(() => {}, [location.pathname]);
+    if (topBarState.light) {
+      body.className = 'light';
+    } else {
+      body.className = 'dark';
+    }
+
+    setTimeout(() => {
+      document.documentElement.classList.remove('no-transition');
+    }, 100);
+  }, [topBarState.light]);
 
   useEffect(() => {
     if (location.pathname.startsWith('/folio')) topBarState.setLight(true);
     else topBarState.setLight(false);
+
     if (contentsRef.current) {
       contentsRef.current.scrollTop = 0;
     }
@@ -52,12 +58,12 @@ export const wrapPageElement = ({ element }) => {
         <meta charset="UTF-8" />
         <meta name="author" content="YellaGoya" />
         <meta name="description" content="Dev blog of Yellagoya" />
-        <link
+        {/* <link
           crossOrigin
           rel="stylesheet"
           as="style"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
-        />
+        /> */}
         <meta
           name="keywords"
           content="YellaGoya, malog, 개발자, 블로그, 개발 블로그, 개발, 개발자 블로그, 프론트엔드, 백엔드, 공부, 코딩, 프로그래밍, 자바스크립트, js, react, 리액트, gatsby, next.js, 넥스트, vanilla js, 바닐라 js,"
@@ -71,7 +77,7 @@ export const wrapPageElement = ({ element }) => {
       <TopBar menuHeight={menuHeight} setMenuHeight={setMenuHeight} />
       <Contents
         ref={contentsRef}
-        id="main-contents"
+        id="main-conbtents"
         $menuHeight={menuHeight}
         $isSearch={topBarState.isSearch}
         $isMenu={topBarState.isMenu}

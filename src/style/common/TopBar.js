@@ -13,7 +13,7 @@ export const Header = styled.header`
 
   background-color: var(--bg);
   transition:
-    background-color 0.4s ease,
+    background-color 0.8s ease,
     top 0.5s ease;
 
   border-bottom: 2px solid var(--border);
@@ -34,17 +34,17 @@ export const TitleWrapper = styled.nav`
     fill: var(--font-highlight);
     transition:
       opacity 0.2s ease,
-      fill 0.4s ease;
+      fill 0.8s ease;
     opacity: ${(props) => (props.$isFolio ? '0.5' : '1')};
   }
 
   & > #malog-title {
-    transition: color 0.4s ease;
+    transition: color 0.8s ease;
     opacity: ${(props) => (props.$isFolio ? '0.5' : '1')};
   }
 
   & > #folio-title {
-    transition: color 0.4s ease;
+    transition: color 0.8s ease;
     opacity: ${(props) => (props.$isFolio ? '1' : '0.5')};
   }
 
@@ -52,7 +52,7 @@ export const TitleWrapper = styled.nav`
     font-size: 1.2rem;
     font-weight: 900;
     color: var(--bg-blur-66);
-    transition: color 0.4s ease;
+    transition: color 0.8s ease;
   }
 `;
 
@@ -127,7 +127,7 @@ export const Menu = styled.nav`
 
   transition:
     all 0.5s ease,
-    background-color 0.4s ease;
+    background-color 0.8s ease;
 
   background-color: var(--bg);
   z-index: 50;
@@ -154,7 +154,7 @@ export const Search = styled.nav`
 
   transition:
     top 0.5s ease,
-    background-color 0.4s ease;
+    background-color 0.8s ease;
 
   z-index: 51;
 
@@ -175,5 +175,9 @@ export const Search = styled.nav`
     border: none;
 
     text-rendering: optimizeLegibility;
+  }
+
+  & > input::placeholder {
+    color: var(--font40);
   }
 `;

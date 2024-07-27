@@ -1,4 +1,5 @@
 import { styled, createGlobalStyle, keyframes } from 'styled-components';
+import pv from 'assets/pv.woff2';
 
 const searchOpacity = keyframes`
   0% {
@@ -19,6 +20,14 @@ const searchOpacity = keyframes`
 `;
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'pv';
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: auto;
+    src: url(${pv}) format('woff2-variations');
+  }
+
   html {
     font-size: 16px;
     font-weight: 400;
@@ -37,17 +46,25 @@ export const GlobalStyle = createGlobalStyle`
 
   }
 
-  body, input, button{
-    font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;;
+  body, input, button {
+    font-family: "pv", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
   }
 
+  .no-transition {
+    transition: none !important;
+  }
+
+  .no-transition * {
+    transition: none !important;
+  }
+
   body {
     margin: 0;
     background-color: var(--bg);
-    transition:background-color 0.4s ease;
+    transition:background-color 0.8s ease;
 
     & > .gatsby-code-button-toaster{
       position: fixed;
@@ -83,42 +100,84 @@ export const GlobalStyle = createGlobalStyle`
         animation: ${searchOpacity} 2s ease-in-out;
         
 
-        font-family: "Pretendard Variable";
+        font-family: "pv";
       }
     }
 
-    --bg: #1b1b1b;
-    --bg-half: #1b1b1baa;
-    --bg-blur-22: #ffffff22;
-    --bg-blur-44: #ffffff44;
-    --bg-blur-66: #ffffff66;
-    --bg-code: #333;
-    --bg-button-hover: #ffffff22;
 
-    --border: #858585;
-    --border-lite: #ccc;
+    --line: transparent;
+    --bg: transparent;
+    --bg-half: transparent;
+    --bg-blur-22: transparent;
+    --bg-blur-44: transparent;
+    --bg-blur-66: transparent;
+    --bg-code: transparent;
+    --bg-button-hover: transparent;
 
-    --font: #fff;
-    --font10: #ffffff10;
-    --font20: #ffffff20;
-    --font30: #ffffff30;
-    --font40: #ffffff40; 
-    --font80: #ffffff80;
-    --fontaa: #ffffffaa;
-    --fontcc: #ffffffcc;
-    --font-highlight: #d5383f;
-    --font-custom: #bd93f9;
+    --border: transparent;
+    --border-lite: transparent;
 
-    --scroll: #888;
-    --scroll-hover: #ccc;
-    --selection-bg: #eee;
-    --selection-font: #000;
+    --font: transparent;
+    --font10: transparent;
+    --font20: transparent;
+    --font30: transparent;
+    --font40: transparent; 
+    --font80: transparent;
+    --fontaa: transparent;
+    --fontcc: transparent;
+    --font-highlight: transparent;
+    --font-custom: transparent;
+
+    --scroll: transparent;
+    --scroll-hover: transparent;
+    --selection-bg: transparent;
+    --selection-font: transparent;
 
     --font-opacity: 0.85;
     --wght-highlight: 430;
     --wght-normal: 300;
 
+    --thumbnail-border: transparent;
+    --thumbnail-shadow: transparent;
+
+    &.dark {
+      --line: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(27, 27, 27, 1) 100%);
+      --bg: #1b1b1b;
+      --bg-half: #1b1b1baa;
+      --bg-blur-22: #ffffff22;
+      --bg-blur-44: #ffffff44;
+      --bg-blur-66: #ffffff66;
+      --bg-code: #333;
+      --bg-button-hover: #ffffff22;
+
+      --border: #858585;
+      --border-lite: #ccc;
+
+      --font: #fff;
+      --font10: #ffffff10;
+      --font20: #ffffff20;
+      --font30: #ffffff30;
+      --font40: #ffffff40; 
+      --font80: #ffffff80;
+      --fontaa: #ffffffaa;
+      --fontcc: #ffffffcc;
+      --font-highlight: #d5383f;
+      --font-custom: #bd93f9;
+
+      --scroll: #888;
+      --scroll-hover: #ccc;
+      --selection-bg: #eee;
+      --selection-font: #000;
+
+      --font-opacity: 0.85;
+      --wght-highlight: 430;
+      --wght-normal: 300;
+      
+      --thumbnail-border: 1px solid rgba(0, 0, 0, 1);
+      --thumbnail-shadow: rgba(0, 0, 0, 1) 5px 5px;
+    }
     &.light {
+      --line: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(27, 27, 27, 1) 100%);
       --bg: #fff;
       --bg-half: #ffffffaa;
       --bg-blur-22: #00000022;
@@ -149,6 +208,9 @@ export const GlobalStyle = createGlobalStyle`
       --font-opacity: 1;
       --wght-highlight: 550;
       --wght-normal: 420;
+
+      --thumbnail-border: transparent;
+      --thumbnail-shadow: transparent;
     }
   }
 

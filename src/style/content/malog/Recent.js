@@ -24,8 +24,12 @@ export const RecentCard = styled.article`
   & > .gatsby-image-wrapper {
     width: 100% !important;
     height: 200px !important;
-    border: 1px solid rgba(0, 0, 0, 1);
-    box-shadow: rgba(0, 0, 0, 1) 5px 5px;
+    border: var(--thumbnail-border);
+    box-shadow: var(--thumbnail-shadow);
+
+    transition:
+      border 0.8s,
+      box-shadow 0.8s;
 
     img {
       object-fit: cover;

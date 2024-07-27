@@ -949,7 +949,7 @@ const AboutMe = () => {
                     >
                       <StaticImage src="polors/banner.png" />
                       <span>
-                        POLORS<p>클릭으로 이동.</p>
+                        POLORS<p>시간을 팔레트로 옮기다.</p>
                       </span>
                     </s.PolorsBanner>
                     <s.ProjectCategory

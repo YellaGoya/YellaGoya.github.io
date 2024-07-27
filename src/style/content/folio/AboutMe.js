@@ -4,7 +4,7 @@ import ga1 from 'assets/ga1.woff2';
 export const WordHighlight = styled.h1`
   margin-bottom: 20px;
 
-  transition: color 0.4s ease;
+  transition: color 0.8s ease;
   color: var(--font);
   font-size: 4rem;
   line-height: 1.05;
@@ -17,7 +17,7 @@ export const HighLightLine = styled.div`
   height: 30vh;
   width: 10px;
   margin: 0 auto;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(27, 27, 27, 1) 100%);
+  background: var(--line);
 `;
 
 export const ProfileWrapper = styled.section``;
@@ -79,7 +79,7 @@ export const History = styled.ul`
   margin: 0;
 
   color: var(--font);
-  transition: color 0.4s ease;
+  transition: color 0.8s ease;
   direction: ltr;
 `;
 
@@ -119,7 +119,7 @@ export const HistoryDiv = styled.div`
 
   border-radius: 2px;
 
-  transition: background-color 0.4s ease;
+  transition: background-color 0.8s ease;
   background-color: var(--font);
 `;
 
@@ -140,7 +140,7 @@ export const ProfileDesc = styled.span`
   direction: ltr;
 
   color: var(--font);
-  transition: color 0.4s ease;
+  transition: color 0.8s ease;
   @media (max-width: 750px) {
     margin-bottom: 100px;
   }
@@ -165,7 +165,7 @@ export const Skills = styled.ul`
   padding: 0 10px;
   margin-top: 170px;
 
-  transition: color 0.4s ease;
+  transition: color 0.8s ease;
   color: var(--font);
   direction: ltr;
 `;
@@ -186,8 +186,8 @@ export const SkillTitle = styled.span`
   padding: 4px 10px;
   border-radius: 0.5rem;
   transition:
-    transform 0.4s ease,
-    background-color 0.4s ease;
+    transform 0.8s ease,
+    background-color 0.8s ease;
 
   & > svg {
     &:first-child {
@@ -200,7 +200,7 @@ export const SkillTitle = styled.span`
     margin-left: 6px;
 
     fill: var(--font);
-    transition: fill 0.4s ease;
+    transition: fill 0.8s ease;
   }
 `;
 
@@ -252,12 +252,12 @@ export const SvgWrapper = styled.div`
     border-radius: 0.25rem;
 
     fill: var(--font);
-    transition: fill 0.4s ease;
+    transition: fill 0.8s ease;
     z-index: 2;
   }
 
   fill: var(--font);
-  transition: fill 0.4s ease;
+  transition: fill 0.8s ease;
 `;
 
 export const SvgTooltip = styled.span`
@@ -394,7 +394,7 @@ export const ModeButtonWrapper = styled.button`
     opacity: 0;
     transition:
       color 0.2s ease,
-      opacity 0.4s ease;
+      opacity 0.8s ease;
   }
 
   &:hover {
@@ -997,7 +997,6 @@ export const CloneContainer = styled.div`
 
     color: #fff;
     font-size: 27px;
-    font-family: 'Pretendard Variable';
     background-color: #000;
 
     cursor: pointer;
@@ -1175,7 +1174,6 @@ export const PolorsBanner = styled.div`
 
     color: #fff;
     font-size: 27px;
-    font-family: 'Pretendard Variable';
     background-color: #000;
 
     cursor: pointer;
