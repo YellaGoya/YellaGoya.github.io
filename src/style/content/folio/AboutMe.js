@@ -450,16 +450,6 @@ export const ProjectWrapper = styled.section`
 `;
 
 export const Project = styled.article`
-  & > div {
-    padding: ${({ $toggle }) => ($toggle ? '50px 0' : '5px 0')};
-  }
-
-  &:nth-child(2) > div {
-    padding: ${({ $toggle }) => ($toggle ? '5px 0 50px 0' : '5px 0')};
-  }
-`;
-
-export const ProjectInterlude = styled.div`
   position: relative;
   border-radius: 0.5rem;
 
@@ -467,7 +457,7 @@ export const ProjectInterlude = styled.div`
 
   transition:
     background-color 0.1s ease,
-    padding 0.8s ease;
+    padding 0s ease;
 `;
 
 export const ProjectIntro = styled.div`
@@ -520,20 +510,19 @@ export const LogoWrapper = styled.div`
 `;
 
 export const ProjectMoreWrapper = styled.div`
-  height: ${({ $toggle, height }) => ($toggle ? `${height + 15}px` : '0')};
-  transition: height 0.8s ease;
+  height: ${({ $toggle }) => ($toggle ? 'auto' : '0')};
+  transition: height 0s ease;
   overflow: hidden;
+
+  & .insight {
+    margin-bottom: 50px;
+  }
 `;
+
 export const ProjectMore = styled.div`
   height: auto;
   transition: max-height 2s linear;
   padding: 0 10px;
-`;
-export const ProjectDate = styled.h2`
-  font-size: 1.2rem;
-  padding: 0 10px;
-  margin: 0;
-  color: var(--font);
 `;
 
 export const ProjectInfo = styled.div`
@@ -564,7 +553,14 @@ export const ProjectName = styled.span`
 
   display: flex;
   align-items: center;
-  /* margin-top: -16px; */
+
+  & > svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 3px;
+
+    transform: ${({ $toggle }) => ($toggle ? 'rotate(180deg)' : 'none')};
+  
 `;
 
 export const GithubLink = styled.a`
@@ -715,43 +711,43 @@ export const ProjectInsight = styled.div`
   }
 `;
 
-export const MoreButton = styled.button`
-  width: 100%;
-  height: 40px;
+// export const MoreButton = styled.button`
+//   width: 100%;
+//   height: 40px;
 
-  background-color: transparent;
-  border: none;
-  margin-top: 50px;
+//   background-color: transparent;
+//   border: none;
+//   margin-top: 50px;
 
-  display: ${({ $toggle }) => ($toggle ? 'block' : 'none')};
+//   display: ${({ $toggle }) => ($toggle ? 'block' : 'none')};
 
-  cursor: pointer;
+//   cursor: pointer;
 
-  & > svg {
-    width: 30px;
-    height: 30px;
+//   & > svg {
+//     width: 30px;
+//     height: 30px;
 
-    border-radius: 0.5rem;
-    fill: var(--font);
+//     border-radius: 0.5rem;
+//     fill: var(--font);
 
-    transition:
-      background-color 0.1s ease,
-      fill 0.1s ease;
+//     transition:
+//       background-color 0.1s ease,
+//       fill 0.1s ease;
 
-    transform: rotate(180deg);
-    /* &:hover {
-      background-color: var(--font);
-      fill: var(--bg);
-    } */
-  }
+//     transform: rotate(180deg);
+//     /* &:hover {
+//       background-color: var(--font);
+//       fill: var(--bg);
+//     } */
+//   }
 
-  &:hover {
-    & > svg {
-      background-color: var(--font);
-      fill: var(--bg);
-    }
-  }
-`;
+//   &:hover {
+//     & > svg {
+//       background-color: var(--font);
+//       fill: var(--bg);
+//     }
+//   }
+// `;
 
 export const ProjectWindow = styled.div`
   position: relative;
@@ -794,9 +790,9 @@ export const Test = styled.div`
 `;
 
 export const ProjectDivLine = styled.div`
-  margin: 0 auto;
   width: calc(100% - 20px);
   height: 1px;
+  margin: 10px;
   background-color: var(--font30);
 `;
 
