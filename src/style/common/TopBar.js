@@ -39,12 +39,16 @@ export const TitleWrapper = styled.nav`
   }
 
   & > #malog-title {
-    transition: color 0.8s ease;
+    transition:
+      opacity 0.2s ease,
+      color 0.8s ease;
     opacity: ${(props) => (props.$isFolio ? '0.5' : '1')};
   }
 
   & > #folio-title {
-    transition: color 0.8s ease;
+    transition:
+      opacity 0.2s ease,
+      color 0.8s ease;
     opacity: ${(props) => (props.$isFolio ? '1' : '0.5')};
   }
 

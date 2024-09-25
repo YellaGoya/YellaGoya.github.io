@@ -33,6 +33,7 @@ export const PhotoGraph = styled.div`
 
   .gatsby-image-wrapper [data-main-image] {
     transition: all 0.2s ease;
+    border-radius: 0.5rem;
   }
 
   & > div > picture > img {
@@ -119,7 +120,6 @@ export const HistoryDiv = styled.div`
 
   border-radius: 2px;
 
-  transition: background-color 0.8s ease;
   background-color: var(--font);
 `;
 
@@ -933,7 +933,7 @@ export const ToTopButton = styled.button`
 
 export const TopLocation = styled.div`
   position: absolute;
-  top: -15px;
+  top: -8px;
 `;
 
 export const CloneContainer = styled.div`
@@ -1023,6 +1023,7 @@ export const CloneContainer = styled.div`
   }
 
   & form > textarea {
+    color: #202020;
     font-family: 'Malgun Gothic';
     font-size: 18px;
     font-weight: 400px;
@@ -1047,7 +1048,7 @@ export const CloneContainer = styled.div`
     background-color: #aaa;
     opacity: 0.3;
 
-    margin: 9px auto;
+    margin: 15px auto;
   }
 
   & section {
@@ -1056,6 +1057,7 @@ export const CloneContainer = styled.div`
   }
 
   & section > span {
+    color: #757575;
     height: 23px;
 
     display: flex;
@@ -1064,7 +1066,9 @@ export const CloneContainer = styled.div`
     font-size: 18px;
     font-weight: 700;
 
-    opacity: 0.5;
+    & > * {
+      fill: #757575;
+    }
 
     &:first-child {
       width: 100px;
@@ -1072,6 +1076,7 @@ export const CloneContainer = styled.div`
 
     &:not(:first-child) {
       width: 50px;
+      opacity: 0.5;
     }
 
     & > svg {

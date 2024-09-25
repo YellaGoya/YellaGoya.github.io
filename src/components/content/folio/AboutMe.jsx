@@ -248,7 +248,7 @@ const AboutMe = () => {
         <s.HighLightLine />
         <s.ProfileWrapper>
           <s.PhotoGraph>
-            <StaticImage src="me.jpg" layout="fixed" alt="A description of the image" />
+            <StaticImage src="me.jpg" layout="fixed" alt="" />
             <s.PhotoDesc>
               안녕하세요. <br />
               개발자 안세혁입니다.
@@ -276,7 +276,7 @@ const AboutMe = () => {
                 <p />
                 " 개발 경험 중 가장 즐거웠던 것은 무엇인가? "
                 <br />
-                라는 질문에 프론트엔드라 답하며, 그 이유는 사용자 경험과 디자인을 중요시하는 가치관을 가졌기 때문입니다.
+                라는 질문에 프론트엔드라 답하며, 그 이유는 사용자 경험과 디자인을 중요시하는 가치관을 가졌기 때문입 니다.
                 <p />
                 사용자에게 더 나은 경험을 제공할 때 개발자로서 보람과 성취감을 느낍니다.
               </s.ProfileText>
@@ -347,7 +347,7 @@ const AboutMe = () => {
                   }}
                 >
                   <s.LogoWrapper>
-                    <StaticImage src="logo/dddev2.png" />
+                    <StaticImage src="logo/dddev2.png" alt="" />
                   </s.LogoWrapper>
                   <s.ProjectInfo>
                     <s.ProjectName>
@@ -380,10 +380,10 @@ const AboutMe = () => {
                         setDddevViewToggle(true);
                       }}
                     >
-                      <StaticImage src="dddev/1.jpg" />
-                      <StaticImage src="dddev/2.jpg" />
-                      <StaticImage src="dddev/3.jpg" />
-                      <StaticImage src="dddev/4.jpg" />
+                      <StaticImage src="dddev/1.jpg" alt="" />
+                      <StaticImage src="dddev/2.jpg" alt="" />
+                      <StaticImage src="dddev/3.jpg" alt="" />
+                      <StaticImage src="dddev/4.jpg" alt="" />
                     </s.ProjectImageGrid>
                     <s.ProjectCategory
                       className="highlight"
@@ -479,7 +479,7 @@ const AboutMe = () => {
                     </s.ProjectInsight>
                   </s.ProjectMore>
                 </s.ProjectMoreWrapper>
-                <s.MoreButton
+                {/* <s.MoreButton
                   $toggle={dddevToggle}
                   onClick={(event) => {
                     event.stopPropagation();
@@ -488,7 +488,7 @@ const AboutMe = () => {
                   }}
                 >
                   <ExpandMoreIcon />
-                </s.MoreButton>
+                </s.MoreButton> */}
               </s.ProjectInterlude>
             </s.Project>
             <s.ProjectDivLine />
@@ -500,7 +500,7 @@ const AboutMe = () => {
                   }}
                 >
                   <s.LogoWrapper>
-                    <StaticImage src="logo/nashda.png" />
+                    <StaticImage src="logo/nashda.png" alt="" />
                   </s.LogoWrapper>
                   <s.ProjectInfo>
                     <s.ProjectName>
@@ -634,7 +634,7 @@ const AboutMe = () => {
                     </s.ProjectInsight>
                   </s.ProjectMore>
                 </s.ProjectMoreWrapper>
-                <s.MoreButton
+                {/* <s.MoreButton
                   $toggle={nashdaToggle}
                   onClick={(event) => {
                     event.stopPropagation();
@@ -643,7 +643,7 @@ const AboutMe = () => {
                   }}
                 >
                   <ExpandMoreIcon />
-                </s.MoreButton>
+                </s.MoreButton> */}
               </s.ProjectInterlude>
             </s.Project>
             <s.ProjectDivLine />
@@ -655,7 +655,7 @@ const AboutMe = () => {
                   }}
                 >
                   <s.LogoWrapper>
-                    <StaticImage src="logo/stvdy.png" />
+                    <StaticImage src="logo/stvdy.png" alt="" />
                   </s.LogoWrapper>
                   <s.ProjectInfo>
                     <s.ProjectName>
@@ -684,11 +684,11 @@ const AboutMe = () => {
                         setStvdyViewToggle(true);
                       }}
                     >
-                      <StaticImage src="stvdy/1.PNG" />
-                      <StaticImage src="stvdy/2.PNG" />
-                      <StaticImage src="stvdy/3.PNG" />
-                      <StaticImage src="stvdy/4.PNG" />
-                      <StaticImage src="stvdy/5.PNG" />
+                      <StaticImage src="stvdy/1.PNG" alt="" />
+                      <StaticImage src="stvdy/2.PNG" alt="" />
+                      <StaticImage src="stvdy/3.PNG" alt="" />
+                      <StaticImage src="stvdy/4.PNG" alt="" />
+                      <StaticImage src="stvdy/5.PNG" alt="" />
                     </s.ProjectImageGrid>
                     <s.ProjectCategory
                       className="highlight"
@@ -769,7 +769,7 @@ const AboutMe = () => {
                     </s.ProjectInsight>
                   </s.ProjectMore>
                 </s.ProjectMoreWrapper>
-                <s.MoreButton
+                {/* <s.MoreButton
                   $toggle={stvdyToggle}
                   onClick={(event) => {
                     event.stopPropagation();
@@ -778,7 +778,7 @@ const AboutMe = () => {
                   }}
                 >
                   <ExpandMoreIcon />
-                </s.MoreButton>
+                </s.MoreButton> */}
               </s.ProjectInterlude>
             </s.Project>
           </s.ProjectWrapper>
@@ -792,7 +792,7 @@ const AboutMe = () => {
                   }}
                 >
                   <s.LogoWrapper>
-                    <StaticImage src="logo/marka.png" />
+                    <StaticImage src="logo/marka.png" alt="" />
                   </s.LogoWrapper>
                   <s.ProjectInfo>
                     <s.ProjectName>
@@ -823,9 +823,9 @@ const AboutMe = () => {
                       }}
                     >
                       <form>
-                        <input value="Greetings. App Marka." />
+                        <input readOnly value="Greetings. App Marka." />
                         <div />
-                        <textarea value={markaGreeting} />
+                        <textarea readOnly value={markaGreeting} />
                         <div />
                         <section>
                           <span>
@@ -897,7 +897,7 @@ const AboutMe = () => {
                     </s.ProjectInsight>
                   </s.ProjectMore>
                 </s.ProjectMoreWrapper>
-                <s.MoreButton
+                {/* <s.MoreButton
                   $toggle={markaToggle}
                   onClick={(event) => {
                     event.stopPropagation();
@@ -906,7 +906,7 @@ const AboutMe = () => {
                   }}
                 >
                   <ExpandMoreIcon />
-                </s.MoreButton>
+                </s.MoreButton> */}
               </s.ProjectInterlude>
             </s.Project>
             <s.ProjectDivLine />
@@ -918,7 +918,7 @@ const AboutMe = () => {
                   }}
                 >
                   <s.LogoWrapper>
-                    <StaticImage src="logo/polors.png" />
+                    <StaticImage src="logo/polors.png" alt="" />
                   </s.LogoWrapper>
                   <s.ProjectInfo>
                     <s.ProjectName>
@@ -947,7 +947,7 @@ const AboutMe = () => {
                         window.open('https://ahnsehyeok.info/app-polors');
                       }}
                     >
-                      <StaticImage src="polors/banner.png" />
+                      <StaticImage src="polors/banner.png" alt="" />
                       <span>
                         POLORS<p>시간을 팔레트로 옮기다.</p>
                       </span>
@@ -1007,7 +1007,7 @@ const AboutMe = () => {
                     </s.ProjectInsight>
                   </s.ProjectMore>
                 </s.ProjectMoreWrapper>
-                <s.MoreButton
+                {/* <s.MoreButton
                   $toggle={polorsToggle}
                   onClick={(event) => {
                     event.stopPropagation();
@@ -1016,7 +1016,7 @@ const AboutMe = () => {
                   }}
                 >
                   <ExpandMoreIcon />
-                </s.MoreButton>
+                </s.MoreButton> */}
               </s.ProjectInterlude>
             </s.Project>
           </s.ProjectWrapper>
@@ -1303,10 +1303,10 @@ const AboutMe = () => {
         }}
       >
         <s.ImageViewerWrapper>
-          <StaticImage src="dddev/1.jpg" />
-          <StaticImage src="dddev/2.jpg" />
-          <StaticImage src="dddev/3.jpg" />
-          <StaticImage src="dddev/4.jpg" />
+          <StaticImage src="dddev/1.jpg" alt="" />
+          <StaticImage src="dddev/2.jpg" alt="" />
+          <StaticImage src="dddev/3.jpg" alt="" />
+          <StaticImage src="dddev/4.jpg" alt="" />
         </s.ImageViewerWrapper>
       </s.ImageViewer>
       <s.ImageViewer
@@ -1332,11 +1332,11 @@ const AboutMe = () => {
         }}
       >
         <s.ImageViewerWrapper>
-          <StaticImage src="stvdy/1.PNG" />
-          <StaticImage src="stvdy/2.PNG" />
-          <StaticImage src="stvdy/3.PNG" />
-          <StaticImage src="stvdy/4.PNG" />
-          <StaticImage src="stvdy/5.PNG" />
+          <StaticImage src="stvdy/1.PNG" alt="" />
+          <StaticImage src="stvdy/2.PNG" alt="" />
+          <StaticImage src="stvdy/3.PNG" alt="" />
+          <StaticImage src="stvdy/4.PNG" alt="" />
+          <StaticImage src="stvdy/5.PNG" alt="" />
         </s.ImageViewerWrapper>
       </s.ImageViewer>
     </>

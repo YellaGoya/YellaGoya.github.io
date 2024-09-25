@@ -13,11 +13,11 @@ const Works = () => {
             window.open('https://ahnsehyeok.info/app-marka', '_blank');
           }}
         >
-          <StaticImage src="app-marka.png" layout="fixed" alt="A description of the image" />
+          <StaticImage src="app-marka.png" layout="fixed" alt="" />
 
           <CardTitle>
             <MarkaIcon>
-              <StaticImage src="ico-marka.png" layout="fixed" alt="A description of the image" />
+              <StaticImage src="ico-marka.png" layout="fixed" alt="" />
             </MarkaIcon>
             arka
           </CardTitle>
@@ -32,10 +32,10 @@ const Works = () => {
             window.open('https://ahnsehyeok.info/app-polors', '_blank');
           }}
         >
-          <StaticImage src="app-polors.png" layout="fixed" alt="A description of the image" />
+          <StaticImage src="app-polors.png" layout="fixed" alt="" />
           <CardTitle>
             <PolorsIcon>
-              <StaticImage src="ico-polors.png" layout="fixed" alt="A description of the image" />
+              <StaticImage src="ico-polors.png" layout="fixed" alt="" />
             </PolorsIcon>
             POLORS
           </CardTitle>

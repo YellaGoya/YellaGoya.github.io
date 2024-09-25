@@ -1,6 +1,7 @@
 import { useRef, useContext, useEffect, useState } from 'react';
-import { Contents, ContentsWidthWrapper, GlobalStyle } from 'style/Global.js';
 
+import 'style/fonts.css';
+import { Contents, ContentsWidthWrapper, GlobalStyle } from 'style/Global.js';
 import 'assets/highlight/prism-dracula.css';
 
 import { Helmet } from 'react-helmet-async';
@@ -9,8 +10,6 @@ import TopBar from 'components/common/TopBar.jsx';
 import { SearchProvider } from 'context/search';
 import { CategoryProvider } from 'context/category';
 import { TopBarProvider, TopBarContext } from 'context/topbar';
-
-document.documentElement.classList.add('no-transition');
 
 export const wrapRootElement = ({ element }) => {
   return (
@@ -28,24 +27,20 @@ export const wrapPageElement = ({ element }) => {
   const topBarState = useContext(TopBarContext);
   const [menuHeight, setMenuHeight] = useState(54);
   useEffect(() => {
-    if (topBarState.light === undefined) return;
     const { body } = document;
 
     if (topBarState.light) {
       body.className = 'light';
     } else {
-      body.className = 'dark';
+      // body.className = 'dark';
+      body.classList.remove('light');
     }
-
-    setTimeout(() => {
-      document.documentElement.classList.remove('no-transition');
-    }, 100);
   }, [topBarState.light]);
 
   useEffect(() => {
-    if (location.pathname.startsWith('/folio')) topBarState.setLight(true);
-    else topBarState.setLight(false);
-
+    // if (location.pathname.startsWith('/folio')) topBarState.setLight(true);
+    // else topBarState.setLight(false);
+    topBarState.setLight(false);
     if (contentsRef.current) {
       contentsRef.current.scrollTop = 0;
     }

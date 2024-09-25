@@ -1,12 +1,11 @@
 import { styled, createGlobalStyle, keyframes } from 'styled-components';
-import pv from 'assets/pv.woff2';
 
 const searchOpacity = keyframes`
   0% {
     opacity: 0;
   }
   
-  15% {
+  15% {   
     opacity: 1;
   }
 
@@ -20,14 +19,6 @@ const searchOpacity = keyframes`
 `;
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'pv';
-    font-weight: 45 920;
-    font-style: normal;
-    font-display: auto;
-    src: url(${pv}) format('woff2-variations');
-  }
-
   html {
     font-size: 16px;
     font-weight: 400;
@@ -53,17 +44,9 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: none;
   }
 
-  .no-transition {
-    transition: none !important;
-  }
-
-  .no-transition * {
-    transition: none !important;
-  }
-
   body {
     margin: 0;
-    background-color: var(--bg);
+    background-color: #1b1b1b;
     transition:background-color 0.8s ease;
 
     & > .gatsby-code-button-toaster{
@@ -105,78 +88,39 @@ export const GlobalStyle = createGlobalStyle`
     }
 
 
-    --line: transparent;
-    --bg: transparent;
-    --bg-half: transparent;
-    --bg-blur-22: transparent;
-    --bg-blur-44: transparent;
-    --bg-blur-66: transparent;
-    --bg-code: transparent;
-    --bg-button-hover: transparent;
-
-    --border: transparent;
-    --border-lite: transparent;
-
-    --font: transparent;
-    --font10: transparent;
-    --font20: transparent;
-    --font30: transparent;
-    --font40: transparent; 
-    --font80: transparent;
-    --fontaa: transparent;
-    --fontcc: transparent;
-    --font-highlight: transparent;
-    --font-custom: transparent;
-
-    --scroll: transparent;
-    --scroll-hover: transparent;
-    --selection-bg: transparent;
-    --selection-font: transparent;
-
+    --line: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(27, 27, 27, 1) 100%);
+    --bg: #1b1b1b;
+    --bg-half: #1b1b1baa;
+    --bg-blur-22: #ffffff22;
+    --bg-blur-44: #ffffff44;
+    --bg-blur-66: #ffffff66;
+    --bg-code: #333;
+    --bg-button-hover: #ffffff22;
+    --border: #858585;
+    --border-lite: #ccc;
+    --font: #fff;
+    --font10: #ffffff10;
+    --font20: #ffffff20;
+    --font30: #ffffff30;
+    --font40: #ffffff40; 
+    --font80: #ffffff80;
+    --fontaa: #ffffffaa;
+    --fontcc: #ffffffcc;
+    --font-highlight: #d5383f;
+    --font-custom: #bd93f9;
+    --scroll: #888;
+    --scroll-hover: #ccc;
+    --selection-bg: #eee;
+    --selection-font: #000;
     --font-opacity: 0.85;
     --wght-highlight: 430;
     --wght-normal: 300;
+    
+    --thumbnail-border: 1px solid rgba(0, 0, 0, 1);
+    --thumbnail-shadow: rgba(0, 0, 0, 1) 5px 5px;
 
-    --thumbnail-border: transparent;
-    --thumbnail-shadow: transparent;
-
-    &.dark {
-      --line: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(27, 27, 27, 1) 100%);
-      --bg: #1b1b1b;
-      --bg-half: #1b1b1baa;
-      --bg-blur-22: #ffffff22;
-      --bg-blur-44: #ffffff44;
-      --bg-blur-66: #ffffff66;
-      --bg-code: #333;
-      --bg-button-hover: #ffffff22;
-
-      --border: #858585;
-      --border-lite: #ccc;
-
-      --font: #fff;
-      --font10: #ffffff10;
-      --font20: #ffffff20;
-      --font30: #ffffff30;
-      --font40: #ffffff40; 
-      --font80: #ffffff80;
-      --fontaa: #ffffffaa;
-      --fontcc: #ffffffcc;
-      --font-highlight: #d5383f;
-      --font-custom: #bd93f9;
-
-      --scroll: #888;
-      --scroll-hover: #ccc;
-      --selection-bg: #eee;
-      --selection-font: #000;
-
-      --font-opacity: 0.85;
-      --wght-highlight: 430;
-      --wght-normal: 300;
-      
-      --thumbnail-border: 1px solid rgba(0, 0, 0, 1);
-      --thumbnail-shadow: rgba(0, 0, 0, 1) 5px 5px;
-    }
     &.light {
+      background-color: #fff;
       --line: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(27, 27, 27, 1) 100%);
       --bg: #fff;
       --bg-half: #ffffffaa;
